@@ -4,7 +4,9 @@ mixin color-container(title, color, opacity)
     else
         div(class=`color-container__box color-container_color_${color}-${opacity}`)
     if opacity === ""
-        h2=title + " #" + color
+        h2.
+            #{title} <br>##[span #{color}]
 
     else
-        h2=title + " " + opacity + "% #" + color
+        h2.
+            #{title} #{opacity}% ##[span #{color}]
