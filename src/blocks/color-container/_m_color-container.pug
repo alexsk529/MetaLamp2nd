@@ -1,0 +1,10 @@
+mixin color-container(title, color, opacity)
+    if opacity === ""
+        div(class=`color-container__box color-container_color_${color}-100`)
+    else
+        div(class=`color-container__box color-container_color_${color}-${opacity}`)
+    if opacity === ""
+        h2=title + " #" + color
+
+    else
+        h2=title + " " + opacity + "% #" + color
