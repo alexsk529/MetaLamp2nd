@@ -1,12 +1,12 @@
 @use "../../reset";
 @use "../../text/text";
-@use '../../blocks/color-container/color-container.scss';
-@use '../../blocks/color-container/color-container__box';
+@use '../../blocks/colorsTypes/_color-container';
+@use '../../blocks/colorsTypes/color-container__box';
 @use "../../blocks/ui-kit/ui-kit__logo";
-@use "../../blocks/color-container/color-container__span";
-@use "../../blocks/text-container/text-container";
-@use "../../blocks/text-container/text-container__span";
-@import '../../blocks/color-container/color_container_color';
+@use "../../blocks/colorsTypes/color-container__span";
+@use "../../blocks/colorsTypes/colorsTypes__text-container";
+@use "../../blocks/colorsTypes/colorsTypes_opacity-25";
+@import '../../blocks/colorsTypes/color_container_color';
 
 @include color(1F2041, #1F2041, 100);
 @include color(1F2041, #1F2041, 75);
@@ -16,7 +16,7 @@
 @include color(BC9CFF, #BC9CFF, 100);
 @include color(6FCF97, #6FCF97, 100);
 
-.colorstypes__section {
+.colorsTypes {
   display: grid;
   grid-template-columns: 282px 436px;
   grid-column-gap: 415px;

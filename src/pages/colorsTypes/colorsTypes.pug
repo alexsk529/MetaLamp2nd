@@ -1,5 +1,5 @@
 include ../../pug/_image
-include ../../blocks/color-container/color-container
+include ../../blocks/colorsTypes/color-container
 
 doctype html
 html
@@ -7,8 +7,8 @@ html
     body
         header
             +image('logo','ui-kit__logo')
-        section.colorstypes__section
-            .color-container
+        .colorsTypes
+            .colorsTypes__color-container
                 +color-container('Dark Shade', '1F2041', 100)
                 +color-container('Dark Shade', '1F2041', 75)
                 +color-container('Dark Shade', '1F2041', 50)
@@ -16,17 +16,17 @@ html
                 +color-container('Dark Shade', '1F2041', 5)
                 +color-container('Purple', 'BC9CFF', "")
                 +color-container('Green', '6FCF97', "")
-            .text-container
+            .colorsTypes__text-container
                 h1
-                    span.text-container__span H1
+                    span(class="colorsTypes_normal-w colorsTypes_opacity-25") H1
                     |This one is the sub-section or widget line
                 h2
-                    span.text-container__span H2
+                    span(class="colorsTypes_normal-w colorsTypes_opacity-25") H2
                     |Next one is the item title inside widgets
                 h3
-                    span.text-container__span H3
+                    span(class="colorsTypes_normal-w colorsTypes_opacity-25") H3
                     |this is a label or cta text
                 p
-                    span.text-container__span Body
+                    span(class="colorsTypes_normal-w colorsTypes_opacity-25") Body
                     |This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
