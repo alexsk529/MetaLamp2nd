@@ -26,7 +26,7 @@ module.exports = {
       filename: '[name].[contenthash].css'
 }),
     new HtmlWebpackPlugin({
-    template: "./src/index.pug"
+    template: "./src/pages/colorstypes/colorstypes.pug"
   }),
   ],
   module: {
