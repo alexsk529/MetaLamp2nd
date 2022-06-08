@@ -1,6 +1,0 @@
-@mixin color($fakecolor, $color, $opacity) {
-  .colorTypes__box_color_#{$fakecolor}-#{$opacity} {
-  background-color: $color;
-  opacity: calc($opacity / 100)
-}
-}

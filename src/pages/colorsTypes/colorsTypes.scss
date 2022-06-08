@@ -1,24 +1,12 @@
 @use "../../reset";
 @use "../../text/text";
-@use '../../blocks/colorsTypes/_color-container';
-@use '../../blocks/colorsTypes/color-container__box';
-@use "../../blocks/ui-kit/ui-kit__logo";
-@use "../../blocks/colorsTypes/color-container__span";
-@use "../../blocks/colorsTypes/colorsTypes__text-container";
-@use "../../blocks/colorsTypes/colorsTypes_opacity-25";
-@import '../../blocks/colorsTypes/color_container_color';
+@use '../../blocks/colorsContent/colorsContent';
+@use "../../blocks/logo/logo";
 
-@include color(1F2041, #1F2041, 100);
-@include color(1F2041, #1F2041, 75);
-@include color(1F2041, #1F2041, 50);
-@include color(1F2041, #1F2041, 25);
-@include color(1F2041, #1F2041, 5);
-@include color(BC9CFF, #BC9CFF, 100);
-@include color(6FCF97, #6FCF97, 100);
+html {
+  width: 1440px;
+  height: 900px;
 
-.colorsTypes {
-  display: grid;
-  grid-template-columns: 282px 436px;
-  grid-column-gap: 415px;
 }
+
 
