@@ -4,6 +4,10 @@
   grid-column-gap: 415px;
   margin-left: 150px;
 
+  &__logo {
+    margin: 30px 30px 67px 30px;
+  }
+
   h2,span {
     line-height: 28px;
   }
@@ -64,7 +68,7 @@
     text-align: right;
   }
 
-  @mixin color($fakecolor, $color, $opacity) {
+  @mixin color($fakecolor, $color, $opacity: 100) {
     .colorsContent__box_color_#{$fakecolor}-#{$opacity} {
       background-color: $color;
       opacity: calc( $opacity / 100);
@@ -76,7 +80,11 @@
   @include color(1F2041, #1F2041, 50);
   @include color(1F2041, #1F2041, 25);
   @include color(1F2041, #1F2041, 5);
-  @include color(BC9CFF, #BC9CFF, 100);
-  @include color(6FCF97, #6FCF97, 100);
+  @include color(BC9CFF, #BC9CFF);
+  @include color(6FCF97, #6FCF97);
+
+}
+
+.text-container {
 
 }

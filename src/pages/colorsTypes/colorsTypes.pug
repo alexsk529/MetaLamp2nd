@@ -3,10 +3,10 @@ include ../../blocks/colorsContent/colorsContent
 
 doctype html
 html
-    include _head
+    include ../../pug/_head
     body
         header
-            +image('logo','logo__colorsContent')
+            +image('logo','colorsContent__logo')
         .colorsContent
             .colorsContent__color-container
                 +color-container('Dark Shade', '1F2041', 100)
@@ -33,5 +33,6 @@ html
                     p body
                 .colorsContent__big-block
                     p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+        a(href="../formElements/formElements.pug") Link
 
 

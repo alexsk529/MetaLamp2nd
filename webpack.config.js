@@ -1,19 +1,32 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
+let globule = require('globule');
 let mode = 'development';
 if ( process.env.NODE_ENV === 'production' ) {
   mode = 'production'
 }
 console.log(mode + ' mode');
 
+const paths = globule.find(["src/pages/**/*.pug"])
+const jspaths = globule.find(["src/pages/**/*.js"])
+
 module.exports = {
   mode: mode,
+  entry: {
+    colorsTypes: './src/pages/colorsTypes/colorsTypes.js',
+    formElements: './src/pages/formElements/formElements.js',
+  },
   output: {
-    filename: '[name],[contenthash].js',
+    filename: (mode === 'development') ? '[name].js' : '[name],[contenthash].js',
+    assetModuleFilename: "assets/[hash][ext][query]",
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true,
+  },
+  devServer: {
+    static: {
+      directory: "./src/pages/colorsTypes",
+    }
   },
   devtool: 'source-map',
   optimization: {
@@ -23,12 +36,17 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
+      filename: (mode === 'development') ? '[name].css' : '[name].[contenthash].css'
 }),
-    new HtmlWebpackPlugin({
-    template: "./src/pages/colorsTypes/colorsTypes.pug"
-  }),
-  ],
+  //   new HtmlWebpackPlugin({
+  //   template: "./src/pages/colorsTypes/colorsTypes.pug"
+  // }),
+    ...paths.map((path) => {
+      return new HtmlWebpackPlugin( {
+        template: path,
+        filename: `${path.split(/\/|.pug/).splice(-2, 1)}.html`,
+      });
+    })],
   module: {
     rules: [
       {
