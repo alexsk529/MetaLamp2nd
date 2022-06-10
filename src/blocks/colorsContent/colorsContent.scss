@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 282px 436px;
   grid-column-gap: 415px;
-  margin-left: 150px;
+  margin: 37px 0 0 150px;
 
   &__logo {
     margin: 30px 30px 67px 30px;
@@ -43,19 +43,6 @@
 
       .colorsContent__big-block:last-child {
         width: 301px;
-      }
-
-      h1 {
-        line-height: 29px;
-        }
-      h2 {
-        line-height: 23px;
-      }
-      h3 {
-        line-height: 15px;
-      }
-      p {
-        line-height: 24px;
       }
   }
 

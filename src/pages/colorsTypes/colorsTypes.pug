@@ -3,10 +3,12 @@ include ../../blocks/colorsContent/colorsContent
 
 doctype html
 html
-    include ../../pug/_head
+    head
+        meta(charset='UTF-8')
+        title Colors&Types
     body
-        header
-            +image('logo','colorsContent__logo')
+        header.uiKit.uiKit__header
+            +image('logo','uiKit__logo')
         .colorsContent
             .colorsContent__color-container
                 +color-container('Dark Shade', '1F2041', 100)
@@ -18,21 +20,20 @@ html
                 +color-container('Green', '6FCF97', "")
             .colorsContent__text-container
                 .colorsContent__small-block
-                    h1 H1
+                    h1.widget H1
                 .colorsContent__big-block
-                    h1 This one is the sub-section or widget line
+                    h1.widget This one is the sub-section or widget line
                 .colorsContent__small-block
-                    h2 H2
+                    h2.widgetInside H2
                 .colorsContent__big-block
-                    h2 Next one is the item title inside widgets
+                    h2.widgetInside Next one is the item title inside widgets
                 .colorsContent__small-block
-                    h3 H3
+                    h3.widgetInside H3
                 .colorsContent__big-block
-                    h3 this is a label or cta text
+                    h3.widgetInside this is a label or cta text
                 .colorsContent__small-block
-                    p body
+                    p.body body
                 .colorsContent__big-block
-                    p This is the body text which is used for most of the design, like paragraphs, lists, etc.
-        a(href="../formElements/formElements.pug") Link
+                    p.body This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
 

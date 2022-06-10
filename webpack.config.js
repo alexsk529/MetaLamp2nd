@@ -9,7 +9,6 @@ if ( process.env.NODE_ENV === 'production' ) {
 console.log(mode + ' mode');
 
 const paths = globule.find(["src/pages/**/*.pug"])
-const jspaths = globule.find(["src/pages/**/*.js"])
 
 module.exports = {
   mode: mode,
@@ -18,8 +17,7 @@ module.exports = {
     formElements: './src/pages/formElements/formElements.js',
   },
   output: {
-    filename: (mode === 'development') ? '[name].js' : '[name],[contenthash].js',
-    assetModuleFilename: "assets/[hash][ext][query]",
+    filename: '[name],[contenthash].js',
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true,
   },
@@ -36,7 +34,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: (mode === 'development') ? '[name].css' : '[name].[contenthash].css'
+      filename: '[name].[contenthash].css'
 }),
   //   new HtmlWebpackPlugin({
   //   template: "./src/pages/colorsTypes/colorsTypes.pug"

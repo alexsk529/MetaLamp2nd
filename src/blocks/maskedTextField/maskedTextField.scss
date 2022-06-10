@@ -1,0 +1,40 @@
+.maskedTextField {
+
+  &__label {
+    margin-bottom: 5px;
+  }
+
+  &__field {
+    width: 320px;
+    height: 44px;
+    margin: 0 0 20px 0;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 15px;
+    border-radius: 4px;
+    border: 1px rgba(31, 32, 65, 0.25) solid;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1F2041;
+    line-height: 18px;
+  }
+  &__field::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1F2041;
+    opacity: 0.25;
+    line-height: 18px;
+    text-transform: uppercase;
+  }
+
+
+  &__field:hover {
+    border-color: rgba(31, 32, 65, 0.5);
+  }
+
+  &__field:focus {
+    outline: rgba(31, 32, 65, 0.5);
+  }
+}

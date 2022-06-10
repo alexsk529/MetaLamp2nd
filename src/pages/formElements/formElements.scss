@@ -1,0 +1,18 @@
+@use "../../reset";
+@use "../../text/text";
+@use '../../blocks/form/form';
+@use "../../blocks/textField/textField";
+@use "../../blocks/uiKit/uiKit";
+@use "../../blocks/dropdown/dropdown";
+@use "../../blocks/maskedTextField/maskedTextField";
+
+
+html {
+  width: 1440px;
+  height: 1853px;
+
+}
+
+* {
+  box-sizing: border-box;
+}

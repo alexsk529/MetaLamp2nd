@@ -1,4 +1,69 @@
+include ../../pug/_image
+
 doctype html
 html
-    include ../../pug/_head
-    body
+    head
+        meta(charset='UTF-8')
+        title Form Elements
+    body.form
+    header.uiKit.uiKit__header
+        +image('logo','uiKit__logo')
+    main.form__content
+        .form__1stBlock
+            .form__uBlock
+                .textField
+                    .textField__label
+                        h3.label text field
+                    .textField__label2
+                        span.label-25 default
+                    input.textField__field(placeholder="Email" type="Email")
+                .textField
+                    .textField__label
+                        h3.label text field
+                    .textField__label2
+                        span.label-25 hover/focus
+                    input.textField__field(value="This is pretty awesome" type="text")
+                .dropdown
+                    h3.label.dropdown__label dropdown
+                    select.dropdown__select
+                        //option.dropdown__item(disabled selected style='display:none')
+                        //    |Сколько гостей
+                .maskedTextField
+                        h3.label masked text field
+                        input.maskedTextField__field(type="date")
+                input.dateDropdown
+                input.dateDropdown
+                input.filterDateDropdown
+                input.textField.textField_subscription
+            .form__uBlock
+                input.checkbox
+                input.radioButtons
+                input.toggle
+                .form__likeButtons
+                    input.likeButton
+                    input.likeButton
+                .form__rateButtons
+                    input.rateButton
+                    input.rateButton
+            .form__uBlock
+                input.rangeSlider
+                .form__clickButtons
+                    input.clickButton
+                    input.clickButton
+                    input.clickButton
+                    input.clickButton
+                    input.clickButton
+                    input.clickButton
+                    input.clickButton
+                input.pagination
+        .form__2ndBlock
+            .form__uBlock
+            .form__uBlock
+            .form__uBlock
+        .form__3rdBlock
+            .form__uBlock
+            .form__uBlock
+            .form__uBlock
+    footer.uiKit.uiKit__footer
+        .allowance
+        .review

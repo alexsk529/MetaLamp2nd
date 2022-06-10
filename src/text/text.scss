@@ -4,27 +4,37 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-p {
+.body {
   font-size: 14px;
   font-weight: 400;
   color: #1F2041;
   opacity: 0.75;
-
+  line-height: 24px;
 }
 
-h1 {
+.widget {
   font-size: 24px;
   font-weight: 700;
+  line-height: 29px;
 }
 
-h2 {
+.widgetInside {
   font-size: 19px;
   font-weight: 700;
+  line-height: 23px;
 }
 
-h3 {
+.label {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
+  line-height: 15px;
 }
 
+.label-25 {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 15px;
+  opacity: 0.25;
+}
