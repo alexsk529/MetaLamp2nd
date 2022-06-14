@@ -1,4 +1,7 @@
 include ../../pug/_image
+include ../../blocks/textField/textField
+include ../../blocks/dropdown/dropdown
+
 
 doctype html
 html
@@ -11,23 +14,9 @@ html
     main.form__content
         .form__1stBlock
             .form__uBlock
-                .textField
-                    .textField__label
-                        h3.label text field
-                    .textField__label2
-                        span.label-25 default
-                    input.textField__field(placeholder="Email" type="Email")
-                .textField
-                    .textField__label
-                        h3.label text field
-                    .textField__label2
-                        span.label-25 hover/focus
-                    input.textField__field(value="This is pretty awesome" type="text")
-                .dropdown
-                    h3.label.dropdown__label dropdown
-                    select.dropdown__select
-                        //option.dropdown__item(disabled selected style='display:none')
-                        //    |Сколько гостей
+                +textField("text field", "default", "Email", "Email", "")
+                +textField("text field", "hover/focus", "text", "", "This is pretty awesome")
+                +dropdown("dropdown")
                 .maskedTextField
                         h3.label masked text field
                         input.maskedTextField__field(type="date")
