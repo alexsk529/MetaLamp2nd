@@ -42,6 +42,7 @@
     "bootstrap": "^5.1.3",
     "easydropdown": "^4.2.0",
     "jquery": "^3.6.0",
+    "material-icons": "^1.11.2",
     "simple-pug-loader": "^0.2.1"
   }
 }

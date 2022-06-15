@@ -1,4 +1,4 @@
-.textField{
+.text-field{
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-areas: "a b c"
@@ -31,13 +31,15 @@
     line-height: 18px;
   }
 
-  &__field:hover {
+  &__field:hover, &__field:focus, &__field:active  {
     border-color: rgba(31, 32, 65, 0.5);
+    outline: none;
   }
 
-  &__field:focus {
-    outline: rgba(31, 32, 65, 0.5);
-  }
+  //&__field:focus {
+  //  border-color: rgba(31, 32, 65, 0.5);
+  //  outline: none;
+  //}
 
   &__field::placeholder {
     font-family: 'Montserrat', sans-serif;

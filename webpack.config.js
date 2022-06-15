@@ -13,8 +13,8 @@ const paths = globule.find(["src/pages/**/*.pug"])
 module.exports = {
   mode: mode,
   entry: {
-    colorsTypes: './src/pages/colorsTypes/colorsTypes.js',
-    formElements: './src/pages/formElements/formElements.js',
+    colorsTypes: './src/pages/colors-types/colors-types.js',
+    formElements: './src/pages/form-elements/form-elements.js',
   },
   output: {
     filename: '[name],[contenthash].js',
@@ -23,7 +23,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: "./src/pages/colorsTypes",
+      directory: "./src/pages/colors-types",
     }
   },
   devtool: 'source-map',
@@ -37,7 +37,7 @@ module.exports = {
       filename: '[name].[contenthash].css'
 }),
   //   new HtmlWebpackPlugin({
-  //   template: "./src/pages/colorsTypes/colorsTypes.pug"
+  //   template: "./src/pages/colors-types/colors-types.pug"
   // }),
     ...paths.map((path) => {
       return new HtmlWebpackPlugin( {

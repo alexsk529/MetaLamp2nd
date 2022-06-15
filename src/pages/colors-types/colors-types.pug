@@ -1,5 +1,5 @@
 include ../../pug/_image
-include ../../blocks/colorsContent/colorsContent
+include ../../blocks/colors-content/colors-content
 
 doctype html
 html
@@ -9,8 +9,8 @@ html
     body
         header.uiKit.uiKit__header
             +image('logo','uiKit__logo')
-        .colorsContent
-            .colorsContent__color-container
+        .colors-content
+            .colors-content__color-container
                 +color-container('Dark Shade', '1F2041', 100)
                 +color-container('Dark Shade', '1F2041', 75)
                 +color-container('Dark Shade', '1F2041', 50)
@@ -18,22 +18,22 @@ html
                 +color-container('Dark Shade', '1F2041', 5)
                 +color-container('Purple', 'BC9CFF', "")
                 +color-container('Green', '6FCF97', "")
-            .colorsContent__text-container
-                .colorsContent__small-block
+            .colors-content__text-container
+                .colors-content__small-block
                     h1.widget H1
-                .colorsContent__big-block
+                .colors-content__big-block
                     h1.widget This one is the sub-section or widget line
-                .colorsContent__small-block
-                    h2.widgetInside H2
-                .colorsContent__big-block
-                    h2.widgetInside Next one is the item title inside widgets
-                .colorsContent__small-block
-                    h3.widgetInside H3
-                .colorsContent__big-block
-                    h3.widgetInside this is a label or cta text
-                .colorsContent__small-block
+                .colors-content__small-block
+                    h2.widget-inside H2
+                .colors-content__big-block
+                    h2.widget-inside Next one is the item title inside widgets
+                .colors-content__small-block
+                    h3.widget-inside H3
+                .colors-content__big-block
+                    h3.widget-inside this is a label or cta text
+                .colors-content__small-block
                     p.body body
-                .colorsContent__big-block
+                .colors-content__big-block
                     p.body This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
 

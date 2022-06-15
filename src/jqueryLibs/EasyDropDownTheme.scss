@@ -12,11 +12,14 @@
 .edd-root {
   display: inline-block;
   position: relative;
-  width: 180px;
+
   user-select: none;
-  font-family: 'Open Sans', arial, helvetica, sans-serif;
-  font-size: 16px;
-  color: #333;
+  //font-family: 'Montserrat', sans-serif;
+  //font-weight: 400;
+  //color: #1F2041;
+  //line-height: 18px;
+  //text-align-last: left;
+  //vertical-align: center;
 }
 
 .edd-root-disabled {
@@ -27,8 +30,10 @@
 .edd-head {
   position: relative;
   overflow: hidden;
-  border: 1px solid #eee;
-  transition: box-shadow 200ms, border-color 150ms;
+  width: 320px;
+  height: 44px;
+  border: 1px rgba(31, 32, 65, 0.25) solid;
+  //transition: box-shadow 200ms, border-color 150ms;
   background: white;
 }
 
@@ -38,7 +43,8 @@
 }
 
 .edd-root-focused .edd-head {
-  box-shadow: 0 0 5px rgba(105, 215, 255, 0.4);
+  border-color: rgba(31, 32, 65, 0.5);
+  //box-shadow: 0 0 5px rgba(105, 215, 255, 0.4);
 }
 
 .edd-root-invalid .edd-head {
@@ -46,15 +52,21 @@
 }
 
 .edd-root:not(.edd-root-disabled):not(.edd-root-open) .edd-head:hover {
-  border-color: #ccc;
+  border-color: rgba(31, 32, 65, 0.5);
 }
 
 .edd-value {
   width: calc(100% - 50px);
   display: inline-block;
-  vertical-align: middle;
-  margin: 8px 0 8px 8px;
-  border-right: 1px solid #eee;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #1F2041;
+  line-height: 18px;
+  text-align-last: left;
+  vertical-align: center;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  margin-left: 15px;
 }
 
 .edd-arrow {
@@ -81,7 +93,7 @@
 }
 
 .edd-root-open .edd-arrow {
-  transform: rotate(180deg);
+  //transform: rotate(180deg);
 }
 
 .edd-value,

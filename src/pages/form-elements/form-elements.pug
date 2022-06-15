@@ -1,0 +1,58 @@
+include ../../pug/_image
+include ../../blocks/text-field/text-field
+include ../../blocks/dropdown/dropdown
+
+
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title Form Elements
+    body.form
+    header.uiKit.uiKit__header
+        +image('logo','uiKit__logo')
+    main.form__content
+        .form__1stBlock
+            .form__uBlock
+                +text-field("text field", "default", "Email", "Email", "")
+                +text-field("text field", "hover/focus", "text", "", "This is pretty awesome")
+                +dropdown("dropdown")
+                .masked-text-field
+                        h3.label masked text field
+                        input.masked-text-field__field(type="date")
+                input.dateDropdown
+                input.dateDropdown
+                input.filter-date-dropdown
+                input.text-field.text-field_subscription
+            .form__uBlock
+                input.checkbox
+                input.radio-buttons
+                input.toggle
+                .form__like-buttons
+                    input.like-button
+                    input.like-button
+                .form__rate-buttons
+                    input.rate-button
+                    input.rate-button
+            .form__uBlock
+                input.range-slider
+                .form__click-buttons
+                    input.click-button
+                    input.click-button
+                    input.click-button
+                    input.click-button
+                    input.click-button
+                    input.click-button
+                    input.click-button
+                input.pagination
+        .form__2ndBlock
+            .form__uBlock
+            .form__uBlock
+            .form__uBlock
+        .form__3rdBlock
+            .form__uBlock
+            .form__uBlock
+            .form__uBlock
+    footer.uiKit.uiKit__footer
+        .allowance
+        .review

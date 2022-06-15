@@ -1,4 +1,4 @@
-.colorsContent {
+.colors-content {
   display: grid;
   grid-template-columns: 282px 436px;
   grid-column-gap: 415px;
@@ -41,7 +41,7 @@
     grid-column-gap: 30px;
     grid-row-gap: 51px;
 
-      .colorsContent__big-block:last-child {
+      .colors-content__big-block:last-child {
         width: 301px;
       }
   }
@@ -56,7 +56,7 @@
   }
 
   @mixin color($fakecolor, $color, $opacity: 100) {
-    .colorsContent__box_color_#{$fakecolor}-#{$opacity} {
+    .colors-content__box_color_#{$fakecolor}-#{$opacity} {
       background-color: $color;
       opacity: calc( $opacity / 100);
     }
