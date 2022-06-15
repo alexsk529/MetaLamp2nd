@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 
 let globule = require('globule');
 let mode = 'development';
@@ -13,8 +14,8 @@ const paths = globule.find(["src/pages/**/*.pug"])
 module.exports = {
   mode: mode,
   entry: {
-    colorsTypes: './src/pages/colors-types/colors-types.js',
-    formElements: './src/pages/form-elements/form-elements.js',
+    'colors-types': './src/pages/colors-types/colors-types.js',
+    'form-elements': './src/pages/form-elements/form-elements.js',
   },
   output: {
     filename: '[name],[contenthash].js',
@@ -33,6 +34,10 @@ module.exports = {
     },
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      '$': 'jquery',
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
 }),
