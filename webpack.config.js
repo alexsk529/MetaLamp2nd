@@ -22,11 +22,6 @@ module.exports = {
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true,
   },
-  devServer: {
-    static: {
-      directory: "./src/pages/colors-types",
-    }
-  },
   devtool: 'source-map',
   optimization: {
     splitChunks: {
@@ -36,7 +31,7 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
-      '$': 'jquery',
+      jQuery: 'jquery',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
