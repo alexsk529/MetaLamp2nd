@@ -8,9 +8,10 @@ import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
 
 
 
-$(document).ready(() => {
+$(document).ready( function() {
   // const selectElement = document.querySelector('.dropdown__select');
   // const edd = easydropdown(selectElement);
+
   $('.iqdropdown').iqDropdown({
 
     onChange: (id, count, totalItems) => {
@@ -28,10 +29,13 @@ $(document).ready(() => {
           adults = totalItems + " гость";
           $('.iqdropdown-selection').html(adults)
         }
+        if ( totalItems == 0 ) {
+          $('.iqdropdown-selection').html('Сколько гостей');
+        }
 
     },
   });
-
+  $('.iqdropdown-selection').html('Сколько гостей');
 });
 
 

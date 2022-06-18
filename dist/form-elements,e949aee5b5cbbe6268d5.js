@@ -41,8 +41,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         adults = totalItems + " гость";
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.iqdropdown-selection').html(adults);
       }
+
+      if (totalItems == 0) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.iqdropdown-selection').html('Сколько гостей');
+      }
     }
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.iqdropdown-selection').html('Сколько гостей');
 });
 
 /***/ }),
@@ -422,4 +427,4 @@ module.exports = __webpack_require__.p + "assets/b4b8dfebda28ec94b585.woff";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=form-elements,f8d10fb006f690fccf36.js.map
+//# sourceMappingURL=form-elements,e949aee5b5cbbe6268d5.js.map
