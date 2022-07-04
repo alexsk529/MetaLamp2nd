@@ -1,6 +1,6 @@
 include ../../pug/_image
 include ../../blocks/text-field/text-field
-include ../../blocks/dropdown/dropdown
+include ../../blocks/item-quantity-dropdown/item-quantity-dropdown
 
 doctype html
 html
@@ -16,18 +16,7 @@ html
                     +text-field("text field", "default", "Email", "Email", "")
                     +text-field("text field", "hover/focus", "text", "", "This is pretty awesome")
                     //+dropdown("dropdown")
-                    .iqdropdown
-                        p(class="iqdropdown-selection" data-selection-text="гость")
-                        .iqdropdown-menu
-                            div(class="iqdropdown-menu-option" data-id="item1")
-                                div
-                                    p(class="iqdropdown-item") Взрослые
-                            div(class="iqdropdown-menu-option" data-id="item2")
-                                div
-                                    p(class="iqdropdown-item") Дети
-                            div(class="iqdropdown-menu-option" data-id="item3")
-                                div
-                                    p(class="iqdropdown-item") Младенцы
+                    +dropdown('adults', 'children', 'infants')
                     .masked-text-field
                             h3.label masked text field
                             input.masked-text-field__field(type="text")

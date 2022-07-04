@@ -112,7 +112,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \********************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/d1b7b29d0d3c69af7290.svg";
+module.exports = __webpack_require__.p + "assets/7ce02fee077a63a0d2aa.svg";
 
 /***/ }),
 
@@ -142,7 +142,7 @@ module.exports = __webpack_require__.p + "assets/bfa0f5c5f8776454227b.woff";
   \******************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/fb1812bf31daa6addcc9.svg";
+module.exports = __webpack_require__.p + "assets/d9021af3d631c5191ce1.svg";
 
 /***/ }),
 
@@ -372,4 +372,4 @@ module.exports = __webpack_require__.p + "assets/b4b8dfebda28ec94b585.woff";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=colors-types,1a9e3bdff218ceb12aae.js.map
+//# sourceMappingURL=colors-types,d39725ec0dbf5cd12a86.js.map

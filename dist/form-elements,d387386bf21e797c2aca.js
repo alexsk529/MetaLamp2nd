@@ -1,6 +1,81 @@
 /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/blocks/item-quantity-dropdown/item-quantity-dropdown.js":
+/*!*********************************************************************!*\
+  !*** ./src/blocks/item-quantity-dropdown/item-quantity-dropdown.js ***!
+  \*********************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var item_quantity_dropdown_lib_item_quantity_dropdown_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! item-quantity-dropdown/lib/item-quantity-dropdown.min */ "./node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.js");
+/* harmony import */ var item_quantity_dropdown_lib_item_quantity_dropdown_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(item_quantity_dropdown_lib_item_quantity_dropdown_min__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _item_quantity_dropdown_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./item-quantity-dropdown.scss */ "./src/blocks/item-quantity-dropdown/item-quantity-dropdown.scss");
+
+
+
+jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('.iqdropdown').iqDropdown({
+    onChange: function onChange(id, count, totalItems) {
+      var guests;
+      var infants;
+      var counter;
+      counter = +1;
+
+      if (totalItems != 0 && counter == 1) {
+        jquery__WEBPACK_IMPORTED_MODULE_1___default()('.iqdropdown-confirm-buttons').prepend("<span>Очистить</span>");
+      }
+
+      function string1(item) {
+        var str = String(item);
+
+        if (item >= 5 && item <= 20 || Number(str[str.length - 1]) >= 5 && Number(str[str.length - 1]) <= 9 || Number(str[str.length - 1]) == 0) {
+          guests = item + " гостей";
+        } else if (Number(str[str.length - 1]) >= 2 && Number(str[str.length - 1]) <= 4) {
+          guests = item + " гостя";
+        } else if (Number(str[str.length - 1]) == 1) {
+          guests = item + " гость";
+        }
+      }
+
+      function string2(item) {
+        var str = String(item);
+
+        if (item >= 5 && item <= 20 || Number(str[str.length - 1]) >= 5 && Number(str[str.length - 1]) <= 9 || Number(str[str.length - 1]) == 0) {
+          infants = item + " младенцев";
+        } else if (Number(str[str.length - 1]) >= 2 && Number(str[str.length - 1]) <= 4) {
+          infants = item + " младенца";
+        } else if (Number(str[str.length - 1]) == 1) {
+          infants = item + " младенец";
+        }
+      }
+
+      if (jquery__WEBPACK_IMPORTED_MODULE_1___default()("div[data-id='infants'] span.counter").html() == 0) {
+        string1(totalItems);
+        jquery__WEBPACK_IMPORTED_MODULE_1___default()('.iqdropdown-selection').html(guests);
+      } else if (jquery__WEBPACK_IMPORTED_MODULE_1___default()("div[data-id='infants'] span.counter").html() != 0) {
+        var countGuests = Number(jquery__WEBPACK_IMPORTED_MODULE_1___default()("div[data-id='adults'] span.counter").html()) + Number(jquery__WEBPACK_IMPORTED_MODULE_1___default()("div[data-id='children'] span.counter").html());
+        var countInf = Number(jquery__WEBPACK_IMPORTED_MODULE_1___default()("div[data-id='infants'] span.counter").html());
+        string1(countGuests);
+        string2(countInf);
+        jquery__WEBPACK_IMPORTED_MODULE_1___default()('.iqdropdown-selection').html(guests + ', ' + infants);
+      }
+
+      if (totalItems == 0) {
+        jquery__WEBPACK_IMPORTED_MODULE_1___default()('.iqdropdown-selection').html('Сколько гостей');
+      }
+
+      console.log('On change count', id, count, totalItems, 'counter', counter);
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('.iqdropdown-menu').append("<div class='iqdropdown-confirm-buttons'></div>").append("<span>Применить</span>");
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('.iqdropdown-selection').html('Сколько гостей');
+});
+
+/***/ }),
 
 /***/ "./src/pages/form-elements/form-elements.js":
 /*!**************************************************!*\
@@ -8,47 +83,49 @@
   \**************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _form_elements_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form-elements.scss */ "./src/pages/form-elements/form-elements.scss");
-/* harmony import */ var item_quantity_dropdown_lib_item_quantity_dropdown_min__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! item-quantity-dropdown/lib/item-quantity-dropdown.min */ "./node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.js");
-/* harmony import */ var item_quantity_dropdown_lib_item_quantity_dropdown_min__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(item_quantity_dropdown_lib_item_quantity_dropdown_min__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var item_quantity_dropdown_lib_item_quantity_dropdown_min_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! item-quantity-dropdown/lib/item-quantity-dropdown.min.css */ "./node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.css");
-
- // import '../../jqueryLibs/EasyDropDownTheme.scss'
-// import easydropdown from 'easydropdown'
-// import 'material-icons/iconfont/material-icons.css'
+/* harmony import */ var _blocks_item_quantity_dropdown_item_quantity_dropdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../blocks/item-quantity-dropdown/item-quantity-dropdown */ "./src/blocks/item-quantity-dropdown/item-quantity-dropdown.js");
 
 
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  // const selectElement = document.querySelector('.dropdown__select');
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {// const selectElement = document.querySelector('.dropdown__select');
   // const edd = easydropdown(selectElement);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.iqdropdown').iqDropdown({
-    onChange: function onChange(id, count, totalItems) {
-      var str = String(totalItems);
-      var adults;
-      var infants;
-
-      if (totalItems >= 5 && totalItems <= 20 || Number(str[str.length - 1]) >= 5 && Number(str[str.length - 1]) <= 9 || Number(str[str.length - 1]) == 0) {
-        adults = totalItems + " гостей";
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.iqdropdown-selection').html(adults);
-      } else if (Number(str[str.length - 1]) >= 2 && Number(str[str.length - 1]) <= 4) {
-        adults = totalItems + " гостя";
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.iqdropdown-selection').html(adults);
-      } else if (Number(str[str.length - 1]) == 1) {
-        adults = totalItems + " гость";
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.iqdropdown-selection').html(adults);
-      }
-
-      if (totalItems == 0) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.iqdropdown-selection').html('Сколько гостей');
-      }
-    }
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.iqdropdown-selection').html('Сколько гостей');
 });
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/blocks/item-quantity-dropdown/item-quantity-dropdown.scss":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/blocks/item-quantity-dropdown/item-quantity-dropdown.scss ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABGBS09AAAAeFBMVEVMaXGVlZWRkZGRkZH///+UlJSRkZGQkJCRkZGZmZmRkZGRkZGSkpKRkZGVlZWQkJCdnZ2QkJCVlZWUlJSQkJCXl5eRkZGSkpKRkZGSkpKRkZGRkZGRkZGRkZGQkJCQkJCRkZGSkpKQkJCRkZGTk5OSkpKRkZGQkJAWlBl2AAAAJ3RSTlMAHcnXATdy+f4FzLJg5ySKDYgMJuYbSm61XtmUmcc1qkiq9fVHWVidqGmEAAAAhUlEQVR42o2O5w7CYAhF6e7XvfdwtN73f0OhatLUxnj+wMklAP2mHGpFX6h6KLn0QFcds6oDeq6rC6DJ91HeAHAf0k4jACdOPlESOwDG6WVmW7CFgblJELIULcubLJVh3SKydFmTZrQn8uXMdZYH/IiOXAxsGAudoOwbcLcVnaN5nkb/8gRapQtVGGewNQAAAABJRU5ErkJggg== */ "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABGBS09AAAAeFBMVEVMaXGVlZWRkZGRkZH///+UlJSRkZGQkJCRkZGZmZmRkZGRkZGSkpKRkZGVlZWQkJCdnZ2QkJCVlZWUlJSQkJCXl5eRkZGSkpKRkZGSkpKRkZGRkZGRkZGRkZGQkJCQkJCRkZGSkpKQkJCRkZGTk5OSkpKRkZGQkJAWlBl2AAAAJ3RSTlMAHcnXATdy+f4FzLJg5ySKDYgMJuYbSm61XtmUmcc1qkiq9fVHWVidqGmEAAAAhUlEQVR42o2O5w7CYAhF6e7XvfdwtN73f0OhatLUxnj+wMklAP2mHGpFX6h6KLn0QFcds6oDeq6rC6DJ91HeAHAf0k4jACdOPlESOwDG6WVmW7CFgblJELIULcubLJVh3SKydFmTZrQn8uXMdZYH/IiOXAxsGAudoOwbcLcVnaN5nkb/8gRapQtVGGewNQAAAABJRU5ErkJggg=="), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABGBS09AAAAe1BMVEVMaXH///+ZmZmqqqqVlZWdnZ2Xl5eVlZWVlZWUlJSQkJCUlJSTk5ORkZGRkZGRkZGSkpKRkZGSkpKSkpKRkZGQkJCRkZGRkZGRkZGQkJCSkpKRkZGRkZGRkZGRkZGRkZGRkZGRkZGQkJCRkZGQkJCRkZGQkJCRkZGQkJAwdLQhAAAAKHRSTlMAAQUGDA0bHSQmNTdHSEpYWV1gbnKIi5SZqqqytcfJzNfZ5uf19fn+jEECQQAAAIhJREFUeNqNj+cSwkAIhLn0Znoz7dLD+z9hII6OJTruH5b9mDuAv2VKaX5BSjojLqlyxi49Huq9D2TVlG/VdaNSWy9Iy1YKOxfA7cismfZAIhopmWJxNPFEzRiJG3NaHs71+6ye8zOtwz7kbxobnmQ3vEBArkAcfHiTPyAWVI0yOTlNTUoDfmoHOBIMkOONx34AAAAASUVORK5CYII= */ "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABGBS09AAAAe1BMVEVMaXH///+ZmZmqqqqVlZWdnZ2Xl5eVlZWVlZWUlJSQkJCUlJSTk5ORkZGRkZGRkZGSkpKRkZGSkpKSkpKRkZGQkJCRkZGRkZGRkZGQkJCSkpKRkZGRkZGRkZGRkZGRkZGRkZGRkZGQkJCRkZGQkJCRkZGQkJCRkZGQkJAwdLQhAAAAKHRSTlMAAQUGDA0bHSQmNTdHSEpYWV1gbnKIi5SZqqqytcfJzNfZ5uf19fn+jEECQQAAAIhJREFUeNqNj+cSwkAIhLn0Znoz7dLD+z9hII6OJTruH5b9mDuAv2VKaX5BSjojLqlyxi49Huq9D2TVlG/VdaNSWy9Iy1YKOxfA7cismfZAIhopmWJxNPFEzRiJG3NaHs71+6ye8zOtwz7kbxobnmQ3vEBArkAcfHiTPyAWVI0yOTlNTUoDfmoHOBIMkOONx34AAAAASUVORK5CYII="), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\nhtml * {\n  -webkit-box-sizing: inherit;\n          box-sizing: inherit;\n}\n\nhtml *::after, html *::before {\n  -webkit-box-sizing: inherit;\n          box-sizing: inherit;\n}\n\nbody {\n  margin: 0;\n  position: inherit;\n}\n\n.iqdropdown {\n  -webkit-tap-highlight-color: transparent;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\n.iqdropdown * {\n  -webkit-tap-highlight-color: transparent;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\n.iqdropdown *::after, .iqdropdown *::before {\n  -webkit-box-sizing: inherit;\n          box-sizing: inherit;\n}\n\n.iqdropdown *:not(input) {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.iqdropdown *:focus {\n  outline: none;\n}\n\n.iqdropdown h1, .iqdropdown h2, .iqdropdown h3, .iqdropdown h4, .iqdropdown h5, .iqdropdown h6 {\n  margin: 0;\n}\n\n.iqdropdown p {\n  margin: 0;\n}\n\n.iqdropdown ul, .iqdropdown ol {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n}\n\n.iqdropdown a {\n  cursor: pointer;\n}\n\n.iqdropdown button {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  background: none;\n  border: 0;\n  cursor: pointer;\n  margin: 0;\n  padding: 0;\n}\n\n.iqdropdown select::-ms-expand {\n  display: none;\n}\n\n.iqdropdown input::-ms-clear {\n  display: none;\n  height: 0;\n  width: 0;\n}\n\n.iqdropdown .icon-decrement {\n  display: inline-block;\n  height: 15px;\n  margin: auto;\n  min-width: 15px;\n  position: relative;\n  width: 15px;\n}\n\n.iqdropdown .icon-decrement::after {\n  background: #002674;\n  content: \"\";\n  display: block;\n  height: 3px;\n  position: absolute;\n  top: 6px;\n  transition: -webkit-transform 0.25s ease-in-out;\n  -webkit-transition: -webkit-transform 0.25s ease-in-out;\n  transition: transform 0.25s ease-in-out;\n  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;\n  width: 15px;\n}\n\n.iqdropdown .icon-decrement.icon-increment::before {\n  background: #002674;\n  content: \"\";\n  display: block;\n  height: 3px;\n  position: absolute;\n  top: 6px;\n  -webkit-transform: rotate(90deg);\n  transform: rotate(90deg);\n  transition: -webkit-transform 0.25s ease-in-out;\n  -webkit-transition: -webkit-transform 0.25s ease-in-out;\n  transition: transform 0.25s ease-in-out;\n  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;\n  width: 15px;\n}\n\n.iqdropdown .iqdropdown-menu {\n  background-color: #FFFFFF;\n  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);\n          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);\n  cursor: default;\n  display: none;\n  left: 0;\n  margin: -2px -1px -1px;\n  position: absolute;\n  right: 0;\n  top: 50px;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n  z-index: 99999;\n}\n\n.iqdropdown .iqdropdown-menu-option {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 75px;\n  padding: 0 15px;\n}\n\n.iqdropdown .iqdropdown-menu-option:last-child {\n  border: 0;\n}\n\n.iqdropdown .iqdropdown-menu-close {\n  color: #002674;\n  font-family: \"OpenSans\", sans-serif;\n  font-size: 14px;\n  font-weight: 600;\n  height: 20px;\n  margin: 20px 0;\n  padding: 0 15px;\n  text-align: right;\n  width: 100%;\n}\n\n.iqdropdown.menu-open .iqdropdown-menu {\n  display: block;\n}\n\n@media only screen and (max-width: 640px) {\n  .iqdropdown .iqdropdown-menu.mobile-top-menu {\n    top: -285px;\n  }\n}\n.iqdropdown-content {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding-right: 10px;\n}\n\n.iqdropdown-item {\n  color: #000;\n  font-family: \"OpenSans\", sans-serif;\n  font-size: 17px;\n  font-weight: 400;\n}\n\n.iqdropdown p.iqdropdown-description {\n  color: #4A4A4A;\n  font-family: \"OpenSans\", sans-serif;\n  font-size: 14px;\n  font-weight: 400;\n  margin-top: 5px;\n}\n\n.iqdropdown .iqdropdown-item-controls {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 45px;\n}\n\n.iqdropdown .iqdropdown-item-controls .counter {\n  color: #4A4A4A;\n  font-family: \"OpenSans\", sans-serif;\n  font-size: 17px;\n  font-weight: 400;\n  border-bottom: 1px solid #E2E2E2;\n  border-top: 1px solid #E2E2E2;\n  padding: 11px 20px;\n}\n\n.iqdropdown .iqdropdown-item-controls button {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border: 1px solid #E2E2E2;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 45px;\n  padding: 0 20px;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n\n.iqdropdown .iqdropdown-item-controls button:hover {\n  background-color: #eee;\n}\n\n.iqdropdown .iqdropdown-item-controls button.button-decrement {\n  border-bottom-left-radius: 25px;\n  border-top-left-radius: 25px;\n}\n\n.iqdropdown .iqdropdown-item-controls button.button-increment {\n  border-bottom-right-radius: 25px;\n  border-top-right-radius: 25px;\n}\n\n.iqdropdown {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border: 1px solid #E2E2E2;\n  border-radius: 4px;\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 50px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 0 15px;\n  position: relative;\n  width: 100%;\n}\n\n.iqdropdown .iqdropdown-selection {\n  color: #4A4A4A;\n  font-family: \"OpenSans\", sans-serif;\n  font-size: 17px;\n  font-weight: 400;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  position: relative;\n}\n\n.iqdropdown .iqdropdown-selection::after {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: contain;\n  content: \"\";\n  display: inline-block;\n  height: 5px;\n  width: 12px;\n  position: absolute;\n  right: 0;\n  top: 40%;\n}\n\n.iqdropdown.menu-open {\n  border-color: #002674;\n}\n\n.iqdropdown.menu-open .iqdropdown-selection::after {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n\n/*# sourceMappingURL=item-quantity-dropdown.min.css.map*/", "",{"version":3,"sources":["webpack://./src/blocks/item-quantity-dropdown/item-quantity-dropdown.scss"],"names":[],"mappings":"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","sourcesContent":["html {\r\n    box-sizing: border-box\r\n}\r\n\r\nhtml * {\r\n    box-sizing: inherit\r\n}\r\n\r\nhtml *::after, html *::before {\r\n    box-sizing: inherit\r\n}\r\n\r\nbody {\r\n    margin: 0;\r\n    position: inherit\r\n}\r\n\r\n.iqdropdown {\r\n    -webkit-tap-highlight-color: transparent;\r\n    box-sizing: border-box\r\n}\r\n\r\n.iqdropdown * {\r\n    -webkit-tap-highlight-color: transparent;\r\n    box-sizing: border-box\r\n}\r\n\r\n.iqdropdown *::after, .iqdropdown *::before {\r\n    box-sizing: inherit\r\n}\r\n\r\n.iqdropdown *:not(input) {\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none\r\n}\r\n\r\n.iqdropdown *:focus {\r\n    outline: none\r\n}\r\n\r\n.iqdropdown h1, .iqdropdown h2, .iqdropdown h3, .iqdropdown h4, .iqdropdown h5, .iqdropdown h6 {\r\n    margin: 0\r\n}\r\n\r\n.iqdropdown p {\r\n    margin: 0\r\n}\r\n\r\n.iqdropdown ul, .iqdropdown ol {\r\n    list-style-type: none;\r\n    margin: 0;\r\n    padding: 0\r\n}\r\n\r\n.iqdropdown a {\r\n    cursor: pointer\r\n}\r\n\r\n.iqdropdown button {\r\n    -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    appearance: none;\r\n    background: none;\r\n    border: 0;\r\n    cursor: pointer;\r\n    margin: 0;\r\n    padding: 0\r\n}\r\n\r\n.iqdropdown select::-ms-expand {\r\n    display: none\r\n}\r\n\r\n.iqdropdown input::-ms-clear {\r\n    display: none;\r\n    height: 0;\r\n    width: 0\r\n}\r\n\r\n.iqdropdown .icon-decrement {\r\n    display: inline-block;\r\n    height: 15px;\r\n    margin: auto;\r\n    min-width: 15px;\r\n    position: relative;\r\n    width: 15px\r\n}\r\n\r\n.iqdropdown .icon-decrement::after {\r\n    background: #002674;\r\n    content: '';\r\n    display: block;\r\n    height: 3px;\r\n    position: absolute;\r\n    top: 6px;\r\n    transition: -webkit-transform 0.25s ease-in-out;\r\n    transition: transform 0.25s ease-in-out;\r\n    transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;\r\n    width: 15px\r\n}\r\n\r\n.iqdropdown .icon-decrement.icon-increment::before {\r\n    background: #002674;\r\n    content: '';\r\n    display: block;\r\n    height: 3px;\r\n    position: absolute;\r\n    top: 6px;\r\n    -webkit-transform: rotate(90deg);\r\n    transform: rotate(90deg);\r\n    transition: -webkit-transform 0.25s ease-in-out;\r\n    transition: transform 0.25s ease-in-out;\r\n    transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;\r\n    width: 15px\r\n}\r\n\r\n.iqdropdown .iqdropdown-menu {\r\n    background-color: #FFFFFF;\r\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);\r\n    cursor: default;\r\n    display: none;\r\n    left: 0;\r\n    margin: -2px -1px -1px;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 50px;\r\n    transition: all 0.2s ease-in-out;\r\n    z-index: 99999\r\n}\r\n\r\n.iqdropdown .iqdropdown-menu-option {\r\n    align-items: center;\r\n    display: flex;\r\n    height: 75px;\r\n    padding: 0 15px\r\n}\r\n\r\n.iqdropdown .iqdropdown-menu-option:last-child {\r\n    border: 0\r\n}\r\n\r\n.iqdropdown .iqdropdown-menu-close {\r\n    color: #002674;\r\n    font-family: \"OpenSans\", sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 600;\r\n    height: 20px;\r\n    margin: 20px 0;\r\n    padding: 0 15px;\r\n    text-align: right;\r\n    width: 100%\r\n}\r\n\r\n.iqdropdown.menu-open .iqdropdown-menu {\r\n    display: block\r\n}\r\n\r\n@media only screen and (max-width: 640px) {\r\n    .iqdropdown .iqdropdown-menu.mobile-top-menu {\r\n        top: -285px\r\n    }\r\n}\r\n\r\n.iqdropdown-content {\r\n    flex: 1;\r\n    padding-right: 10px\r\n}\r\n\r\n.iqdropdown-item {\r\n    color: #000;\r\n    font-family: \"OpenSans\", sans-serif;\r\n    font-size: 17px;\r\n    font-weight: 400\r\n}\r\n\r\n.iqdropdown p.iqdropdown-description {\r\n    color: #4A4A4A;\r\n    font-family: \"OpenSans\", sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    margin-top: 5px\r\n}\r\n\r\n.iqdropdown .iqdropdown-item-controls {\r\n    display: flex;\r\n    height: 45px\r\n}\r\n\r\n.iqdropdown .iqdropdown-item-controls .counter {\r\n    color: #4A4A4A;\r\n    font-family: \"OpenSans\", sans-serif;\r\n    font-size: 17px;\r\n    font-weight: 400;\r\n    border-bottom: 1px solid #E2E2E2;\r\n    border-top: 1px solid #E2E2E2;\r\n    padding: 11px 20px\r\n}\r\n\r\n.iqdropdown .iqdropdown-item-controls button {\r\n    align-items: center;\r\n    border: 1px solid #E2E2E2;\r\n    display: flex;\r\n    height: 45px;\r\n    padding: 0 20px;\r\n    transition: all 0.2s ease-in-out\r\n}\r\n\r\n.iqdropdown .iqdropdown-item-controls button:hover {\r\n    background-color: #eee\r\n}\r\n\r\n.iqdropdown .iqdropdown-item-controls button.button-decrement {\r\n    border-bottom-left-radius: 25px;\r\n    border-top-left-radius: 25px\r\n}\r\n\r\n.iqdropdown .iqdropdown-item-controls button.button-increment {\r\n    border-bottom-right-radius: 25px;\r\n    border-top-right-radius: 25px\r\n}\r\n\r\n.iqdropdown {\r\n    align-items: center;\r\n    border: 1px solid #E2E2E2;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    display: flex;\r\n    height: 50px;\r\n    justify-content: space-between;\r\n    padding: 0 15px;\r\n    position: relative;\r\n    width: 100%\r\n}\r\n\r\n.iqdropdown .iqdropdown-selection {\r\n    color: #4A4A4A;\r\n    font-family: \"OpenSans\", sans-serif;\r\n    font-size: 17px;\r\n    font-weight: 400;\r\n    flex: 1;\r\n    position: relative\r\n}\r\n\r\n.iqdropdown .iqdropdown-selection::after {\r\n    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABGBS09AAAAeFBMVEVMaXGVlZWRkZGRkZH///+UlJSRkZGQkJCRkZGZmZmRkZGRkZGSkpKRkZGVlZWQkJCdnZ2QkJCVlZWUlJSQkJCXl5eRkZGSkpKRkZGSkpKRkZGRkZGRkZGRkZGQkJCQkJCRkZGSkpKQkJCRkZGTk5OSkpKRkZGQkJAWlBl2AAAAJ3RSTlMAHcnXATdy+f4FzLJg5ySKDYgMJuYbSm61XtmUmcc1qkiq9fVHWVidqGmEAAAAhUlEQVR42o2O5w7CYAhF6e7XvfdwtN73f0OhatLUxnj+wMklAP2mHGpFX6h6KLn0QFcds6oDeq6rC6DJ91HeAHAf0k4jACdOPlESOwDG6WVmW7CFgblJELIULcubLJVh3SKydFmTZrQn8uXMdZYH/IiOXAxsGAudoOwbcLcVnaN5nkb/8gRapQtVGGewNQAAAABJRU5ErkJggg==);\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: contain;\r\n    content: '';\r\n    display: inline-block;\r\n    height: 5px;\r\n    width: 12px;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 40%\r\n}\r\n\r\n.iqdropdown.menu-open {\r\n    border-color: #002674\r\n}\r\n\r\n.iqdropdown.menu-open .iqdropdown-selection::after {\r\n    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABGBS09AAAAe1BMVEVMaXH///+ZmZmqqqqVlZWdnZ2Xl5eVlZWVlZWUlJSQkJCUlJSTk5ORkZGRkZGRkZGSkpKRkZGSkpKSkpKRkZGQkJCRkZGRkZGRkZGQkJCSkpKRkZGRkZGRkZGRkZGRkZGRkZGRkZGQkJCRkZGQkJCRkZGQkJCRkZGQkJAwdLQhAAAAKHRSTlMAAQUGDA0bHSQmNTdHSEpYWV1gbnKIi5SZqqqytcfJzNfZ5uf19fn+jEECQQAAAIhJREFUeNqNj+cSwkAIhLn0Znoz7dLD+z9hII6OJTruH5b9mDuAv2VKaX5BSjojLqlyxi49Huq9D2TVlG/VdaNSWy9Iy1YKOxfA7cismfZAIhopmWJxNPFEzRiJG3NaHs71+6ye8zOtwz7kbxobnmQ3vEBArkAcfHiTPyAWVI0yOTlNTUoDfmoHOBIMkOONx34AAAAASUVORK5CYII=)\r\n}\r\n\r\n\r\n/*# sourceMappingURL=item-quantity-dropdown.min.css.map*/"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
 
 /***/ }),
 
@@ -58,6 +135,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   \*******************************************************************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
@@ -90,12 +168,77 @@ ___CSS_LOADER_EXPORT___.push([module.id, "html, body, div, span, applet, object,
 
 /***/ }),
 
+/***/ "./node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.js ***!
+  \*******************************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+!function(t,n){ true?module.exports=n():0}(window,function(){return function(t){var n={};function e(o){if(n[o])return n[o].exports;var r=n[o]={i:o,l:!1,exports:{}};return t[o].call(r.exports,r,r.exports,e),r.l=!0,r.exports}return e.m=t,e.c=n,e.d=function(t,n,o){e.o(t,n)||Object.defineProperty(t,n,{enumerable:!0,get:o})},e.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},e.t=function(t,n){if(1&n&&(t=e(t)),8&n)return t;if(4&n&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(e.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&n&&"string"!=typeof t)for(var r in t)e.d(o,r,function(n){return t[n]}.bind(null,r));return o},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},e.p="",e(e.s=0)}([function(t,n,e){"use strict";e.r(n);e(1);!function(t){var n={maxItems:1/0,minItems:0,selectionText:"item",textPlural:"items",controls:{position:"right",displayCls:"iqdropdown-content",controlsCls:"iqdropdown-item-controls",counterCls:"counter"},items:{},onChange:function(){},beforeDecrement:function(){return!0},beforeIncrement:function(){return!0},setSelectionText:function(t,n){var e=1!==n&&this.textPlural.length>0?this.textPlural:this.selectionText;return"".concat(n," ").concat(e)}};t.fn.iqDropdown=function(e){return this.each(function(){var o=t(this),r=o.find("p.iqdropdown-selection").last(),i=o.find("div.iqdropdown-menu").find("div.iqdropdown-menu-option"),u={selectionText:r.data("selection-text"),textPlural:r.data("text-plural")},c=t.extend(!0,{},n,u,e),a={},l=0;function s(){r.html(c.setSelectionText(a,l))}o.click(function(){o.toggleClass("menu-open")}),i.each(function(){var n=t(this),e=n.data("id"),o=Number(n.data("defaultcount")||"0");a[e]=o,l+=o,function(t,n){var e=Number(n.data("mincount")),o=Number(n.data("maxcount"));c.items[t]={minCount:Number.isNaN(Number(e))?0:e,maxCount:Number.isNaN(Number(o))?1/0:o}}(e,n),function(n,e){var o=t("<div />").addClass(c.controls.controlsCls),r=t('\n          <button class="button-decrement">\n            <i class="icon-decrement"></i>\n          </button>\n        '),i=t('\n          <button class="button-increment">\n            <i class="icon-decrement icon-increment"></i>\n          </button>\n        '),u=t("<span>".concat(a[n],"</span>")).addClass(c.controls.counterCls);e.children("div").addClass(c.controls.displayCls),o.append(r,u,i),"right"===c.controls.position?e.append(o):e.prepend(o),r.click(function(t){var e=c.items,o=c.minItems,r=c.beforeDecrement,i=c.onChange;r(n,a)&&l>o&&a[n]>e[n].minCount&&(a[n]-=1,l-=1,u.html(a[n]),s(),i(n,a[n],l)),t.preventDefault()}),i.click(function(t){var e=c.items,o=c.maxItems,r=c.beforeIncrement,i=c.onChange;r(n,a)&&l<o&&a[n]<e[n].maxCount&&(a[n]+=1,l+=1,u.html(a[n]),s(),i(n,a[n],l)),t.preventDefault()}),e.click(function(t){return t.stopPropagation()})}(e,n)}),s()}),this}}(jQuery)},function(t,n,e){}])});
+//# sourceMappingURL=item-quantity-dropdown.min.js.map
+
+/***/ }),
+
+/***/ "./src/blocks/item-quantity-dropdown/item-quantity-dropdown.scss":
+/*!***********************************************************************!*\
+  !*** ./src/blocks/item-quantity-dropdown/item-quantity-dropdown.scss ***!
+  \***********************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_item_quantity_dropdown_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../../../node_modules/sass-loader/dist/cjs.js!./item-quantity-dropdown.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/blocks/item-quantity-dropdown/item-quantity-dropdown.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_item_quantity_dropdown_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_item_quantity_dropdown_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_item_quantity_dropdown_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_item_quantity_dropdown_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/pages/form-elements/form-elements.scss":
 /*!****************************************************!*\
   !*** ./src/pages/form-elements/form-elements.scss ***!
   \****************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
@@ -147,6 +290,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module) {
 
+"use strict";
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABGBS09AAAAe1BMVEVMaXH///+ZmZmqqqqVlZWdnZ2Xl5eVlZWVlZWUlJSQkJCUlJSTk5ORkZGRkZGRkZGSkpKRkZGSkpKSkpKRkZGQkJCRkZGRkZGRkZGQkJCSkpKRkZGRkZGRkZGRkZGRkZGRkZGRkZGQkJCRkZGQkJCRkZGQkJCRkZGQkJAwdLQhAAAAKHRSTlMAAQUGDA0bHSQmNTdHSEpYWV1gbnKIi5SZqqqytcfJzNfZ5uf19fn+jEECQQAAAIhJREFUeNqNj+cSwkAIhLn0Znoz7dLD+z9hII6OJTruH5b9mDuAv2VKaX5BSjojLqlyxi49Huq9D2TVlG/VdaNSWy9Iy1YKOxfA7cismfZAIhopmWJxNPFEzRiJG3NaHs71+6ye8zOtwz7kbxobnmQ3vEBArkAcfHiTPyAWVI0yOTlNTUoDfmoHOBIMkOONx34AAAAASUVORK5CYII=";
 
 /***/ }),
@@ -157,6 +301,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABG
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module) {
 
+"use strict";
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABGBS09AAAAeFBMVEVMaXGVlZWRkZGRkZH///+UlJSRkZGQkJCRkZGZmZmRkZGRkZGSkpKRkZGVlZWQkJCdnZ2QkJCVlZWUlJSQkJCXl5eRkZGSkpKRkZGSkpKRkZGRkZGRkZGRkZGQkJCQkJCRkZGSkpKQkJCRkZGTk5OSkpKRkZGQkJAWlBl2AAAAJ3RSTlMAHcnXATdy+f4FzLJg5ySKDYgMJuYbSm61XtmUmcc1qkiq9fVHWVidqGmEAAAAhUlEQVR42o2O5w7CYAhF6e7XvfdwtN73f0OhatLUxnj+wMklAP2mHGpFX6h6KLn0QFcds6oDeq6rC6DJ91HeAHAf0k4jACdOPlESOwDG6WVmW7CFgblJELIULcubLJVh3SKydFmTZrQn8uXMdZYH/IiOXAxsGAudoOwbcLcVnaN5nkb/8gRapQtVGGewNQAAAABJRU5ErkJggg==";
 
 /***/ }),
@@ -167,7 +312,8 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAMCAMAAABG
   \********************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/d1b7b29d0d3c69af7290.svg";
+"use strict";
+module.exports = __webpack_require__.p + "assets/7ce02fee077a63a0d2aa.svg";
 
 /***/ }),
 
@@ -177,6 +323,7 @@ module.exports = __webpack_require__.p + "assets/d1b7b29d0d3c69af7290.svg";
   \********************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
+"use strict";
 module.exports = __webpack_require__.p + "assets/0697040c56e0a596472b.ttf";
 
 /***/ }),
@@ -187,6 +334,7 @@ module.exports = __webpack_require__.p + "assets/0697040c56e0a596472b.ttf";
   \*********************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
+"use strict";
 module.exports = __webpack_require__.p + "assets/bfa0f5c5f8776454227b.woff";
 
 /***/ }),
@@ -197,7 +345,8 @@ module.exports = __webpack_require__.p + "assets/bfa0f5c5f8776454227b.woff";
   \******************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/fb1812bf31daa6addcc9.svg";
+"use strict";
+module.exports = __webpack_require__.p + "assets/d9021af3d631c5191ce1.svg";
 
 /***/ }),
 
@@ -207,6 +356,7 @@ module.exports = __webpack_require__.p + "assets/fb1812bf31daa6addcc9.svg";
   \******************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
+"use strict";
 module.exports = __webpack_require__.p + "assets/317b418ed317e258b173.ttf";
 
 /***/ }),
@@ -217,6 +367,7 @@ module.exports = __webpack_require__.p + "assets/317b418ed317e258b173.ttf";
   \*******************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
+"use strict";
 module.exports = __webpack_require__.p + "assets/b4b8dfebda28ec94b585.woff";
 
 /***/ })
@@ -422,9 +573,9 @@ module.exports = __webpack_require__.p + "assets/b4b8dfebda28ec94b585.woff";
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_getU-978f76","vendors-node_modules_item-quantity-dropdown_lib_item-quantity-dropdown_min_js-node_modules_it-d53be7"], function() { return __webpack_require__("./src/pages/form-elements/form-elements.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_getU-978f76"], function() { return __webpack_require__("./src/pages/form-elements/form-elements.js"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=form-elements,e949aee5b5cbbe6268d5.js.map
+//# sourceMappingURL=form-elements,d387386bf21e797c2aca.js.map
