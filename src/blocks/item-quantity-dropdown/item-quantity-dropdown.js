@@ -3,18 +3,26 @@ import $ from "jquery";
 import './item-quantity-dropdown.scss'
 
 $(document).ready( function() {
+    let counter = 0;
+    $('.iqdropdown-menu').append("<div class='iqdropdown-confirm-buttons'><button>Применить</button></div>");
+//iqdropdown initialization
     $('.iqdropdown').iqDropdown({
 
         onChange: (id, count, totalItems) => {
 
             let guests;
             let infants;
-            let counter;
-            counter =+1;
+//reset button
+            counter = counter + 1;
             if (totalItems != 0 && counter == 1) {
-                $('.iqdropdown-confirm-buttons').prepend("<span>Очистить</span>")
+                $('.iqdropdown-confirm-buttons').prepend("<button class='iqdropdown-clean'>Очистить</button>")
             }
 
+            if ( totalItems == 0 ) {
+                $('.iqdropdown-confirm-buttons button:first-child').remove();
+                counter = 0
+            }
+//function of conjugation for adults
             function string1 (item) {
                 let str = String(item);
                 if ((item >= 5 && item <= 20) || (Number(str[str.length - 1]) >= 5 && Number(str[str.length - 1]) <= 9) || (Number(str[str.length - 1]) == 0)) {
@@ -25,7 +33,7 @@ $(document).ready( function() {
                     guests = item + " гость";
                 }
             }
-
+//function of conjugation for infants
             function string2 (item) {
                 let str = String(item);
                 if ((item >= 5 && item <= 20) || (Number(str[str.length - 1]) >= 5 && Number(str[str.length - 1]) <= 9) || (Number(str[str.length - 1]) == 0)) {
@@ -52,11 +60,24 @@ $(document).ready( function() {
                 $('.iqdropdown-selection').html('Сколько гостей');
             }
             console.log('On change count', id, count, totalItems, 'counter', counter);
+            $('button.iqdropdown-clean').click(function () {
+                $('.iqdropdown-item-controls').each(function () {
+                    $('.button-decrement').click()
+                })
+            });
+//onchange ending
         },
-
-
     });
-
-    $('.iqdropdown-menu').append("<div class='iqdropdown-confirm-buttons'></div>").append("<span>Применить</span>");
+//iqdropdown ending
     $('.iqdropdown-selection').html('Сколько гостей');
+
+    $('.iqdropdown-confirm-buttons').click(event => event.stopPropagation())
+//put toggle on Применить
+    $('.iqdropdown-confirm-buttons button:last-child').click(function () {
+        $('.iqdropdown').toggleClass('menu-open')
+    });
+//put reset on Очистить
+
+
+
 });
