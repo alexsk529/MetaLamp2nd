@@ -15,8 +15,7 @@ html
                 .form__uBlock
                     +text-field("text field", "default", "Email", "Email", "")
                     +text-field("text field", "hover/focus", "text", "", "This is pretty awesome")
-                    //+dropdown("dropdown")
-                    +dropdown('adults', 'children', 'infants')
+                    +dropdown('adults', 'children', 'infants', 'dropdown')
                     .masked-text-field
                             h3.label masked text field
                             input.masked-text-field__field(type="text")
@@ -53,6 +52,6 @@ html
                 .form__uBlock
                 .form__uBlock
                 .form__uBlock
-            footer.uiKit.uiKit__footer
-                .allowance
-                .review
+        footer.uiKit.uiKit__footer
+            .allowance
+            .review

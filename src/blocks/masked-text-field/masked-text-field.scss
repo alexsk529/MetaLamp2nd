@@ -16,9 +16,14 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 400;
-    color: #1F2041;
+    color: rgba(31, 32, 65, 0.75);
     line-height: 18px;
   }
+
+  &__field_unhover {
+    color: rgba(31, 32, 65, 0.25);
+  }
+
   &__field::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;

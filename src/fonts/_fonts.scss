@@ -15,3 +15,12 @@
   font-weight: 700;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Material Icons';
+  src: url("../../fonts/MaterialIcons.ttf") format("truetype"),
+       url("../../fonts/MaterialIcons.woff") format("woff"),
+       url("../../fonts/MaterialIcons.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
