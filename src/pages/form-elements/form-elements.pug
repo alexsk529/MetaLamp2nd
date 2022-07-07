@@ -3,7 +3,9 @@ include ../../blocks/text-field/text-field
 include ../../blocks/item-quantity-dropdown/item-quantity-dropdown
 
 doctype html
+
 html
+
     head
         meta(charset='UTF-8')
         title Form Elements
@@ -19,8 +21,9 @@ html
                     .masked-text-field
                             h3.label masked text field
                             input.masked-text-field__field(type="text")
-                    input.dateDropdown
-                    input.dateDropdown
+                    .date-dropdown
+                        input.date-dropdown__field(id='start')
+                        input.date-dropdown__field(id='end')
                     input.filter-date-dropdown
                     input.text-field.text-field_subscription
                 .form__uBlock
