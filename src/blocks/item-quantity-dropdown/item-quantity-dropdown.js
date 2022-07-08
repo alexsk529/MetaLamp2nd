@@ -87,6 +87,7 @@ $(document).ready( function() {
     $('.iqdropdown-selection').html('Сколько гостей');
 
     $('.iqdropdown-button-container').click(event => event.stopPropagation())
+    $('.iqdropdown-menu').click(event => event.stopPropagation())
 //put toggle on Применить
     $('.iqdropdown-button-container button:last-child').click(function () {
         $('.iqdropdown').toggleClass('menu-open')

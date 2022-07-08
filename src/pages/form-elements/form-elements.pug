@@ -1,6 +1,7 @@
 include ../../pug/_image
 include ../../blocks/text-field/text-field
 include ../../blocks/item-quantity-dropdown/item-quantity-dropdown
+include ../../blocks/date-dropdown/date-dropdown
 
 doctype html
 
@@ -21,9 +22,7 @@ html
                     .masked-text-field
                             h3.label masked text field
                             input.masked-text-field__field(type="text")
-                    .date-dropdown
-                        input.date-dropdown__field(id='start')
-                        input.date-dropdown__field(id='end')
+                    +date-dropdown('date dropdown')
                     input.filter-date-dropdown
                     input.text-field.text-field_subscription
                 .form__uBlock

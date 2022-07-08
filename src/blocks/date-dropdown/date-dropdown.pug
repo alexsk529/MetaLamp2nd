@@ -1,0 +1,12 @@
+mixin date-dropdown (lab)
+    .date-dropdown
+        .date-dropdown__block
+            h3.label.dropdown__label= lab
+            .date-dropdown__item
+                input.date-dropdown__field(id='start')
+                span(class="material-icons expand-arrow") &#xE5CF
+        .date-dropdown__block
+            h3.label.dropdown__label= lab
+            .date-dropdown__item
+                input.date-dropdown__field(id='end')
+                span(class="material-icons expand-arrow") &#xE5CF
