@@ -1,5 +1,5 @@
 import AirDatepicker from 'air-datepicker';
-import './air-datepicker.css';
+import './date-dropdown.scss';
 import $ from "jquery";
 
 $('#start').val('ДД.ММ.ГГГГ');
@@ -31,11 +31,15 @@ let dp = new AirDatepicker ("#start", {
             $('#start').val(formattedDate[0]);
             $('#end').val(formattedDate[1]);
         }
+
         // alert (formattedDate);
     },
     buttons: ['clear', confirm],
+    prevHtml: '<span class="material-icons arrow-back">&#xE5C4</span>',
+    nextHtml: '<span class="material-icons arrow-forward">&#xE5C8</span>',
+    multipleDatesSeparator: " ",
+    navTitles: {days: "MMMM yyyy", months: "yyyy", years: "yyyy1 - yyyy2"},
 });
-
 
 $('.date-dropdown').find('#end').click(function (event) {
      $(this).parent().parent().parent().find('#start').focus();
@@ -57,6 +61,7 @@ $('.date-dropdown').find('#start').blur(function () {
     $(this).parent().parent().parent().find('#end').removeClass("date-dropdown__field_hover")});
 
 $('.date-dropdown air-datepicker-navigation').find('svg').remove();
+
 // } else $('#end').removeClass("date-dropdown__field_hover")
 
 // $(document).click(function (){dp.hide()})
