@@ -25,6 +25,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -37,8 +39,21 @@ var confirm = {
 };
 
 var Datedropdown = /*#__PURE__*/_createClass(function Datedropdown(el) {
+  var _this = this;
+
   _classCallCheck(this, Datedropdown);
 
+  _defineProperty(this, "addHover", function () {
+    return jquery__WEBPACK_IMPORTED_MODULE_2___default()(_this).parent().find('input').addClass("date-dropdown__field_hover");
+  });
+
+  _defineProperty(this, "removeHover", function () {
+    return jquery__WEBPACK_IMPORTED_MODULE_2___default()(_this).parent().find('input').removeClass("date-dropdown__field_hover");
+  });
+
+  var wrapper = jquery__WEBPACK_IMPORTED_MODULE_2___default()('.date-dropdown__wrapper');
+  var start = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#start');
+  var end = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#end');
   this.opts = {
     container: 'div.date-dropdown',
     range: true,
@@ -49,19 +64,19 @@ var Datedropdown = /*#__PURE__*/_createClass(function Datedropdown(el) {
 
       // fnSelect(formattedDate, datepicker)
       if (formattedDate.length == 0) {
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('#start').val('ДД.ММ.ГГГГ');
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('#end').val('ДД.ММ.ГГГГ');
+        start.val('ДД.ММ.ГГГГ');
+        end.val('ДД.ММ.ГГГГ');
       }
 
       if (formattedDate.length == 1) {
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('#start').val(formattedDate[0]);
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('#end').val('ДД.ММ.ГГГГ');
+        start.val(formattedDate[0]);
+        end.val('ДД.ММ.ГГГГ');
         jquery__WEBPACK_IMPORTED_MODULE_2___default()('.-range-from-').addClass('-range-to-');
       }
 
       if (formattedDate.length == 2) {
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('#start').val(formattedDate[0]);
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()('#end').val(formattedDate[1]);
+        start.val(formattedDate[0]);
+        end.val(formattedDate[1]);
       }
     },
     buttons: ['clear', confirm],
@@ -75,9 +90,6 @@ var Datedropdown = /*#__PURE__*/_createClass(function Datedropdown(el) {
     }
   };
   var dp = new air_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](el, this.opts);
-  var wrapper = jquery__WEBPACK_IMPORTED_MODULE_2___default()('.date-dropdown__wrapper');
-  var start = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#start');
-  var end = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#end');
   start.val('ДД.ММ.ГГГГ');
   end.val('ДД.ММ.ГГГГ'); // end.click(function () {
   //     start.focus();
@@ -85,18 +97,22 @@ var Datedropdown = /*#__PURE__*/_createClass(function Datedropdown(el) {
 
   end.click(function () {
     dp.visible || dp.show();
+    start.addClass("date-dropdown__field_hover");
   });
   end.blur(function () {
     dp.inFocus || dp.visible || dp.opts.isMobile || dp.hide();
+    start.removeClass("date-dropdown__field_hover");
   });
   wrapper.find('span').click(function () {
-    start.focus();
+    dp.visible || dp.show();
+    start.addClass("date-dropdown__field_hover");
   });
-  wrapper.find('span').hover(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).parent().find('input').addClass("date-dropdown__field_hover");
-  }, function () {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).parent().find('input').removeClass("date-dropdown__field_hover");
-  });
+  wrapper.find('span').hover(this.addHover, this.removeHover); // wrapper.find('span').hover(function (){
+  //     $(this).parent().find('input').addClass("date-dropdown__field_hover")
+  // }, function () {
+  //     $(this).parent().find('input').removeClass("date-dropdown__field_hover")
+  // })
+
   start.focus(function () {
     end.addClass("date-dropdown__field_hover");
   });
@@ -188,14 +204,32 @@ var Filterdp = /*#__PURE__*/_createClass(function Filterdp(el) {
     buttons: ['clear', confirm],
     prevHtml: '<span class="material-icons arrow-back">&#xE5C4</span>',
     nextHtml: '<span class="material-icons arrow-forward">&#xE5C8</span>',
-    multipleDatesSeparator: " ",
+    multipleDatesSeparator: " - ",
     navTitles: {
       days: "MMMM yyyy",
       months: "yyyy",
       years: "yyyy1 - yyyy2"
+    },
+    dateFormat: function dateFormat(date) {
+      return date.toLocaleString('ru-RU', {
+        day: '2-digit',
+        month: 'short'
+      }).toLowerCase();
     }
   };
   var dp = new air_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](el, this.opts);
+  var span = jquery__WEBPACK_IMPORTED_MODULE_2___default()(el).parent().find('span');
+  console.log(span);
+  console.log(jquery__WEBPACK_IMPORTED_MODULE_2___default()(el));
+  span.click(function () {
+    dp.visible || dp.show();
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()(el).focus();
+  });
+  span.hover(function (el) {
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()(el).addClass("filter-date-dropdown__field_hover");
+  }, function (el) {
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()(el).removeClass("filter-date-dropdown__field_hover");
+  });
   return dp;
 });
 
@@ -1003,4 +1037,4 @@ module.exports = __webpack_require__.p + "assets/b4b8dfebda28ec94b585.woff";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=form-elements,661db9dc128fcb4a916d.js.map
+//# sourceMappingURL=form-elements,f8570f4d779675e4a0e2.js.map

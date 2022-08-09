@@ -10,25 +10,27 @@ let confirm = {
 
 class Datedropdown {
     constructor(el) {
-
+        let wrapper = $('.date-dropdown__wrapper');
+        let start = $('#start');
+        let end = $('#end');
         this.opts = {
             container: 'div.date-dropdown',
             range: true,
             onSelect({date, formattedDate, datepicker }) {
                 // fnSelect(formattedDate, datepicker)
                 if ( formattedDate.length == 0 ) {
-                    $('#start').val('ДД.ММ.ГГГГ');
-                    $('#end').val('ДД.ММ.ГГГГ');
+                    start.val('ДД.ММ.ГГГГ');
+                    end.val('ДД.ММ.ГГГГ');
                 }
                 if ( formattedDate.length == 1 ) {
-                    $('#start').val(formattedDate[0]);
-                    $('#end').val('ДД.ММ.ГГГГ');
+                    start.val(formattedDate[0]);
+                    end.val('ДД.ММ.ГГГГ');
                     $('.-range-from-').addClass('-range-to-');
                 }
 
                 if ( formattedDate.length == 2 ) {
-                    $('#start').val(formattedDate[0]);
-                    $('#end').val(formattedDate[1]);
+                   start.val(formattedDate[0]);
+                    end.val(formattedDate[1]);
                 }
             },
             buttons: ['clear', confirm],
@@ -39,9 +41,7 @@ class Datedropdown {
         }
 
         let dp = new AirDatepicker (el, this.opts);
-        let wrapper = $('.date-dropdown__wrapper');
-        let start = $('#start');
-        let end = $('#end');
+
 
         start.val('ДД.ММ.ГГГГ');
         end.val('ДД.ММ.ГГГГ');
@@ -52,21 +52,26 @@ class Datedropdown {
 
         end.click(function () {
             dp.visible || dp.show();
+            start.addClass("date-dropdown__field_hover");
         })
 
         end.blur(function () {
-            dp.inFocus || dp.visible || dp.opts.isMobile || dp.hide()
+            dp.inFocus || dp.visible || dp.opts.isMobile || dp.hide();
+            start.removeClass("date-dropdown__field_hover");
         })
 
         wrapper.find('span').click(function () {
-            start.focus();
+            dp.visible || dp.show();
+            start.addClass("date-dropdown__field_hover");
         })
 
-        wrapper.find('span').hover(function (){
-            $(this).parent().find('input').addClass("date-dropdown__field_hover")
-        }, function () {
-            $(this).parent().find('input').removeClass("date-dropdown__field_hover")
-        })
+        wrapper.find('span').hover(this.addHover, this.removeHover )
+
+        // wrapper.find('span').hover(function (){
+        //     $(this).parent().find('input').addClass("date-dropdown__field_hover")
+        // }, function () {
+        //     $(this).parent().find('input').removeClass("date-dropdown__field_hover")
+        // })
 
         start.focus(function () {
             end.addClass("date-dropdown__field_hover")});
@@ -76,8 +81,12 @@ class Datedropdown {
         $('.date-dropdown air-datepicker-navigation').find('svg').remove();
 
         return dp;
-
     }
+
+    addHover = () => $(this).parent().find('input').addClass("date-dropdown__field_hover")
+
+    removeHover = () => $(this).parent().find('input').removeClass("date-dropdown__field_hover")
+
 }
 
 for (let el of $('.date-dropdown #start')) {
