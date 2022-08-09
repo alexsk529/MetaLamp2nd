@@ -1,6 +1,6 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 import $ from "jquery";
-import './item-quantity-dropdown.scss'
+import './iqdropdown.scss'
 
 $(document).ready( function() {
     let counter = 0;

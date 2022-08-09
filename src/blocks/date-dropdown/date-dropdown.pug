@@ -2,11 +2,11 @@ mixin date-dropdown (lab)
     .date-dropdown
         .date-dropdown__block
             h3.label.dropdown__label= lab
-            .date-dropdown__item
-                input.date-dropdown__field(id='start')
+            .date-dropdown__wrapper
+                input.date-dropdown__field(id='start').item
                 span(class="material-icons expand-arrow") &#xE5CF
         .date-dropdown__block
             h3.label.dropdown__label= lab
-            .date-dropdown__item
-                input.date-dropdown__field(id='end')
+            .date-dropdown__wrapper
+                input.date-dropdown__field(id='end').item
                 span(class="material-icons expand-arrow") &#xE5CF
