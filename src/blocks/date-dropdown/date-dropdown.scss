@@ -83,13 +83,6 @@ $purple: #BC9CFF;
     background: $main-grad-25;
     color: #FFFFFF;
     font-weight: 700;
-  }
-
-  &.-selected-,
-  &.-selected-.-other-month- {
-    //font-weight: 700;
-    //color: white;
-    //background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 
     &::after {
       content: '';
@@ -100,6 +93,17 @@ $purple: #BC9CFF;
       border-radius: 50%;
       background: $main-grad;
     }
+  }
+
+  &.-selected-,
+  &.-selected-.-other-month- {
+    //font-weight: 700;
+    //color: white;
+    //background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+    //&::after {
+    //
+    //}
   }
   &.-current- {
     color: white;

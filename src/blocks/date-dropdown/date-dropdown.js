@@ -2,38 +2,54 @@ import AirDatepicker from 'air-datepicker';
 import './date-dropdown.scss';
 import $ from "jquery";
 
-let confirm = {
-    content: 'Применить',
-    className: 'custom-button-classname',
-    onClick: dp => {dp.hide()}
-}
+
 
 class Datedropdown {
+    start = $(this);
+    end = $(this).parent().parent().parent().find('#end');
+    clearCustom = {
+        content: 'очистить'.toUpperCase(),
+        className: 'custom-button-classname',
+        onClick: dp => {
+            dp.clear()
+            dp.hide();
+            this.start.removeClass("date-dropdown__field_hover");
+            this.end.removeClass("date-dropdown__field_hover");
+        }
+    }
+    confirm = {
+        content: 'Применить'.toUpperCase(),
+        className: 'custom-button-classname',
+        onClick: dp => {
+            dp.hide();
+            this.start.removeClass("date-dropdown__field_hover");
+            this.end.removeClass("date-dropdown__field_hover");
+        }
+    }
     constructor(el) {
-        let wrapper = $('.date-dropdown__wrapper');
-        let start = $('#start');
-        let end = $('#end');
+        let start = $(el);
+        let end = $(el).parent().parent().parent().find('#end');
+        let wrapper = $(el).parent().parent().parent().find('.date-dropdown__wrapper');
         this.opts = {
             container: 'div.date-dropdown',
             range: true,
             onSelect({date, formattedDate, datepicker }) {
-                // fnSelect(formattedDate, datepicker)
-                if ( formattedDate.length == 0 ) {
-                    start.val('ДД.ММ.ГГГГ');
-                    end.val('ДД.ММ.ГГГГ');
-                }
-                if ( formattedDate.length == 1 ) {
-                    start.val(formattedDate[0]);
-                    end.val('ДД.ММ.ГГГГ');
-                    $('.-range-from-').addClass('-range-to-');
-                }
-
-                if ( formattedDate.length == 2 ) {
-                   start.val(formattedDate[0]);
-                    end.val(formattedDate[1]);
+                switch(formattedDate.length) {
+                    case 0:
+                        start.val('ДД.ММ.ГГГГ');
+                        end.val('ДД.ММ.ГГГГ');
+                        break;
+                    case 1:
+                        start.val(formattedDate[0]);
+                        end.val('ДД.ММ.ГГГГ');
+                        $('.-range-from-').addClass('-range-to-');
+                        break;
+                    case 2:
+                        start.val(formattedDate[0]);
+                        end.val(formattedDate[1]);
                 }
             },
-            buttons: ['clear', confirm],
+            buttons: [this.clearCustom, this.confirm],
             prevHtml: '<span class="material-icons arrow-back">&#xE5C4</span>',
             nextHtml: '<span class="material-icons arrow-forward">&#xE5C8</span>',
             multipleDatesSeparator: " ",
@@ -50,43 +66,35 @@ class Datedropdown {
         //     start.focus();
         // })
 
-        end.click(function () {
+        end.click(() => {
             dp.visible || dp.show();
             start.addClass("date-dropdown__field_hover");
         })
 
-        end.blur(function () {
-            dp.inFocus || dp.visible || dp.opts.isMobile || dp.hide();
+        end.blur(() => {
+            dp.inFocus || !dp.visible || dp.hide();
             start.removeClass("date-dropdown__field_hover");
         })
 
-        wrapper.find('span').click(function () {
-            dp.visible || dp.show();
-            start.addClass("date-dropdown__field_hover");
+        wrapper.find('span').click(() => {
+            start.focus()
         })
 
-        wrapper.find('span').hover(this.addHover, this.removeHover )
+        wrapper.find('span').hover(function (){
+            $(this).parent().find('input').addClass("date-dropdown__field_hover")
+        }, function () {
+            $(this).parent().find('input').removeClass("date-dropdown__field_hover")
+        })
 
-        // wrapper.find('span').hover(function (){
-        //     $(this).parent().find('input').addClass("date-dropdown__field_hover")
-        // }, function () {
-        //     $(this).parent().find('input').removeClass("date-dropdown__field_hover")
-        // })
-
-        start.focus(function () {
+        start.focus(() => {
             end.addClass("date-dropdown__field_hover")});
-        start.blur(function () {
+        start.blur(() => {
             end.removeClass("date-dropdown__field_hover")});
 
         $('.date-dropdown air-datepicker-navigation').find('svg').remove();
 
         return dp;
     }
-
-    addHover = () => $(this).parent().find('input').addClass("date-dropdown__field_hover")
-
-    removeHover = () => $(this).parent().find('input').removeClass("date-dropdown__field_hover")
-
 }
 
 for (let el of $('.date-dropdown #start')) {
