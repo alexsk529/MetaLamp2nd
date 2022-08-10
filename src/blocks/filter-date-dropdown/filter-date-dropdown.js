@@ -27,7 +27,7 @@ class Filterdp {
         }
     }
     constructor(el) {
-        this.opts = {
+        let opts = {
             container: 'div.filter-date-dropdown',
             range: true,
             onSelect({date, formattedDate, datepicker }) {
@@ -48,7 +48,7 @@ class Filterdp {
             dateFormat: 'd MMM',
             altFieldDateFormat: 'd MMM',
         }
-        let dp = new AirDatepicker (el, this.opts);
+        let dp = new AirDatepicker (el, opts);
 
         let span = $(el).parent().find('span');
         console.log(span);

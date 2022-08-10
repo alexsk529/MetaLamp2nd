@@ -30,7 +30,7 @@ class Datedropdown {
         let start = $(el);
         let end = $(el).parent().parent().parent().find('#end');
         let wrapper = $(el).parent().parent().parent().find('.date-dropdown__wrapper');
-        this.opts = {
+        let opts = {
             container: 'div.date-dropdown',
             range: true,
             onSelect({date, formattedDate, datepicker }) {
@@ -56,7 +56,7 @@ class Datedropdown {
             navTitles: {days: "MMMM yyyy", months: "yyyy", years: "yyyy1 - yyyy2"},
         }
 
-        let dp = new AirDatepicker (el, this.opts);
+        let dp = new AirDatepicker (el, opts);
 
 
         start.val('ДД.ММ.ГГГГ');

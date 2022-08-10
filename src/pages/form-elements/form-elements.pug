@@ -3,6 +3,7 @@ include ../../blocks/text-field/text-field
 include ../../blocks/iqdropdown/iqdropdown
 include ../../blocks/date-dropdown/date-dropdown
 include ../../blocks/filter-date-dropdown/filter-date-dropdown
+include ../../blocks/subscription-text-field/subscription-text-field
 
 doctype html
 
@@ -25,7 +26,7 @@ html
                             input.masked-text-field__field(type="text").item
                     +date-dropdown('date dropdown')
                     +filter-date-dropdown('filter date dropdown')
-                    input.text-field.text-field_subscription
+                    +subscription-text-field('subscription text field', 'Email')
                 .form__uBlock
                     input.checkbox
                     input.radio-buttons

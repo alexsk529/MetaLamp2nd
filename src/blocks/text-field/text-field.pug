@@ -1,7 +1,7 @@
-mixin text-field(l, l25, type, plchld, val)
+mixin text-field(l, l25, type, plc, val)
     .text-field
         .text-field__label
             h3(class="label")= l
         .text-field__label2
             span(class="label-25")= l25
-        input.text-field__field(placeholder=plchld type=`${type}` value = val).item
+        input.text-field__field(placeholder=plc type=`${type}` value = val).item
