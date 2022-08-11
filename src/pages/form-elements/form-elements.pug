@@ -4,6 +4,7 @@ include ../../blocks/iqdropdown/iqdropdown
 include ../../blocks/date-dropdown/date-dropdown
 include ../../blocks/filter-date-dropdown/filter-date-dropdown
 include ../../blocks/subscription-text-field/subscription-text-field
+include ../../blocks/checkbox-buttons/checkbox-buttons
 
 doctype html
 
@@ -18,9 +19,24 @@ html
         main.form__content
             .form__1stBlock
                 .form__uBlock
-                    +text-field("text field", "default", "Email", "Email", "")
-                    +text-field("text field", "hover/focus", "text", "", "This is pretty awesome")
-                    +iqdropdown('adults', 'children', 'infants', 'dropdown')
+                    +text-field({
+                        labelmain:"text field",
+                        label: "default",
+                        type: "Email",
+                        placeholder: "Email"
+                    })
+                    +text-field({
+                        labelmain: "text field",
+                        label: "hover/focus",
+                        type: "text",
+                        value: "This is pretty awesome"
+                    })
+                    +iqdropdown({
+                        id1: 'adults',
+                        id2: 'children',
+                        id3: 'infants',
+                        label: 'dropdown'
+                    })
                     .masked-text-field
                             h3.label masked text field
                             input.masked-text-field__field(type="text").item
@@ -28,7 +44,7 @@ html
                     +filter-date-dropdown('filter date dropdown')
                     +subscription-text-field('subscription text field', 'Email')
                 .form__uBlock
-                    input.checkbox
+                    +checkbox('checkbox buttons', 'Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)')
                     input.radio-buttons
                     input.toggle
                     .form__like-buttons

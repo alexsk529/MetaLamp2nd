@@ -1,6 +1,8 @@
 
-mixin iqdropdown(id1, id2, id3, l)
-    h3(class="label")= l
+mixin iqdropdown(props)
+    - props = props || {}
+    - var { id1 = '', id2 = '', id3 = '', label = ''} = props
+    h3(class="label")= label
     .iqdropdown.item
         p(class="iqdropdown-selection" data-selection-text="гость")
         .iqdropdown-menu

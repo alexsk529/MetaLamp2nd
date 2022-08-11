@@ -1,7 +1,9 @@
-mixin text-field(l, l25, type, plc, val)
+mixin text-field( props )
+    - props = props || {}
+    - var { labelmain = '', label = '', type = '', placeholder = '', value ='' } = props
     .text-field
         .text-field__label
-            h3(class="label")= l
+            h3(class="label")= labelmain
         .text-field__label2
-            span(class="label-25")= l25
-        input.text-field__field(placeholder=plc type=`${type}` value = val).item
+            span(class="label-25")= label
+        input.text-field__field(placeholder=placeholder type=`${type}` value = val).item
