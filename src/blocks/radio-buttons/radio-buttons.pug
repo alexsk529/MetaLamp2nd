@@ -1,0 +1,14 @@
+mixin radio-buttons(props)
+    - props = props || {}
+    - var {title='', str} = props
+    .radio-buttons
+        .radio-buttons__title
+            h3.label.radio-buttons__label= title
+        each val, index in str
+            label.radio-buttons__item
+                if (index == 0)
+                    input(type="radio" name="gender" value= val checked)
+                else
+                    input(type="radio" name="gender" value= val)
+                span.body= val
+

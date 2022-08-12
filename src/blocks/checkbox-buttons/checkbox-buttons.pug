@@ -1,11 +1,12 @@
 include ../box-and-label/box-and-label
 
-mixin checkbox(lab, ...str)
-    - lab = lab || ''
+mixin checkbox(props)
+    - props = props || {}
+    - var {title = 'checkbox buttons', str} = props
     div.checkbox-buttons
         .checkbox-buttons__title
-            h3.label.checkbox-buttons__label= lab
-        each val, index in str
-            +box-and-label(str[index])
+            h3.label.checkbox-buttons__label= title
+        each val in str
+            +box-and-label(val)
 
 
