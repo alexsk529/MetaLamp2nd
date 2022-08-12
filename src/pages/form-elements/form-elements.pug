@@ -6,6 +6,7 @@ include ../../blocks/filter-date-dropdown/filter-date-dropdown
 include ../../blocks/subscription-text-field/subscription-text-field
 include ../../blocks/checkbox-buttons/checkbox-buttons
 include ../../blocks/radio-buttons/radio-buttons
+include ../../blocks/toggle/toggle
 
 doctype html
 
@@ -53,7 +54,10 @@ html
                         title: 'radio buttons',
                         str: ['Мужчины', 'Женщины'],
                     })
-                    input.toggle
+                    +toggle({
+                        title: 'toggle',
+                        str: ['Получать спецпредложения', 'Получать спецпредложения']
+                    })
                     .form__like-buttons
                         input.like-button
                         input.like-button
