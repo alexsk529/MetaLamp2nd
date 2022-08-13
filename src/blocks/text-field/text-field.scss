@@ -28,7 +28,7 @@
       line-height: 18px;
     }
 
-    &:hover, &:focus, &:active {
+    &:hover, &:focus, &:active, &_hover {
       border-color: rgba(31, 32, 65, 0.5);
       outline: none;
     }

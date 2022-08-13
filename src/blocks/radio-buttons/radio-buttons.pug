@@ -2,8 +2,8 @@ mixin radio-buttons(props)
     - props = props || {}
     - var {title='', str=[]} = props
     .radio-buttons
-        .radio-buttons__title
-            h3.label.radio-buttons__label= title
+        - if (title != '')
+            h3.label.title= title
         each val, index in str
             label.radio-buttons__item
                 if (index == 0)

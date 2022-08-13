@@ -1,6 +1,7 @@
 @use "../../reset";
 @use "../../text/text";
 @use '../../blocks/form/form';
+@use "../../blocks/item/item";
 @use "../../blocks/text-field/text-field";
 @use "../../blocks/uiKit/uiKit";
 @use "../../blocks/dropdown/dropdown";
@@ -8,11 +9,15 @@
 @use "../../blocks/expand-arrow/expand-arrow";
 @use "../../blocks/date-dropdown/date-dropdown";
 @use "../../blocks/filter-date-dropdown/filter-date-dropdown";
-@use "../../blocks/item/item";
 @use "../../blocks/subscription-text-field/subscription-text-field";
+@use "../../blocks/wrapper/wrapper";
+@use "../../blocks/title/title";
 @use "../../blocks/checkbox-buttons/checkbox-buttons";
 @use "../../blocks/radio-buttons/radio-buttons";
 @use "../../blocks/toggle/toggle";
+@use "../../blocks/like-button/like-button";
+@use "../../blocks/rate-button/rate-button";
+
 
 
 html {

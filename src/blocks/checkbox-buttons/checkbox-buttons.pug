@@ -4,8 +4,7 @@ mixin checkbox(props)
     - props = props || {}
     - var {title = 'checkbox buttons', str=[]} = props
     div.checkbox-buttons
-        .checkbox-buttons__title
-            h3.label.checkbox-buttons__label= title
+        h3.label.title= title
         each val in str
             +box-and-label(val)
 

@@ -1,0 +1,6 @@
+mixin rate-button
+    .rate-button
+        - var n = 0;
+        while n < 5
+            span.rate-button__icon.material-icons(data-before='star_border')
+            - n++
