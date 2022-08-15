@@ -677,44 +677,136 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-var obj = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.rate-button').eq(0).find('span');
-var arr = [];
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var _iterator = _createForOfIteratorHelper(obj),
-    _step;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var RateButton = /*#__PURE__*/_createClass(function RateButton(obj) {
+  _classCallCheck(this, RateButton);
+
+  _defineProperty(this, "arr", []);
+
+  _defineProperty(this, "flags", []);
+
+  var _iterator = _createForOfIteratorHelper(obj),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var el = _step.value;
+      this.arr.push(el);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  for (var i = 0; i < this.arr.length; i++) {
+    this.flags[i] = false;
+  }
+
+  var that = this;
+
+  var hover = function hover() {
+    obj.hover(function () {
+      var index = that.arr.indexOf(this);
+
+      for (var _i = 0; _i <= index; _i++) {
+        if (!that.flags[_i]) jquery__WEBPACK_IMPORTED_MODULE_0___default()(that.arr[_i]).attr('data-before', 'star');
+      }
+    }, function () {
+      var index = that.arr.indexOf(this);
+
+      for (var _i2 = that.arr.length; _i2 >= 0; _i2--) {
+        if (!that.flags[_i2]) jquery__WEBPACK_IMPORTED_MODULE_0___default()(that.arr[_i2]).attr('data-before', 'star_border');
+      }
+    });
+  };
+
+  hover();
+  obj.click(function () {
+    var index = that.arr.indexOf(this);
+
+    if (that.flags.includes(true) && that.flags[index] !== false) {
+      var _iterator2 = _createForOfIteratorHelper(that.arr),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var el = _step2.value;
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(el).attr('data-before', 'star_border');
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      that.flags = that.flags.map(function () {
+        return false;
+      });
+    } else {
+      for (var _i3 = 0; _i3 <= index; _i3++) {
+        if (!that.flags[_i3]) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(that.arr[_i3]).off('mouseover');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(that.arr[_i3]).off('mouseleave');
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(that.arr[_i3]).attr('data-before', 'star');
+          that.flags[_i3] = !that.flags[_i3];
+        }
+      }
+    }
+
+    if (that.arr.indexOf(true) === -1) hover();
+  });
+});
+
+var obj = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.rate-button');
+
+var _iterator3 = _createForOfIteratorHelper(obj),
+    _step3;
 
 try {
-  for (_iterator.s(); !(_step = _iterator.n()).done;) {
-    var el = _step.value;
-    arr.push(el);
-  }
+  for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+    var el = _step3.value;
+    new RateButton(jquery__WEBPACK_IMPORTED_MODULE_0___default()(el).find('span'));
+  } // for (let el of obj) {
+  //     arr.push(el);
+  // }
+  // let flags = [];
+  // for (let i = 0; i < arr.length; i++) {
+  //     flags[i] = false;
+  // }
+  // hoverButtons(obj);
+  //
+  // obj.click(function () {
+  //     let index = arr.indexOf(this);
+  //     for (let i = 0; i <= index; i++) {
+  //         if (flags[i] === false) {
+  //             $(arr[i]).off('mouseover');
+  //             $(arr[i]).off('mouseleave');
+  //             $(arr[i]).attr('data-before','star')
+  //             flags [i] = !flags[i]
+  //         } else if (flags[i] === true) {
+  //             $(arr[i]).attr('data-before','star_border')
+  //             flags [i] = !flags[i]
+  //         }
+  //     }
+  //     if (arr.indexOf(true) === -1) hoverButtons(obj);
+  //     console.log(flags)
+  // })
+
 } catch (err) {
-  _iterator.e(err);
+  _iterator3.e(err);
 } finally {
-  _iterator.f();
+  _iterator3.f();
 }
-
-obj.hover(function () {
-  var index = arr.indexOf(this);
-
-  for (var i = 0; i <= index; i++) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(arr[i]).attr('data-before', 'star');
-  }
-}, function () {
-  var index = arr.indexOf(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
-
-  for (var i = arr.length; i > index; i--) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(arr[i]).attr('data-before', 'star_border');
-  }
-});
-obj.click(function () {
-  var index = arr.indexOf(this);
-
-  for (var i = 0; i <= index; i++) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(arr[i]).attr('data-before', 'star');
-  }
-});
 
 /***/ }),
 
@@ -1439,4 +1531,4 @@ module.exports = __webpack_require__.p + "assets/c93d1d2e0ebf70b1d568.svg";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=form-elements,dbab6481ba6bb5cef0dd.js.map
+//# sourceMappingURL=form-elements,e0bf6feb96d4bde2ec4c.js.map
