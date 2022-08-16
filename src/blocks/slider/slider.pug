@@ -1,0 +1,12 @@
+mixin slider(props)
+    - props = props || {}
+    - let {title='range slider'} = props
+    .slider
+        h3.title.label= title
+        span.slider__range.body
+            - let n = 0
+            while n < 3
+                i=''
+                - n++
+        .slider__container
+            input(type='text' class="js-range-slider" name="my_range" value="")

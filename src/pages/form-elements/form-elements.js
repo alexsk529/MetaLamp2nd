@@ -7,6 +7,7 @@ import '../../blocks/filter-date-dropdown/filter-date-dropdown';
 import '../../blocks/subscription-text-field/subscription-text-field';
 import '../../blocks/like-button/like-button';
 import '../../blocks/rate-button/rate-button';
+import '../../blocks/slider/slider';
 import $ from "jquery";
 
 

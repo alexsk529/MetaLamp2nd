@@ -4,7 +4,7 @@ import './iqdropdown.scss'
 
 $(document).ready( function() {
     let counter = 0;
-    $('.iqdropdown-menu').append("<div class='iqdropdown-button-container'><button class='iqdropdown-confirm-button label label_color_purple'>Применить</button></div>");
+    $('.iqdropdown-menu').append("<div class='iqdropdown-button-round-container'><button-round class='iqdropdown-confirm-button-round label label_color_purple'>Применить</button-round></div>");
 //iqdropdown initialization
     $('.iqdropdown').iqDropdown({
 
@@ -12,16 +12,16 @@ $(document).ready( function() {
 
             let guests;
             let infants;
-//reset button
+//reset button-round
             counter = counter + 1;
             if (totalItems != 0 && counter == 1) {
-                $('.iqdropdown-button-container').prepend("<button class='iqdropdown-clean iqdropdown-confirm-button label label_color_purple'>Очистить</button>");
-                $('.iqdropdown-button-container').addClass('iqdropdown-multiple-container')
+                $('.iqdropdown-button-round-container').prepend("<button-round class='iqdropdown-clean iqdropdown-confirm-button-round label label_color_purple'>Очистить</button-round>");
+                $('.iqdropdown-button-round-container').addClass('iqdropdown-multiple-container')
             }
 
             if ( totalItems == 0 ) {
-                $('.iqdropdown-button-container button:first-child').remove();
-                $('.iqdropdown-button-container').removeClass('iqdropdown-multiple-container');
+                $('.iqdropdown-button-round-container button-round:first-child').remove();
+                $('.iqdropdown-button-round-container').removeClass('iqdropdown-multiple-container');
                 counter = 0
             }
 //function of conjugation for adults
@@ -63,18 +63,18 @@ $(document).ready( function() {
             }
             console.log('On change count', id, count, totalItems, 'counter', counter);
 //put reset on Очистить
-            $('button.iqdropdown-clean').click(function () {
+            $('button-round.iqdropdown-clean').click(function () {
                 $('.iqdropdown-item-controls').each(function () {
-                    $('.button-decrement').click()
+                    $('.button-round-decrement').click()
                 })
             });
 //inactive buttons activations
 
                 $('[data-id]').each(function () {
                     if (count != 0) {
-                        $('[data-id=' + id + ']').find('.button-decrement').removeClass('iqdropdown-button_inactive')
+                        $('[data-id=' + id + ']').find('.button-round-decrement').removeClass('iqdropdown-button_inactive')
                     } else {
-                        $('[data-id=' + id + ']').find('.button-decrement').addClass('iqdropdown-button_inactive')
+                        $('[data-id=' + id + ']').find('.button-round-decrement').addClass('iqdropdown-button_inactive')
                     }
                 });
 
@@ -83,13 +83,13 @@ $(document).ready( function() {
     });
 //iqdropdown ending
 
-    $('.button-decrement').addClass('iqdropdown-button_inactive')
+    $('.button-round-decrement').addClass('iqdropdown-button_inactive')
     $('.iqdropdown-selection').html('Сколько гостей');
 
-    $('.iqdropdown-button-container').click(event => event.stopPropagation())
+    $('.iqdropdown-button-round-container').click(event => event.stopPropagation())
     $('.iqdropdown-menu').click(event => event.stopPropagation())
 //put toggle on Применить
-    $('.iqdropdown-button-container button:last-child').click(function () {
+    $('.iqdropdown-button-round-container button-round:last-child').click(function () {
         $('.iqdropdown').toggleClass('menu-open')
     });
 //hover on div.iqdropdown

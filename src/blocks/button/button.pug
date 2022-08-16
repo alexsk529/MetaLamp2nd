@@ -1,0 +1,7 @@
+mixin button (props)
+    - props = props || {}
+    - let {title = '', isArrow = false, className=''} = props
+        div(class=`button ${className}`)
+            span= title
+            if isArrow
+                span(class="material-icons arrow-forward") &#xE5C8

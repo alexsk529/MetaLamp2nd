@@ -1,4 +1,13 @@
 .wrapper {
   width: 260px;
 
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    &>h3 {
+      flex-basis: 100%;
+    }
+
+  }
 }

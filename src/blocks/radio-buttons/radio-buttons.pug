@@ -1,6 +1,6 @@
 mixin radio-buttons(props)
     - props = props || {}
-    - var {title='', str=[]} = props
+    - let {title='', str=[]} = props
     .radio-buttons
         - if (title != '')
             h3.label.title= title

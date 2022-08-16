@@ -1,21 +1,24 @@
 .text-field{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-areas: "a b c"
-                       "d d d";
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-between;
+  //grid-template-columns: auto auto auto;
+  //grid-template-areas: "a b c"
+  //                     "d d d";
   &__label {
-    grid-area: a;
+    //grid-area: a;
     margin-bottom: 5px;
   }
 
   &__label2 {
-    grid-area: c;
+    //grid-area: c;
     margin-bottom: 5px;
-    grid-column: 3 / 4;
+    //grid-column: 3 / 4;
   }
 
   &__field {
-    grid-area: d;
+    //grid-area: d;
     width: 320px;
     height: 44px;
 

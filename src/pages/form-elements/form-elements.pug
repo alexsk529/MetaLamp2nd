@@ -9,6 +9,8 @@ include ../../blocks/radio-buttons/radio-buttons
 include ../../blocks/toggle/toggle
 include ../../blocks/like-button/like-button
 include ../../blocks/rate-button/rate-button
+include ../../blocks/slider/slider
+include ../../blocks/button/button
 
 doctype html
 
@@ -69,9 +71,38 @@ html
                         +rate-button
                         +rate-button
                 .form__uBlock
-                    input.range-slider
-                    .form__click-buttons
-                        input.click-button
+                    +slider()
+                    .wrapper.wrapper__buttons
+                        h3.title.label= 'buttons'
+                        +button({
+                            title: 'click me',
+                            className: 'button_style_solid click-me',
+                        })
+                        +button({
+                            title: 'click me',
+                            className: 'button_style_solid button_style_op-50 click-me',
+                        })
+                        +button({
+                            title: 'click me',
+                            className: 'button_style_border click-me',
+                        })
+                        +button({
+                            title: 'click me',
+                            className: 'button_style_border button_style_op-50 click-me',
+                        })
+                        +button({
+                            title: 'click me',
+                            className: 'button_style_border button_style_without-border',
+                        })
+                        +button({
+                            title: 'click me',
+                            className: 'button_style_without-border button_style_gray',
+                        })
+                        +button({
+                            title: 'перейти к оплате',
+                            isArrow: true,
+                            className: 'button_style_solid payment-button click-me',
+                        })
                         input.click-button
                         input.click-button
                         input.click-button
@@ -90,3 +121,4 @@ html
         footer.uiKit.uiKit__footer
             .allowance
             .review
+

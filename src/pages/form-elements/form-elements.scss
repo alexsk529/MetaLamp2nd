@@ -17,7 +17,11 @@
 @use "../../blocks/toggle/toggle";
 @use "../../blocks/like-button/like-button";
 @use "../../blocks/rate-button/rate-button";
-
+@use '../../blocks/slider/slider';
+@use "../../blocks/button/button";
+@use "../../blocks/button-round/button-round";
+@use "../../blocks/click-me/click-me";
+@use "../../blocks/payment-button/payment-button";
 
 
 html {

@@ -44,6 +44,7 @@
     "cleave.js": "^1.6.0",
     "easydropdown": "^4.2.0",
     "inputmask": "^5.0.7",
+    "ion-rangeslider": "^2.3.1",
     "item-quantity-dropdown": "^2.1.0",
     "jquery": "^3.6.0",
     "material-icons": "^1.11.2",

@@ -4,7 +4,7 @@ import $ from "jquery";
 
 let clearCustom = {
     content: 'очистить'.toUpperCase(),
-    className: 'custom-button-classname',
+    className: 'custom-button-round-classname',
     onClick: dp => {
         dp.clear()
         dp.hide();
@@ -14,7 +14,7 @@ let clearCustom = {
 }
 let confirm = {
     content: 'Применить'.toUpperCase(),
-    className: 'custom-button-classname',
+    className: 'custom-button-round-classname',
     onClick: dp => {
         dp.hide();
         $(dp.$el).removeClass("date-dropdown__field_hover");
