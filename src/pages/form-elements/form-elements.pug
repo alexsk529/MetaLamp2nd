@@ -11,6 +11,7 @@ include ../../blocks/like-button/like-button
 include ../../blocks/rate-button/rate-button
 include ../../blocks/slider/slider
 include ../../blocks/button/button
+include ../../blocks/pagination/pagination
 
 doctype html
 
@@ -41,7 +42,8 @@ html
                         id1: 'adults',
                         id2: 'children',
                         id3: 'infants',
-                        label: 'dropdown'
+                        label: 'dropdown',
+                        maxCount: 7,
                     })
                     .masked-text-field
                             h3.label masked text field
@@ -103,13 +105,9 @@ html
                             isArrow: true,
                             className: 'button_style_solid payment-button click-me',
                         })
-                        input.click-button
-                        input.click-button
-                        input.click-button
-                        input.click-button
-                        input.click-button
-                        input.click-button
-                    input.pagination
+                    +pages({
+                        title: 'pagination'
+                    })
             .form__2ndBlock
                 .form__uBlock
                 .form__uBlock
@@ -122,3 +120,6 @@ html
             .allowance
             .review
 
+        //script(src="https://code.jquery.com/jquery-3.6.0.min.js"
+        //    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        //    crossorigin="anonymous")

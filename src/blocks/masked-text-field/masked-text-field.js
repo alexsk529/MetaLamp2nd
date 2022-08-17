@@ -1,15 +1,14 @@
-import $ from "jquery";
-import inputmask from '../../../node_modules/inputmask/lib/jquery.inputmask';
-import '../../../node_modules/inputmask/lib/extensions/inputmask.date.extensions'
+import '../../libs/inputmask';
+
 
 $(document).ready( function() {
-
-    $('.masked-text-field__field').inputmask({
+    let im = new Inputmask({
         alias: "datetime",
         inputFormat: "dd.mm.yyyy",
         clearMaskOnLostFocus: false,
         placeholder: "ДД.ММ.ГГГГ"
     });
+    im.mask($('.masked-text-field__field'))
 
     $('.masked-text-field__field').addClass('masked-text-field__field_unhover');
     $('.masked-text-field__field').hover(function () {

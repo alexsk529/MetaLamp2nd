@@ -1,4 +1,3 @@
-import $ from "jquery";
 import ionRangeSlider from 'ion-rangeslider';
 
 class Slider {

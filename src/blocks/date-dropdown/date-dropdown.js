@@ -1,6 +1,5 @@
 import AirDatepicker from 'air-datepicker';
 import './date-dropdown.scss';
-import $ from "jquery";
 
 let clearCustom = {
     content: 'очистить'.toUpperCase(),

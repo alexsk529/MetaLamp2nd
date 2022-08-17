@@ -48,6 +48,7 @@
     "item-quantity-dropdown": "^2.1.0",
     "jquery": "^3.6.0",
     "material-icons": "^1.11.2",
+    "paginationjs": "^2.1.5",
     "simple-pug-loader": "^0.2.1"
   }
 }

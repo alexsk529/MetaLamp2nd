@@ -18,13 +18,21 @@
 .iqdropdown {
     -webkit-tap-highlight-color: transparent;
     box-sizing: border-box;
-    width: 320px;
+
     height: 44px;
     align-items: center;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     position: relative;
+
+    &_width_wide {
+        width: 320px;
+    }
+
+    &_width_narrow {
+        width: 266px;
+    }
 
     & .expand-arrow {
         position: absolute;

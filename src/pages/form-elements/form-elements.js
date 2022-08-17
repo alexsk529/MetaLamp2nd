@@ -8,7 +8,10 @@ import '../../blocks/subscription-text-field/subscription-text-field';
 import '../../blocks/like-button/like-button';
 import '../../blocks/rate-button/rate-button';
 import '../../blocks/slider/slider';
-import $ from "jquery";
+var pagination = require('paginationjs')
+// import '../../libs/jquery.simplePagination';
+// import '../../libs/simplePagination.css';
+
 
 
 
@@ -29,6 +32,24 @@ for (let i = 1; i < 3; i++) {
 for (let i = 1; i < 13; i++) {
     $('.like-button').eq(1).trigger('click')
 }
+
+$('.rate-button').eq(0).find('span:nth-child(4)').trigger('click')
+$('.rate-button').eq(1).find('span:nth-child(5)').trigger('click')
+
+
+    $('.pagination').pagination({
+        dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        pageSize: 1,
+        callback: function(data, pagination) {
+            $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
+        },
+        showPrevious: false,
+        pageRange: 1,
+    })
+
+    $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
+
+
 
 
 
