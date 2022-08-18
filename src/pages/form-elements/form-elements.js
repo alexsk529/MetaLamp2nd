@@ -49,6 +49,15 @@ $('.rate-button').eq(1).find('span:nth-child(5)').trigger('click')
 
     $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
 
+for (let i = 0; i < 2; i++) {
+    let dp = $('.iqdropdown_width_narrow').eq(1)
+    if (i == 1) dp.click()
+
+    dp.find('.icon-increment').eq(0).click()
+    dp.find('.icon-increment').eq(1).click()
+}
+
+
 
 
 

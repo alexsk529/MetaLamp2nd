@@ -4,6 +4,7 @@ const webpack = require('webpack');
 
 const globule = require('globule');
 const fs = require('fs')
+const path = require('path')
 
 let mode = 'development';
 if ( process.env.NODE_ENV === 'production' ) {
@@ -24,11 +25,12 @@ fs.writeFile("src/libs/_libs.pug", mixins, (err) => {
 })
 
 module.exports = {
-  // devServer: {
-  //   static: {
-  //
-  //   },
-  // },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'dist')
+    },
+    port: 8080,
+  },
   mode: mode,
   entry: {
     'colors-types': './src/pages/colors-types/colors-types.js',

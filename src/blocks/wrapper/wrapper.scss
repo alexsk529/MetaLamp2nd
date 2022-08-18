@@ -4,7 +4,7 @@
   &__buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: flex-start;
     &>h3 {
       flex-basis: 100%;
     }

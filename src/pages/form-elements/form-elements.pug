@@ -27,11 +27,10 @@ html
                         value: "This is pretty awesome"
                     })
                     +iqdropdown({
-                        id1: 'adults',
-                        id2: 'children',
-                        id3: 'infants',
+                        id1: 'Взрослые',
+                        id2: 'Дети',
+                        id3: 'Младенцы',
                         label: 'dropdown',
-                        maxCount: 7,
                     })
                     .masked-text-field
                             h3.label masked text field
@@ -98,6 +97,22 @@ html
                     })
             .form__2ndBlock
                 .form__uBlock
+                    +iqdropdown({
+                        id1: 'Спальни',
+                        id2: 'Кровати',
+                        id3:  'Ванные комнаты',
+                        label:  'dropdown',
+                        className:  'iqdropdown_width_narrow',
+                        description: 'default',
+                    })
+                    +iqdropdown({
+                        id1: 'спальни',
+                        id2: 'кровати',
+                        id3: 'ванные комнаты',
+                        label: 'dropdown',
+                        className: 'iqdropdown_width_narrow',
+                        description: 'expanded'
+                    })
                 .form__uBlock
                 .form__uBlock
             .form__3rdBlock

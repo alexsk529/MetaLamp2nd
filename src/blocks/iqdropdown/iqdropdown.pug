@@ -1,17 +1,18 @@
 
 mixin iqdropdown(props)
     - props = props || {}
-    - var { id1 = '', id2 = '', id3 = '', label = '', maxCount = NaN, className = 'iqdropdown_width_wide' } = props
+    - var { id1 = '', id2 = '', id3 = '', label = '', description = '', className = 'iqdropdown_width_wide' } = props
     h3(class="label")= label
+    span(class="label-25")= description
     div(class= `iqdropdown item ${className}`)
         p(class="iqdropdown-selection" data-selection-text="гость")
         .iqdropdown-menu
             div(class="iqdropdown-menu-option" data-id=id1)
                 div
-                    p(class="iqdropdown-item") Взрослые
+                    p(class="iqdropdown-item")= id1
             div(class="iqdropdown-menu-option" data-id=id2)
                 div
-                    p(class="iqdropdown-item") Дети
-            div(class="iqdropdown-menu-option" data-id=id3 data-maxcount= maxCount)
+                    p(class="iqdropdown-item")= id2
+            div(class="iqdropdown-menu-option" data-id=id3)
                 div
-                    p(class="iqdropdown-item") Младенцы
+                    p(class="iqdropdown-item")= id3

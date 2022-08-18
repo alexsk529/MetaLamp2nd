@@ -67,12 +67,12 @@ class Datedropdown extends AirDatepicker {
         // })
 
         end.click(() => {
-            dp.visible || dp.show();
+            this.visible || this.show();
             start.addClass("date-dropdown__field_hover");
         })
 
         end.blur(() => {
-            dp.inFocus || !dp.visible || dp.hide();
+            this.inFocus || !this.visible || this.hide();
             start.removeClass("date-dropdown__field_hover");
         })
 
