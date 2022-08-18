@@ -408,4 +408,4 @@ module.exports = __webpack_require__.p + "assets/b4b8dfebda28ec94b585.woff";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=colors-types,412f99d94dc36120e0c9.js.map
+//# sourceMappingURL=colors-types.59295ea265f7bf0f4aba.js.map

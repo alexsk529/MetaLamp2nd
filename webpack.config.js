@@ -2,7 +2,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
-let globule = require('globule');
+const globule = require('globule');
+const fs = require('fs')
+
 let mode = 'development';
 if ( process.env.NODE_ENV === 'production' ) {
   mode = 'production'
@@ -11,18 +13,32 @@ console.log(mode + ' mode');
 
 const paths = globule.find(["src/pages/**/*.pug"])
 
+const mixins = globule
+    .find(["src/blocks/**/*.pug"])
+    .map((path ) => path.split('/').pop().split('.').slice(0, 1) )
+    .reduce((acc, currentItem) => acc + `include ../blocks/${currentItem}/${currentItem}.pug\n`, ``);
+
+fs.writeFile("src/libs/_libs.pug", mixins, (err) => {
+  if (err) throw err;
+  console.log('Mixins are generated automatically!')
+})
+
 module.exports = {
+  // devServer: {
+  //   static: {
+  //
+  //   },
+  // },
   mode: mode,
   entry: {
     'colors-types': './src/pages/colors-types/colors-types.js',
     'form-elements': './src/pages/form-elements/form-elements.js',
   },
   output: {
-    filename: '[name],[contenthash].js',
+    filename: '[name].[contenthash].js',
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true,
   },
-
   devtool: 'source-map',
   optimization: {
     splitChunks: {
