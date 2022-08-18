@@ -419,8 +419,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var item_quantity_dropdown_lib_item_quantity_dropdown_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(item_quantity_dropdown_lib_item_quantity_dropdown_min__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _iqdropdown_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iqdropdown.scss */ "./src/blocks/iqdropdown/iqdropdown.scss");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-var _this = undefined;
-
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -441,6 +439,29 @@ var guestDropdown = /*#__PURE__*/_createClass(function guestDropdown(el, options
 
   $(el).iqDropdown(options);
   $(el).find('.button-decrement').addClass('iqdropdown-button_inactive');
+  $(el).find('.iqdropdown-menu').append("<div class='iqdropdown-button-container'><button class='iqdropdown-confirm-button label label_color_purple'>Применить</button></div>");
+  $(el).find('.iqdropdown-button-container').click(function (event) {
+    return event.stopPropagation();
+  });
+  $(el).find('.iqdropdown-menu').click(function (event) {
+    return event.stopPropagation();
+  }); //put toggle on confirm-button
+
+  $(el).find('.iqdropdown-button-container button:last-child').click(function () {
+    $(el).toggleClass('menu-open');
+  }); //hover on div.iqdropdown
+
+  $(el).hover(function () {
+    $(this).addClass('iqdropdown-hover');
+  }, function () {
+    $(this).removeClass('iqdropdown-hover');
+  }); //setting styles
+
+  $(el).find('.iqdropdown-selection').after("<span class='material-icons expand-arrow'>&#xE5CF</span>");
+  $(el).find('.iqdropdown-item').addClass("label");
+  $(el).find('.counter').addClass("label");
+  $(el).find('.icon-decrement').html('-');
+  $(el).find('.icon-increment').html('+');
 });
 
 var _iterator = _createForOfIteratorHelper($('.iqdropdown_width_wide')),
@@ -449,37 +470,56 @@ var _iterator = _createForOfIteratorHelper($('.iqdropdown_width_wide')),
 try {
   var _loop = function _loop() {
     var el = _step.value;
-    var guests = 0,
-        infants = 0;
     var options = {
       el: el,
       maxItems: 20,
+      flag: false,
       onChange: function onChange(id, count, totalItems) {
-        if (id == 'adults' || id == 'children') guests += count;else infants += count;
-        if (totalItems == _this.maxItems) $(_this.el).find('button').addClass('iqdropdown-button_inactive');
+        //inactive buttons
+        var data = 'data-id=' + '"' + id + '"';
+        if (count != 0) $(this.el).find("[".concat(data, "]")).find('.button-decrement').removeClass('iqdropdown-button_inactive');else $(this.el).find("[".concat(data, "]")).find('.button-decrement').addClass('iqdropdown-button_inactive');
+        if (totalItems == this.maxItems) $(this.el).find('.button-increment').addClass('iqdropdown-button_inactive');else $(this.el).find('.button-increment').removeClass('iqdropdown-button_inactive'); // clean button initialization
+
+        if (totalItems != 0 && this.flag === false) {
+          $(this.el).find('.iqdropdown-button-container').prepend("<button class='iqdropdown-clean iqdropdown-confirm-button label label_color_purple'>Очистить</button>");
+          $(this.el).find('.iqdropdown-button-container').addClass('iqdropdown-multiple-container');
+          this.flag = true; //clean button event
+
+          $(el).find('.iqdropdown-clean').click(function () {
+            $(el).find('.iqdropdown-item-controls').each(function () {
+              while ($(this).find('.button-decrement').attr('class') != 'button-decrement iqdropdown-button_inactive') {
+                $(this).find('.button-decrement').click();
+              }
+            });
+          });
+        }
+
+        if (totalItems == 0) {
+          $(this.el).find('.iqdropdown-button-container button:first-child').remove();
+          $(this.el).find('.iqdropdown-button-container').removeClass('iqdropdown-multiple-container');
+          this.flag = false;
+        }
       },
       setSelectionText: function setSelectionText(itemCount, totalItems) {
-        var g = guests;
-        var i = infants;
-        console.log(g + ' ' + i);
+        var arr = Object.values(itemCount);
+        var g = arr[0] + arr[1];
+        var i = arr[2];
         var firstPart = '';
         var secondPart = '';
-        if (g == 1) firstPart = "".concat(totalItems, " \u0433\u043E\u0441\u0442\u044C");else if (g < 5) firstPart = "".concat(totalItems, " \u0433\u043E\u0441\u0442\u044F");else firstPart = "".concat(totalItems, " \u0433\u043E\u0441\u0442\u0435\u0439");
-        if (i == 1) secondPart = "".concat(totalItems, " \u043C\u043B\u0430\u0434\u0435\u043D\u0435\u0446");else if (g < 5) secondPart = "".concat(totalItems, " \u043C\u043B\u0430\u0434\u0435\u043D\u0446\u0430");else secondPart = "".concat(totalItems, " \u043C\u043B\u0430\u0434\u0435\u043D\u0446\u0435\u0432");
-        if (totalItems == 0) return 'Сколько гостей';
-        if (g > 0 && i == 0) return firstPart;
-        if (g == 0 && i > 0) return 'Добавьте взрослых';
-        if (g > 0 && i > 0) return "".concat(firstPart, " ").concat(secondPart);
-      },
-      beforeIncrement: function beforeIncrement(id, itemCount) {// if (guests == 0 && id == 'infants') return false
+        if (g == 1) firstPart = "".concat(g, " \u0433\u043E\u0441\u0442\u044C");else if (g < 5) firstPart = "".concat(g, " \u0433\u043E\u0441\u0442\u044F");else firstPart = "".concat(g, " \u0433\u043E\u0441\u0442\u0435\u0439");
+        if (i == 1) secondPart = "".concat(i, " \u043C\u043B\u0430\u0434\u0435\u043D\u0435\u0446");else if (g < 5) secondPart = "".concat(i, " \u043C\u043B\u0430\u0434\u0435\u043D\u0446\u0430");else secondPart = "".concat(i, " \u043C\u043B\u0430\u0434\u0435\u043D\u0446\u0435\u0432");
+        if (totalItems == 0) return 'Сколько гостей';else if (arr[0] == 0 && (i > 0 || arr[1] > 0)) return 'Добавьте взрослых';else if (g > 0 && i == 0) return firstPart;else if (g > 0 && i > 0) return "".concat(firstPart, ", ").concat(secondPart);
       }
     };
+    options.onChange = options.onChange.bind(options); // options.updateDisplay2 = options.updateDisplay2.bind(options);
+
     new guestDropdown(el, options);
   };
 
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
     _loop();
-  } //     let counter = 0;
+  } // //confirm button
+  //     let counter = 0;
   //     $('.iqdropdown-menu').append("<div class='iqdropdown-button-container'><button class='iqdropdown-confirm-button label label_color_purple'>Применить</button></div>");
   // //iqdropdown initialization
   //     $('.iqdropdown').iqDropdown({
@@ -5440,4 +5480,4 @@ module.exports = __webpack_require__.p + "assets/c93d1d2e0ebf70b1d568.svg";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=form-elements,a34672141802e7ecef3e.js.map
+//# sourceMappingURL=form-elements,c036c8d3f49c9650df66.js.map
