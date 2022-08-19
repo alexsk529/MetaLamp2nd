@@ -4,8 +4,16 @@
     flex-wrap: wrap;
 }
 
+.paginationjs-pages span, .paginationjs-pages a {
+    user-select: none;
+}
+
 .paginationjs .paginationjs-pages {
     float: left
+}
+
+.paginationjs-page {
+    cursor: pointer;
 }
 
 .paginationjs .paginationjs-pages ul {

@@ -1,9 +1,7 @@
 mixin text-field( props )
     - props = props || {}
     - var { labelmain = '', label = '', type = '', placeholder = '', value ='' } = props
-    .text-field
-        .text-field__label
-            h3(class="label")= labelmain
-        .text-field__label2
-            span(class="label-25")= label
+    .text-field.wrapper-20
+        h3(class="label label_position_text-field")= labelmain
+        span(class="label label_style_25 label_position_text-field")= label
         input.text-field__field(placeholder=placeholder type=`${type}` value = value).item

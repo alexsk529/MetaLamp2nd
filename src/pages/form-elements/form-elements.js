@@ -1,14 +1,7 @@
 
 import './form-elements.scss'
-import '../../blocks/iqdropdown/iqdropdown';
-import '../../blocks/masked-text-field/masked-text-field';
-import '../../blocks/date-dropdown/date-dropdown';
-import '../../blocks/filter-date-dropdown/filter-date-dropdown';
-import '../../blocks/subscription-text-field/subscription-text-field';
-import '../../blocks/like-button/like-button';
-import '../../blocks/rate-button/rate-button';
-import '../../blocks/slider/slider';
-var pagination = require('paginationjs')
+import '../../libs/_scripts.js'
+let pagination = require('paginationjs')
 // import '../../libs/jquery.simplePagination';
 // import '../../libs/simplePagination.css';
 
@@ -18,12 +11,12 @@ var pagination = require('paginationjs')
 $('.text-field').eq(1).find('input').addClass('text-field__field_hover');
 
 let arr = [];
-arr.push($('.box-and-label__label:not(:first)'));
+arr.push($('.checkbox-buttons').find('.box-and-label__label:not(:first)'));
 for (let el of arr) {
-    el.find('input').trigger('click');
+    el.find('input').attr('checked', 'checked')
 }
 
-$('.toggle__item:first').find('input').trigger('click');
+$('.toggle__item:first').find('input').attr('checked', 'checked');
 
 for (let i = 1; i < 3; i++) {
     $('.like-button').eq(0).trigger('click')
@@ -37,17 +30,17 @@ $('.rate-button').eq(0).find('span:nth-child(4)').trigger('click')
 $('.rate-button').eq(1).find('span:nth-child(5)').trigger('click')
 
 
-    $('.pagination').pagination({
-        dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-        pageSize: 1,
-        callback: function(data, pagination) {
-            $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
-        },
-        showPrevious: false,
-        pageRange: 1,
-    })
+$('.pagination').pagination({
+    dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    pageSize: 1,
+    callback: function(data, pagination) {
+        $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
+    },
+    showPrevious: false,
+    pageRange: 1,
+})
 
-    $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
+$('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
 
 for (let i = 0; i < 2; i++) {
     let dp = $('.iqdropdown_width_narrow').eq(1)
@@ -55,6 +48,22 @@ for (let i = 0; i < 2; i++) {
 
     dp.find('.icon-increment').eq(0).click()
     dp.find('.icon-increment').eq(1).click()
+}
+for (let i = 0; i < 2; i++) {
+    let dp = $('.form__2ndBlock').find('.iqdropdown_width_wide').eq(1);
+    if (i == 0) {
+        $('.form__2ndBlock').find('.iqdropdown_width_wide').click();
+        dp.find('.icon-increment').eq(1).click()
+    }
+    dp.find('.icon-increment').eq(0).click()
+}
+
+
+
+let checkbox = $('.expandable-checkbox').eq(1)
+checkbox.trigger('click')
+for (let i = 1; i < 4; i++) {
+    checkbox.find('input').eq(i).attr('checked', 'checked')
 }
 
 

@@ -1,0 +1,8 @@
+mixin rich-box(str)
+    - let [title = '', description = ''] = str.split('/')
+    .rich-box
+        label.rich-box__label
+            input(type = 'checkbox')
+            span.body= title
+            span.body= description
+

@@ -18,13 +18,13 @@
 .iqdropdown {
     -webkit-tap-highlight-color: transparent;
     box-sizing: border-box;
-
-    height: 44px;
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
     position: relative;
+    height: 44px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
 
     &_width_wide {
         width: 320px;
@@ -110,19 +110,20 @@
         background-color: #FFFFFF;
         cursor: default;
         display: none;
-        left: 0;
         border: 1px rgba(31, 32, 65, 0.5) solid;
         border-radius: 0 0 4px 4px;
         border-top: none;
-        margin: 1px -1px -1px;
         padding-top: 7px;
         padding-left: 15px;
-        padding-bottom: 13px;
+        margin: 1px -1px 0 -1px;
         position: absolute;
         right: 0;
+        left: 0;
         top: 100%;
         transition: all 0.2s ease-in-out;
-        z-index: 99999
+        z-index: 99999;
+        box-sizing: border-box;
+        box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
     }
 
     & &-menu-option {
@@ -151,7 +152,7 @@
 
     &-content {
         flex: 1;
-        padding-right: 10px
+        margin-right: 10px
     }
 
     & &-item-controls {
@@ -166,6 +167,7 @@
         display: flex;
         justify-content: flex-end;
         margin-right: 7px;
+        margin-bottom: 13px;
     }
 
     &-multiple-container {
@@ -202,7 +204,8 @@
         font-weight: 400;
         line-height: 18px;
         flex: 1;
-        position: relative
+        position: relative;
+        margin-bottom: 12px;
     }
 
     &.menu-open {

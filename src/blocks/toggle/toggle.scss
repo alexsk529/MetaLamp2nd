@@ -3,6 +3,7 @@
 
   &__icon {
     display: inline-block;
+    vertical-align: middle;
     width: 40px;
     height: 20px;
     border-radius: 10px;
@@ -12,6 +13,7 @@
     position: relative;
     transition-property: border;
     transition-duration: 0.5s;
+    cursor: pointer;
 
     &::before {
       content: '';
@@ -22,8 +24,6 @@
       height: 12px;
       border-radius: 50%;
       background: rgba(31, 32, 65, 0.25);
-      line-height: 20px;
-      vertical-align: baseline;
       transition-property: background, left;
       transition-duration: 1s, 0.5s;
     }
@@ -34,12 +34,11 @@
     display: inline-flex;
     align-items: center;
     margin-bottom: 14px;
+    vertical-align: top;
 
     & > label {
 
       & > span {
-        line-height: 18px;
-        vertical-align: top;
         user-select: none;
       }
 

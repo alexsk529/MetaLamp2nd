@@ -1,9 +1,9 @@
 mixin radio-buttons(props)
     - props = props || {}
     - let {title='', str=[]} = props
-    .radio-buttons
+    .radio-buttons.wrapper-40
         - if (title != '')
-            h3.label.title= title
+            h3.label.label_position_button= title
         each val, index in str
             label.radio-buttons__item
                 if (index == 0)

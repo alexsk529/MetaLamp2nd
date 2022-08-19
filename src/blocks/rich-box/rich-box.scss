@@ -1,4 +1,4 @@
-.box-and-label {
+.rich-box {
   display: flex;
   justify-content: flex-start;
   width: 230px;
@@ -16,7 +16,7 @@
         border: 1px rgba(31, 32, 65, 0.5) solid;
       }
 
-      &>input:checked+span::before {
+      &>input:checked+span:first::before {
         border: 1px #BC9CFF solid;
         background-image: url("../../images/vector.svg");
       }
@@ -25,11 +25,10 @@
         vertical-align: middle;
         display: inline-flex;
         user-select: none;
-        line-height: 18px;
-        color: rgba(31, 32, 65, 0.5);
+
       }
 
-      &>span::before {
+      &>span:first::before {
         content: '';
         display: inline-block;
         width: 20px;
@@ -44,5 +43,20 @@
         background-position: center center;
         cursor: pointer;
       }
+
+      &>span:first {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 700;
+        color: rgba(31, 32, 65, 0.75);
+      }
+
+      &>span:last-child {
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: 400;
+        color: rgba(31, 32, 65, 0.75);
+      }
+
     }
 }

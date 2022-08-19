@@ -4,8 +4,10 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  cursor: pointer;
 
   &>span {
+    user-select: none;
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;

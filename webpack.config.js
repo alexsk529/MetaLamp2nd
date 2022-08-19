@@ -24,6 +24,27 @@ fs.writeFile("src/libs/_libs.pug", mixins, (err) => {
   console.log('Mixins are generated automatically!')
 })
 
+const styles = globule
+    .find(["src/blocks/**/*.scss"])
+    .map((path) => path.split('/').pop().split('.').slice(0, 1))
+    .reduce((acc, currentItem) => acc + `@use \"../blocks/${currentItem}/${currentItem}.scss\";\n`, ``)
+
+fs.writeFile("src/libs/_libs.scss", styles, (err) => {
+  if (err) throw err;
+  console.log('Styles are generated automatically!')
+})
+
+const scripts = globule
+    .find(["src/blocks/**/*.js"])
+    .map((path) => path.split('/').pop().split('.').slice(0, 1))
+    .reduce((acc, currentItem) => acc + `import \'../blocks/${currentItem}/${currentItem}.js\';\n`, ``)
+
+fs.writeFile("src/libs/_scripts.js", scripts, (err) => {
+  if (err) throw err;
+  console.log('Scripts are generated automatically!')
+})
+
+
 module.exports = {
   devServer: {
     static: {

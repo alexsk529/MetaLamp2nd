@@ -1,22 +1,26 @@
 .rate-button {
   display: inline-block;
   box-sizing: border-box;
+  vertical-align: middle;
+
+  &__icon {
+    width: 24px;
+    line-height: 24px;
+    font-size: 24px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+  }
 
   &__icon:before {
-    vertical-align: middle;
+    vertical-align: top;
     content: attr(data-before);
     display: inline-block;
-    width: 24px;
-    font-size: 24px;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
     font-variation-settings: 'FILL' 0;
-    vertical-align: middle;
-    -webkit-font-variation-settings: 'FILL' 0;
-    -moz-font-variation-settings: 'FILL' 0;
     user-select: none;
   }
 

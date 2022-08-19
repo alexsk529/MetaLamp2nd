@@ -26,14 +26,15 @@ html
                         type: "text",
                         value: "This is pretty awesome"
                     })
-                    +iqdropdown({
-                        id1: 'Взрослые',
-                        id2: 'Дети',
-                        id3: 'Младенцы',
-                        label: 'dropdown',
-                    })
-                    .masked-text-field
-                            h3.label masked text field
+                    .wrapper.wrapper__dropdown.wrapper-20
+                        +iqdropdown({
+                            id1: 'Взрослые',
+                            id2: 'Дети',
+                            id3: 'Младенцы',
+                            label: 'dropdown',
+                        })
+                    .masked-text-field.wrapper-40
+                            h3.label.label_position_text-field masked text field
                             input.masked-text-field__field(type="text").item
                     +date-dropdown('date dropdown')
                     +filter-date-dropdown('filter date dropdown')
@@ -51,74 +52,101 @@ html
                         title: 'toggle',
                         str: ['Получать спецпредложения', 'Получать спецпредложения']
                     })
-                    .wrapper
-                        h3.title.label= 'like button'
+                    .wrapper.wrapper-40
+                        h3.label.label_position_button= 'like button'
                         +like-button
                         +like-button
                     .wrapper
-                        h3.title.label= 'rate button'
+                        h3.label.label_position_button= 'rate button'
                         +rate-button
                         +rate-button
                 .form__uBlock
                     +slider()
-                    .wrapper.wrapper__buttons
-                        h3.title.label= 'buttons'
+                    .wrapper.wrapper__buttons.wrapper_width_narrow.wrapper-40
+                        h3.label.label_position_button= 'buttons'
                         +button({
                             title: 'click me',
-                            className: 'button_style_solid click-me',
+                            className: 'button button_style_solid click-me',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button_style_solid button_style_op-50 click-me',
+                            className: 'button button_style_solid button_style_op-50 click-me',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button_style_border click-me',
+                            className: 'button button_style_border click-me',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button_style_border button_style_op-50 click-me',
+                            className: 'button button_style_border button_style_op-50 click-me',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button_style_border button_style_without-border',
+                            className: 'button button_style_border button_style_without-border',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button_style_without-border button_style_gray',
+                            className: 'button button_style_without-border button_style_gray',
                         })
                         +button({
                             title: 'перейти к оплате',
                             isArrow: true,
-                            className: 'button_style_solid payment-button click-me',
+                            className: 'button button_style_solid payment-button',
                         })
                     +pages({
                         title: 'pagination'
                     })
             .form__2ndBlock
                 .form__uBlock
-                    +iqdropdown({
-                        id1: 'Спальни',
-                        id2: 'Кровати',
-                        id3:  'Ванные комнаты',
-                        label:  'dropdown',
-                        className:  'iqdropdown_width_narrow',
-                        description: 'default',
-                    })
-                    +iqdropdown({
-                        id1: 'спальни',
-                        id2: 'кровати',
-                        id3: 'ванные комнаты',
-                        label: 'dropdown',
-                        className: 'iqdropdown_width_narrow',
-                        description: 'expanded'
-                    })
+                    .wrapper.wrapper__dropdown.wrapper-20.wrapper_width_narrow
+                        +iqdropdown({
+                            id1: 'Спальни',
+                            id2: 'Кровати',
+                            id3:  'Ванные комнаты',
+                            label:  'dropdown',
+                            className:  'iqdropdown_width_narrow',
+                            description: 'default',
+                        })
+                    .wrapper.wrapper__dropdown.wrapper_width_narrow
+                        +iqdropdown({
+                            id1: 'спальни',
+                            id2: 'кровати',
+                            id3: 'ванные комнаты',
+                            label: 'dropdown',
+                            className: 'iqdropdown_width_narrow',
+                            description: 'expanded'
+                        })
                 .form__uBlock
+                    .wrapper.wrapper__dropdown.wrapper-20
+                        +iqdropdown({
+                            id1: 'Взрослые',
+                            id2: 'Дети',
+                            id3: 'Младенцы',
+                            label: 'dropdown',
+                        })
                 .form__uBlock
+                    .wrapper.wrapper__dropdown.wrapper-20
+                        +iqdropdown({
+                            id1: 'Взрослые',
+                            id2: 'Дети',
+                            id3: 'Младенцы',
+                            label: 'dropdown',
+                        })
             .form__3rdBlock
                 .form__uBlock
+                    +expandable-checkbox({
+                        items: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
+                    })
+                    +expandable-checkbox({
+                        items: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
+                    })
                 .form__uBlock
+                    +rich-checkbox({
+                        str: ['Широкий коридор/Ширина коридоров в номере не менее 91 см.',
+                            'Помощник для инвалидов/На 1 этаже вас встретит специалист и проводит до номера']
+                    })
                 .form__uBlock
+
         footer.uiKit.uiKit__footer
             .allowance
             .review

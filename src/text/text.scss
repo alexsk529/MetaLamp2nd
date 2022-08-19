@@ -36,6 +36,27 @@ input, textarea, button, i {
   text-transform: uppercase;
   line-height: 15px;
   color: #1F2041;
+
+  &_style {
+    &_25 {
+      font-weight: 400;
+      opacity: 0.25;
+    }
+  }
+
+  &_position {
+    &_text-field {
+      margin-bottom: 5px;
+    }
+    &_button {
+      margin-bottom: 16px;
+    }
+
+    &_slider {
+      margin-bottom: 20px;
+    }
+
+  }
 }
 
 .label_color_purple {

@@ -35,6 +35,7 @@ import './iqdropdown.scss'
     class roomDropdown extends guestDropdown {
     constructor(el, options) {
         super(el, options);
+        $(el).find('.iqdropdown-button-container').remove()
     }
     }
 
@@ -109,6 +110,13 @@ let options = {
 
     for (let el of $('.iqdropdown_width_narrow')) {
         let subOptions = Object.assign({}, options);
+        subOptions.onChange = function (id, count, totalItems) {
+            let data = 'data-id=' + '"' + id + '"';
+            if (count != 0) $(this.el).find(`[${data}]`).find('.button-decrement').removeClass('iqdropdown-button_inactive')
+            else $(this.el).find(`[${data}]`).find('.button-decrement').addClass('iqdropdown-button_inactive')
+            if (totalItems == this.maxItems) $(this.el).find('.button-increment').addClass('iqdropdown-button_inactive')
+            else $(this.el).find('.button-increment').removeClass('iqdropdown-button_inactive')
+        }
         subOptions.onChange = subOptions.onChange.bind(subOptions);
         subOptions.el = el
         subOptions.setSelectionText = function (itemCount, totalItems) {

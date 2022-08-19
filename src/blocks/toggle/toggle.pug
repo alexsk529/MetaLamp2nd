@@ -1,9 +1,9 @@
 mixin toggle (props)
     - props = props || {}
     - var {title = '', str=[]} = props
-    .toggle
+    .toggle.wrapper-40
         - if (title != '')
-            h3.label.title= title
+            h3.label.label_position_button= title
         each val in str
             .toggle__item
                 label
@@ -11,5 +11,5 @@ mixin toggle (props)
                         input(type="checkbox" checked)
                     else
                         input(type="checkbox")
-                    .toggle__icon
+                    span.toggle__icon
                     span.body= val

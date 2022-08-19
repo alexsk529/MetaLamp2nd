@@ -1,5 +1,18 @@
 .wrapper {
-  width: 260px;
+
+  &_width_wide {
+    width: 320px;
+  }
+
+  &_width_narrow {
+    width: 266px;
+  }
+
+  &__dropdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
   &__buttons {
     display: flex;
@@ -10,7 +23,16 @@
     }
   }
 
-  &__pagination {
-    width: 360px;
-  }
+}
+
+.wrapper-20 {
+  margin-bottom: 20px;
+}
+
+.wrapper-30 {
+  margin-bottom: 30px;
+}
+
+.wrapper-40 {
+  margin-bottom: 40px;
 }

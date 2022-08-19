@@ -1,8 +1,8 @@
 mixin slider(props)
     - props = props || {}
     - let {title='range slider'} = props
-    .slider
-        h3.title.label= title
+    .slider.wrapper-40
+        h3.label.label_position_slider= title
         span.slider__range.body
             - let n = 0
             while n < 3
