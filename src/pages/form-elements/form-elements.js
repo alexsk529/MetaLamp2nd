@@ -18,13 +18,17 @@ for (let el of arr) {
 
 $('.toggle__item:first').find('input').attr('checked', 'checked');
 
-for (let i = 1; i < 3; i++) {
-    $('.like-button').eq(0).trigger('click')
+for (let i = 0; i < 3; i++) {
+
+    if (i == 0) window.likeButtons[i].counter = 2;
+    else {
+        window.likeButtons[i].counter = 11;
+        window.likeButtons[i].array[0].trigger('click')
+    }
+    window.likeButtons[i].updateCounter();
+
 }
 
-for (let i = 1; i < 13; i++) {
-    $('.like-button').eq(1).trigger('click')
-}
 
 $('.rate-button').eq(0).find('span:nth-child(4)').trigger('click')
 $('.rate-button').eq(1).find('span:nth-child(5)').trigger('click')
@@ -50,14 +54,13 @@ for (let i = 0; i < 2; i++) {
     dp.find('.icon-increment').eq(1).click()
 }
 for (let i = 0; i < 2; i++) {
-    let dp = $('.form__2ndBlock').find('.iqdropdown_width_wide').eq(1);
+    let dp = $('.form__Block').eq(1).find('.iqdropdown_width_wide').eq(1);
     if (i == 0) {
-        $('.form__2ndBlock').find('.iqdropdown_width_wide').click();
+        $('.form__Block').eq(1).find('.iqdropdown_width_wide').click();
         dp.find('.icon-increment').eq(1).click()
     }
     dp.find('.icon-increment').eq(0).click()
 }
-
 
 
 let checkbox = $('.expandable-checkbox').eq(1)

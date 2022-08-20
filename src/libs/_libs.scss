@@ -1,4 +1,5 @@
 @use "../blocks/box-and-label/box-and-label.scss";
+@use "../blocks/bullet-list/bullet-list.scss";
 @use "../blocks/button-round/button-round.scss";
 @use "../blocks/button/button.scss";
 @use "../blocks/checkbox-buttons/checkbox-buttons.scss";
@@ -11,6 +12,7 @@
 @use "../blocks/filter-date-dropdown/filter-date-dropdown.scss";
 @use "../blocks/form/form.scss";
 @use "../blocks/header/header.scss";
+@use "../blocks/icon/icon.scss";
 @use "../blocks/iqdropdown/iqdropdown.scss";
 @use "../blocks/item/item.scss";
 @use "../blocks/like-button/like-button.scss";
@@ -19,6 +21,7 @@
 @use "../blocks/payment-button/payment-button.scss";
 @use "../blocks/radio-buttons/radio-buttons.scss";
 @use "../blocks/rate-button/rate-button.scss";
+@use "../blocks/review/review.scss";
 @use "../blocks/rich-box/rich-box.scss";
 @use "../blocks/slider/slider.scss";
 @use "../blocks/subscription-text-field/subscription-text-field.scss";

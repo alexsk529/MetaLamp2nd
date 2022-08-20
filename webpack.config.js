@@ -21,7 +21,7 @@ const mixins = globule
 
 fs.writeFile("src/libs/_libs.pug", mixins, (err) => {
   if (err) throw err;
-  console.log('Mixins are generated automatically!')
+  console.log('Mixins are included automatically!')
 })
 
 const styles = globule
@@ -31,7 +31,7 @@ const styles = globule
 
 fs.writeFile("src/libs/_libs.scss", styles, (err) => {
   if (err) throw err;
-  console.log('Styles are generated automatically!')
+  console.log('Styles are included automatically!')
 })
 
 const scripts = globule
@@ -41,7 +41,7 @@ const scripts = globule
 
 fs.writeFile("src/libs/_scripts.js", scripts, (err) => {
   if (err) throw err;
-  console.log('Scripts are generated automatically!')
+  console.log('Scripts are included automatically!')
 })
 
 

@@ -82,13 +82,13 @@ let options = {
         let message = [];
         if (g == 1) firstPart = `${g} гость`
         else if (g > 1 && g < 5) firstPart = `${g} гостя`
-        else if (g > 5 && g < 20) firstPart = `${g} гостей`
+        else if (g >= 5 && g < 21) firstPart = `${g} гостей`
 
         message.push(firstPart);
 
         if (i == 1) secondPart = `${i} младенец`
         else if (i > 1 && i < 5) secondPart = `${i} младенца`
-        else if (i > 5 && i < 20) secondPart = `${i} младенцев`
+        else if (i >= 5 && i < 21) secondPart = `${i} младенцев`
 
         message.push(secondPart)
 
@@ -128,19 +128,19 @@ let options = {
 
             if (arr[0] == 1) bedroom = `${arr[0]} спальня`
             else if (arr[0] > 1 && arr[0] < 5) bedroom = `${arr[0]} спальни`
-            else if (arr[0] > 5 && arr[0] < 20) bedroom = `${arr[0]} спален`
+            else if (arr[0] >= 5 && arr[0] < 21) bedroom = `${arr[0]} спален`
 
             message.push(bedroom);
 
             if (arr[1] == 1) beds = `${arr[1]} кровать`
             else if (arr[1] > 1 && arr[1] < 5) beds = `${arr[1]} кровати`
-            else if (arr[1] > 5 && arr[1] < 20) beds = `${arr[1]} кроватей`
+            else if (arr[1] >= 5 && arr[1] < 21) beds = `${arr[1]} кроватей`
 
             message.push(beds);
 
             if (arr[2] == 1) bathroom = `${arr[2]} ванная комната`
             else if (arr[2] > 1 && arr[2] < 5) bathroom = `${arr[2]} ванные комнаты`
-            else if (arr[2] > 5 && arr[2] < 20) bathroom = `${arr[2]} ванных комнат`
+            else if (arr[2] >= 5 && arr[2] < 21) bathroom = `${arr[2]} ванных комнат`
 
             message.push(bathroom);
             message = message.filter(item => item != '').join(', ');

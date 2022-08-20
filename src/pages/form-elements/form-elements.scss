@@ -35,3 +35,7 @@ html {
 * {
   box-sizing: border-box;
 }
+
+h3, span {
+  user-select: none;
+}

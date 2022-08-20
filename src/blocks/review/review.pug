@@ -1,0 +1,12 @@
+mixin review (props)
+    - props = props || {}
+    - let {picture='', name='', time='', text = ''} = props
+    .review
+        .review__img
+            +image('png',picture)
+        .review__name
+            span.body= name
+            span.body= time
+        .review__text
+            +like-button
+            span.body= text

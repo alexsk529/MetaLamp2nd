@@ -23,6 +23,7 @@ let confirm = {
 
 let opts = {
     container: 'div.date-dropdown',
+    minDate: new Date(),
     range: true,
     onSelect({date, formattedDate, datepicker }) {
         switch(formattedDate.length) {

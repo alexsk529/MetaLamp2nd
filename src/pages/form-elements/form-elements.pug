@@ -10,9 +10,9 @@ html
         title Form Elements
     body.form
         header.uiKit.uiKit__header
-            +image('logo','uiKit__logo')
+            +image('svg','logo','uiKit__logo')
         main.form__content
-            .form__1stBlock
+            .form__Block
                 .form__uBlock
                     +text-field({
                         labelmain:"text field",
@@ -96,7 +96,7 @@ html
                     +pages({
                         title: 'pagination'
                     })
-            .form__2ndBlock
+            .form__Block
                 .form__uBlock
                     .wrapper.wrapper__dropdown.wrapper-20.wrapper_width_narrow
                         +iqdropdown({
@@ -132,7 +132,7 @@ html
                             id3: 'Младенцы',
                             label: 'dropdown',
                         })
-            .form__3rdBlock
+            .form__Block
                 .form__uBlock
                     +expandable-checkbox({
                         items: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
@@ -146,7 +146,22 @@ html
                             'Помощник для инвалидов/На 1 этаже вас встретит специалист и проводит до номера']
                     })
                 .form__uBlock
-
+                    +bullet-list({
+                        str: ['Нельзя с питомцами',
+                            'Без вечеринок и мероприятий',
+                            'Время прибытия - после 13:00, а выезд до 12:00']
+                    })
+            .form__Block
+                .form__uBlock
+                    +icon('insert_emoticon/Комфорт/Шумопоглощающие стены')
+                    +icon('location_city/Удобство/Окно в каждой из спален')
+                .form__doubleUBlock
+                    +review({
+                        picture: 'person1',
+                        name: 'Мурад Сарафанов',
+                        time: '5 дней назад',
+                        text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                    })
         footer.uiKit.uiKit__footer
             .allowance
             .review
