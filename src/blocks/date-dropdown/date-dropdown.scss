@@ -7,17 +7,21 @@ $purple: #BC9CFF;
   display: flex;
   justify-content: space-between;
 
+  &__block:not(:last-child) {
+    margin-right: 20px;
+  }
+
   &__block {
     display: inline-block;
     position: relative;
     overflow: hidden;
   }
+
+
   &__wrapper {
     display: inline-block;
     position: relative;
     overflow: hidden;
-    margin-right: 20px;
-
 
     & .expand-arrow {
       position: absolute;

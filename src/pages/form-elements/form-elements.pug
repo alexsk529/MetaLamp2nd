@@ -4,7 +4,6 @@ include ../../libs/_libs.pug
 doctype html
 
 html
-
     head
         meta(charset='UTF-8')
         title Form Elements
@@ -36,7 +35,7 @@ html
                     .masked-text-field.wrapper-40
                             h3.label.label_position_text-field masked text field
                             input.masked-text-field__field(type="text").item
-                    +date-dropdown('date dropdown')
+                    +date-dropdown('date dropdown', 'date dropdown', '40')
                     +filter-date-dropdown('filter date dropdown')
                     +subscription-text-field('subscription text field', 'Email')
                 .form__uBlock

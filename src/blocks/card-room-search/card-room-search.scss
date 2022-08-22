@@ -1,0 +1,17 @@
+.card-room-search {
+  width: 380px;
+  height: 374px;
+  background: white;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 40px 30px 30px;
+
+  & h1 {
+    margin-bottom: 21px;
+  }
+
+  & .wrapper__dropdown {
+    margin-bottom: 31px;
+  }
+}

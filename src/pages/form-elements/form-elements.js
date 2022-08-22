@@ -6,7 +6,7 @@ let pagination = require('paginationjs')
 // import '../../libs/simplePagination.css';
 
 
-
+//iqdropdown
 
 $('.text-field').eq(1).find('input').addClass('text-field__field_hover');
 

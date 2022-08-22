@@ -1,0 +1,16 @@
+mixin card-room-search(margin)
+    .card-room-search(class = `wrapper-${margin}`)
+        h1.widget Найдем номера под ваши пожелания
+        +date-dropdown('прибытие', 'отбытие', '20')
+        .wrapper.wrapper__dropdown
+            +iqdropdown({
+                id1: 'Взрослые',
+                id2: 'Дети',
+                id3: 'Младенцы',
+                label: 'гости',
+            })
+        +button({
+            title: 'подобрать номер',
+            isArrow: true,
+            className: 'button_style_solid payment-button',
+        })

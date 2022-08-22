@@ -1,0 +1,14 @@
+.card-room {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &__item {
+    width: 270px;
+    height: 257px;
+    background: white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+  }
+}
+
