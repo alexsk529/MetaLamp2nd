@@ -21,10 +21,6 @@
     color: white;
   }
 
-  &_style_op-50 {
-    opacity: 0.5;
-  }
-
   &_style_border {
     background: linear-gradient(white, white) padding-box,
                 linear-gradient(180deg, #BC9CFF 100%, #8BA4F9 100%) border-box;
@@ -34,15 +30,15 @@
     color: #BC9CFF;
   }
 
-  &_style_gray {
-    color: rgba(31, 32, 65, 0.5);
-  }
-
   &_style_without-border {
     background: none;
     border: none;
     margin-right: 20px;
     margin-bottom: 30px;
     font-weight: 700;
+
+    &:hover, &_hover {
+      color: rgba(31, 32, 65, 0.5);
+    }
   }
 }

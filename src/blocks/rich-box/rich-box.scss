@@ -1,8 +1,11 @@
+.rich-box:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .rich-box {
   display: flex;
   justify-content: flex-start;
   width: 266px;
-  margin-bottom: 10px;
 
   &__label {
 

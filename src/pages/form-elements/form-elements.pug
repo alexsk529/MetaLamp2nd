@@ -42,7 +42,7 @@ html
                 .form__uBlock
                     +checkbox({
                         title: 'checkbox buttons',
-                        str: ['Можно курить','Можно с питомцами','Можно пригласить гостей (до 10 человек)']
+                        str: ['Можно курить','Можно с питомцами/checked','Можно пригласить гостей (до 10 человек)/checked']
                     })
                     +radio-buttons({
                         title: 'radio buttons',
@@ -66,32 +66,32 @@ html
                         h3.label.label_position_button= 'buttons'
                         +button({
                             title: 'click me',
-                            className: 'button button_style_solid click-me',
+                            className: 'button_style_solid click-me',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button button_style_solid button_style_op-50 click-me',
+                            className: 'button_style_solid button_style_op-50 click-me',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button button_style_border click-me',
+                            className: 'button_style_border click-me',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button button_style_border button_style_op-50 click-me',
+                            className: 'button_style_border button_style_op-50 click-me',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button button_style_border button_style_without-border',
+                            className: 'button_style_border button_style_without-border',
                         })
                         +button({
                             title: 'click me',
-                            className: 'button button_style_without-border button_style_gray',
+                            className: 'button_style_without-border button_style_gray',
                         })
                         +button({
                             title: 'перейти к оплате',
                             isArrow: true,
-                            className: 'button button_style_solid payment-button',
+                            className: 'button_style_solid payment-button',
                         })
                     +pages({
                         title: 'pagination'
@@ -138,7 +138,7 @@ html
                         items: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
                     })
                     +expandable-checkbox({
-                        items: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
+                        items: ['Завтрак', 'Письменный стол/checked', 'Стул для кормления/checked', 'Кроватка/checked', 'Телевизор', 'Шампунь']
                     })
                 .form__uBlock
                     +rich-checkbox({

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   width: 230px;
-  margin-bottom: 10px;
+
 
     &__label {
 
@@ -45,4 +45,8 @@
         cursor: pointer;
       }
     }
+}
+
+.box-and-label:not(:last-child) {
+  margin-bottom: 10px;
 }

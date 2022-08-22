@@ -10,9 +10,19 @@ class Slider {
 
 let start, end;
 function writeVal() {
-    $(this).parent().parent().find('.slider__range').find('i').eq(0).text(start + '₽');
-    $(this).parent().parent().find('.slider__range').find('i').eq(1).text(' - ');
-    $(this).parent().parent().find('.slider__range').find('i').eq(2).text(end + '₽');
+    function separator(str) {
+        str = String(str)
+        if (str.length < 4) return str
+        if (str.length >= 4 && str.length < 5) return str[0] + ' ' + str.slice(1) + '₽'
+        else return str.slice(0, 2) + ' ' + str.slice(2) + '₽'
+    }
+
+    let el = $(this).parent().parent().find('.slider__range').find('i')
+
+
+    el.eq(0).text(separator(start));
+    el.eq(1).text(' - ');
+    el.eq(2).text(separator(end));
 }
 let options = {
     type: 'double',

@@ -4,4 +4,14 @@
   margin-right: 19px;
   margin-bottom: 30px;
   font-weight: 700;
+
+  &:not(.click-me_hover):hover {
+    opacity: 0.5;
+  }
+
+  &_hover {
+    opacity: 0.5;
+  }
+
+
 }

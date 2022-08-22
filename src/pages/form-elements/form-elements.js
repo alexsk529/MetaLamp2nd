@@ -10,11 +10,6 @@ let pagination = require('paginationjs')
 
 $('.text-field').eq(1).find('input').addClass('text-field__field_hover');
 
-let arr = [];
-arr.push($('.checkbox-buttons').find('.box-and-label__label:not(:first)'));
-for (let el of arr) {
-    el.find('input').attr('checked', 'checked')
-}
 
 $('.toggle__item:first').find('input').attr('checked', 'checked');
 
@@ -34,6 +29,10 @@ $('.rate-button').eq(0).find('span:nth-child(4)').trigger('click')
 $('.rate-button').eq(1).find('span:nth-child(5)').trigger('click')
 
 
+$('.click-me').eq(1).addClass('click-me_hover')
+$('.click-me').eq(3).addClass('click-me_hover')
+$('.button_style_without-border').eq(1).addClass('button_style_without-border_hover')
+
 $('.pagination').pagination({
     dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
     pageSize: 1,
@@ -47,12 +46,19 @@ $('.pagination').pagination({
 $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
 
 for (let i = 0; i < 2; i++) {
-    let dp = $('.iqdropdown_width_narrow').eq(1)
-    if (i == 1) dp.click()
+    let dp = $('.iqdropdown_width_narrow')
 
-    dp.find('.icon-increment').eq(0).click()
-    dp.find('.icon-increment').eq(1).click()
+    if (i == 1) dp.eq(1).click()
+    for (let el of dp) {
+        $(el).find('.icon-increment').eq(0).click()
+        $(el).find('.icon-increment').eq(1).click()
+    }
+    dp.eq(0).off('click')
 }
+
+$('.expandable-checkbox').eq(0).off('click')
+$('.expandable-checkbox').eq(1).click()
+
 for (let i = 0; i < 2; i++) {
     let dp = $('.form__Block').eq(1).find('.iqdropdown_width_wide').eq(1);
     if (i == 0) {
@@ -63,11 +69,6 @@ for (let i = 0; i < 2; i++) {
 }
 
 
-let checkbox = $('.expandable-checkbox').eq(1)
-checkbox.trigger('click')
-for (let i = 1; i < 4; i++) {
-    checkbox.find('input').eq(i).attr('checked', 'checked')
-}
 
 
 
