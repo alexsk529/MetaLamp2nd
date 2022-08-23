@@ -48,5 +48,7 @@ class RateButton {
 
 let obj = $('.rate-button');
 for (let el of obj) {
+    let rate = Number($(el).attr('data-rate'));
     new RateButton($(el).find('span'))
+    $(el).find(`span:nth-child(${rate})`).trigger('click')
 }

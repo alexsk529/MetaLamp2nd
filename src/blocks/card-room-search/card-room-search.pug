@@ -1,8 +1,9 @@
-mixin card-room-search(margin)
-    .card-room-search(class = `wrapper-${margin}`)
-        h1.widget Найдем номера под ваши пожелания
-        +date-dropdown('прибытие', 'отбытие', '20')
-        .wrapper.wrapper__dropdown
+mixin card-room-search
+    .card-room-search
+        h1.widget.card-room-search__headline Найдем номера под ваши пожелания
+        .card-room-search__date-dropdown
+            +date-dropdown('прибытие', 'отбытие')
+        .wrapper.card-room-search__dropdown
             +iqdropdown({
                 id1: 'Взрослые',
                 id2: 'Дети',

@@ -13,80 +13,94 @@ html
         main.form__content
             .form__Block
                 .form__uBlock
-                    +text-field({
-                        labelmain:"text field",
-                        label: "default",
-                        type: "Email",
-                        placeholder: "Email"
-                    })
-                    +text-field({
-                        labelmain: "text field",
-                        label: "hover/focus",
-                        type: "text",
-                        value: "This is pretty awesome"
-                    })
-                    .wrapper.wrapper__dropdown.wrapper-20
+                    .form__text-field
+                        +text-field({
+                            labelmain:"text field",
+                            label: "default",
+                            type: "Email",
+                            placeholder: "Email"
+                        })
+                    .form__text-field
+                        +text-field({
+                            labelmain: "text field",
+                            label: "hover/focus",
+                            type: "text",
+                            value: "This is pretty awesome"
+                        })
+                    .wrapper.form__dropdown
                         +iqdropdown({
                             id1: 'Взрослые',
                             id2: 'Дети',
                             id3: 'Младенцы',
                             label: 'dropdown',
                         })
-                    .masked-text-field.wrapper-40
+                    .masked-text-field.form__masked-text
                             h3.label.label_position_text-field masked text field
                             input.masked-text-field__field(type="text").item
-                    +date-dropdown('date dropdown', 'date dropdown', '40')
-                    +filter-date-dropdown('filter date dropdown')
+                    .form__date-dropdown
+                        +date-dropdown('date dropdown', 'date dropdown')
+                    .form__date-dropdown
+                        +filter-date-dropdown('filter date dropdown')
                     +subscription-text-field('subscription text field', 'Email')
                 .form__uBlock
-                    +checkbox({
-                        title: 'checkbox buttons',
-                        str: ['Можно курить','Можно с питомцами/checked','Можно пригласить гостей (до 10 человек)/checked']
-                    })
-                    +radio-buttons({
-                        title: 'radio buttons',
-                        str: ['Мужчины', 'Женщины'],
-                    })
-                    +toggle({
-                        title: 'toggle',
-                        str: ['Получать спецпредложения', 'Получать спецпредложения']
-                    })
-                    .wrapper.wrapper-40
+                    .form__buttons
+                        +checkbox({
+                            title: 'checkbox buttons',
+                            str: ['Можно курить','Можно с питомцами/checked','Можно пригласить гостей (до 10 человек)/checked']
+                        })
+                    .form__radio-buttons
+                        +radio-buttons({
+                            title: 'radio buttons',
+                            str: ['Мужчины', 'Женщины'],
+                        })
+                    .form__toggle
+                        +toggle({
+                            title: 'toggle',
+                            str: ['Получать спецпредложения', 'Получать спецпредложения']
+                        })
+                    .wrapper.form__buttons
                         h3.label.label_position_button= 'like button'
                         +like-button
                         +like-button
                     .wrapper
                         h3.label.label_position_button= 'rate button'
-                        +rate-button
-                        +rate-button
+                        +rate-button(4)
+                        +rate-button(5)
                 .form__uBlock
-                    +slider()
-                    .wrapper.wrapper__buttons.wrapper_width_narrow.wrapper-40
+                    .form__buttons
+                        +slider()
+                    .wrapper.wrapper__buttons.wrapper_width_narrow.form__buttons
                         h3.label.label_position_button= 'buttons'
-                        +button({
-                            title: 'click me',
-                            className: 'button_style_solid click-me',
-                        })
-                        +button({
-                            title: 'click me',
-                            className: 'button_style_solid button_style_op-50 click-me',
-                        })
-                        +button({
-                            title: 'click me',
-                            className: 'button_style_border click-me',
-                        })
-                        +button({
-                            title: 'click me',
-                            className: 'button_style_border button_style_op-50 click-me',
-                        })
-                        +button({
-                            title: 'click me',
-                            className: 'button_style_border button_style_without-border',
-                        })
-                        +button({
-                            title: 'click me',
-                            className: 'button_style_without-border button_style_gray',
-                        })
+                        .wrapper__button-item
+                            +button({
+                                title: 'click me',
+                                className: 'button_style_solid click-me',
+                            })
+                        .wrapper__button-item
+                            +button({
+                                title: 'click me',
+                                className: 'button_style_solid button_style_op-50 click-me',
+                            })
+                        .wrapper__button-item
+                            +button({
+                                title: 'click me',
+                                className: 'button_style_border click-me',
+                            })
+                        .wrapper__button-item
+                            +button({
+                                title: 'click me',
+                                className: 'button_style_border button_style_op-50 click-me',
+                            })
+                        .wrapper__button-item
+                            +button({
+                                title: 'click me',
+                                className: 'button_style_border button_style_without-border',
+                            })
+                        .wrapper__button-item
+                            +button({
+                                title: 'click me',
+                                className: 'button_style_without-border button_style_gray',
+                            })
                         +button({
                             title: 'перейти к оплате',
                             isArrow: true,
@@ -97,7 +111,7 @@ html
                     })
             .form__Block
                 .form__uBlock
-                    .wrapper.wrapper__dropdown.wrapper-20.wrapper_width_narrow
+                    .wrapper.form__dropdown.wrapper_width_narrow
                         +iqdropdown({
                             id1: 'Спальни',
                             id2: 'Кровати',
@@ -106,7 +120,7 @@ html
                             className:  'iqdropdown_width_narrow',
                             description: 'default',
                         })
-                    .wrapper.wrapper__dropdown.wrapper_width_narrow
+                    .wrapper.wrapper_width_narrow
                         +iqdropdown({
                             id1: 'спальни',
                             id2: 'кровати',
@@ -116,7 +130,7 @@ html
                             description: 'expanded'
                         })
                 .form__uBlock
-                    .wrapper.wrapper__dropdown.wrapper-20
+                    .wrapper.form__dropdown
                         +iqdropdown({
                             id1: 'Взрослые',
                             id2: 'Дети',
@@ -124,7 +138,7 @@ html
                             label: 'dropdown',
                         })
                 .form__uBlock
-                    .wrapper.wrapper__dropdown.wrapper-20
+                    .wrapper.form__dropdow
                         +iqdropdown({
                             id1: 'Взрослые',
                             id2: 'Дети',
@@ -152,8 +166,10 @@ html
                     })
             .form__Block
                 .form__uBlock
-                    +icon('insert_emoticon/Комфорт/Шумопоглощающие стены')
-                    +icon('location_city/Удобство/Окно в каждой из спален')
+                    .form__icon
+                        +icon('insert_emoticon/Комфорт/Шумопоглощающие стены')
+                    .form__icon
+                        +icon('location_city/Удобство/Окно в каждой из спален')
                 .form__doubleUBlock
                     +review({
                         picture: 'person1',

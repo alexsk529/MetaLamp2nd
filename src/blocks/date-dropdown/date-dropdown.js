@@ -8,7 +8,7 @@ let clearCustom = {
         dp.clear()
         dp.hide();
         $(dp.$el).removeClass("date-dropdown__field_hover");
-        $(dp.$el).parent().parent().parent().find('#end').removeClass("date-dropdown__field_hover");
+        $(dp.$el).parent().parent().parent().find('.end').removeClass("date-dropdown__field_hover");
     }
 }
 let confirm = {
@@ -17,7 +17,7 @@ let confirm = {
     onClick: dp => {
         dp.hide();
         $(dp.$el).removeClass("date-dropdown__field_hover");
-        $(dp.$el).parent().parent().parent().find('#end').removeClass("date-dropdown__field_hover");
+        $(dp.$el).parent().parent().parent().find('.end').removeClass("date-dropdown__field_hover");
     }
 }
 
@@ -29,18 +29,18 @@ let opts = {
         switch(formattedDate.length) {
             case 0:
                 $(datepicker.$el).val('ДД.ММ.ГГГГ');
-                $(datepicker.$el).parent().parent().parent().find('#end').val('ДД.ММ.ГГГГ');
+                $(datepicker.$el).parent().parent().parent().find('.end').val('ДД.ММ.ГГГГ');
 
                 break;
             case 1:
                 $(datepicker.$el).val(formattedDate[0]);
-                $(datepicker.$el).parent().parent().parent().find('#end').val('ДД.ММ.ГГГГ');
+                $(datepicker.$el).parent().parent().parent().find('.end').val('ДД.ММ.ГГГГ');
                 $('.-range-from-').addClass('-range-to-');
 
                 break;
             case 2:
                 $(datepicker.$el).val(formattedDate[0]);
-                $(datepicker.$el).parent().parent().parent().find('#end').val(formattedDate[1]);
+                $(datepicker.$el).parent().parent().parent().find('.end').val(formattedDate[1]);
         }
     },
     buttons: [clearCustom, confirm],
@@ -52,12 +52,12 @@ let opts = {
 
 class Datedropdown extends AirDatepicker {
     start = $(this);
-    end = $(this).parent().parent().parent().find('#end');
+    end = $(this).parent().parent().parent().find('.end');
 
     constructor(el, opts) {
         super(el, opts)
         let start = $(el);
-        let end = $(el).parent().parent().parent().find('#end');
+        let end = $(el).parent().parent().parent().find('.end');
         let wrapper = $(el).parent().parent().parent().find('.date-dropdown__wrapper');
 
         start.val('ДД.ММ.ГГГГ');
@@ -95,12 +95,14 @@ class Datedropdown extends AirDatepicker {
         $('.date-dropdown .air-datepicker-navigation').find('svg').remove();
     }
 }
-
-for (let el of $('.date-dropdown #start')) {
-    new Datedropdown('#start', opts)
+let datedropArr = [];
+for (let el of $('.start')) {
+    let dp = new Datedropdown(el, opts);
+    datedropArr.push(dp);
 }
 
-
+console.log(datedropArr)
+console.log($('.start'))
 
 
 // } else $('#end').removeClass("date-dropdown__field_hover")

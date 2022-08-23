@@ -8,12 +8,6 @@
     width: 266px;
   }
 
-  &__dropdown {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
   &__buttons {
     display: flex;
     flex-wrap: wrap;
@@ -22,11 +16,10 @@
       flex-basis: 100%;
     }
   }
-
-}
-
-.wrapper-20 {
-  margin-bottom: 20px;
+  &__button-item {
+    margin-right: 19px;
+    margin-bottom: 30px;
+  }
 }
 
 .wrapper-30 {

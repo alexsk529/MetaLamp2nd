@@ -1,0 +1,14 @@
+include ../../pug/_image
+
+mixin card-room(props)
+    - props = props || {}
+    - let {format, name, className, number, price, lux, rate, review} = props
+    .card-room
+        +image(format,name, className)
+        .card-room__text
+            .card-room__item
+                +room-number(number, price, lux)
+            .card-room__rate
+                +rate-button(rate)
+                span.label.label_color_gray= review
+                span.body  Отзывов

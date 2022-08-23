@@ -5,4 +5,21 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  padding: 39px 29px 31px;
+
+  &__headline {
+    margin-bottom: 20px;
+  }
+
+  &__text-field {
+    margin-bottom: 10px;
+  }
+
+  &__text-field:nth-child(3) {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    margin-bottom: 30px;
+  }
 }

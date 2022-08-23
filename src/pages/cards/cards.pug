@@ -12,14 +12,36 @@ html
             +image('svg','logo','uiKit__logo')
         main.cards__content
             .cards__container
-                +card-room-search('40')
-                .card-account-signup
+                .wrapper-40
+                    +card-room-search
+                +card-account-signup
             .cards__container
-                .card-room-parameters.wrapper-40
-                .card-login
+                .wrapper-40
+                    +card-room-parameters
+                +card-login
             .cards__container
-                .card-calendar.wrapper-40
-                .card-room
-                    .card-room__item.wrapper-40
-                    .card-room__item
+                .wrapper-40
+                    +card-calendar
+                .wrapper-40
+                    +card-room({
+                        name: 'room1',
+                        format: 'png',
+                        className: 'card-room__img',
+                        number: '888',
+                        price: '9 990',
+                        lux: true,
+                        rate: '5',
+                        review: '145',
+                    })
+                +card-room({
+                    name: 'room2',
+                    format: 'png',
+                    className: 'card-room__img',
+                    number: '840',
+                    price: '9 900',
+                    lux: false,
+                    rate: '4',
+                    review: '65',
+                })
+
         footer

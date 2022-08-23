@@ -25,10 +25,6 @@ for (let i = 0; i < 3; i++) {
 }
 
 
-$('.rate-button').eq(0).find('span:nth-child(4)').trigger('click')
-$('.rate-button').eq(1).find('span:nth-child(5)').trigger('click')
-
-
 $('.click-me').eq(1).addClass('click-me_hover')
 $('.click-me').eq(3).addClass('click-me_hover')
 $('.button_style_without-border').eq(1).addClass('button_style_without-border_hover')

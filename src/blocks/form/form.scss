@@ -7,6 +7,41 @@
     display: grid;
   }
 
+  &__text-field {
+    margin-bottom: 20px;
+  }
+
+  &__dropdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__masked-text {
+    margin-bottom: 40px;
+  }
+
+  &__radio-buttons {
+    margin-bottom: 40px;
+  }
+
+  &__buttons {
+    margin-bottom: 40px;
+  }
+
+  &__toggle {
+    margin-bottom: 44px;
+  }
+
+  &__date-dropdown{
+    margin-bottom: 40px;
+  }
+
+  &__icon {
+    margin-bottom: 20px;
+  }
+
   &__Block {
     width: 100%;
     display: flex;

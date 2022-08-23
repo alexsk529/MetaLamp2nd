@@ -6,8 +6,7 @@ $purple: #BC9CFF;
 .date-dropdown {
   display: flex;
   justify-content: space-between;
-
-  &__block:not(:last-child) {
+  &__block:nth-child(1) {
     margin-right: 20px;
   }
 
@@ -21,7 +20,7 @@ $purple: #BC9CFF;
   &__wrapper {
     display: inline-block;
     position: relative;
-    overflow: hidden;
+    //overflow: hidden;
 
     & .expand-arrow {
       position: absolute;
@@ -345,7 +344,7 @@ $purple: #BC9CFF;
   position: absolute;
   transition: opacity var(--adp-transition-duration) var(--adp-transition-ease), transform var(--adp-transition-duration) var(--adp-transition-ease);
   z-index: var(--adp-z-index);
-  padding: 20px 0 20px 20px;
+  padding: 18px 0 18px 19px;
 }
 
 .air-datepicker:not(.-custom-position-) {

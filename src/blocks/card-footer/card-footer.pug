@@ -1,0 +1,7 @@
+mixin card-footer(label, title)
+    .card-footer
+        span.body= label
+        +button({
+            title: title,
+            className: 'button_style_border button_style_op-50 click-me',
+        })

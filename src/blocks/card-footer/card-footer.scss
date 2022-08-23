@@ -1,0 +1,11 @@
+.card-footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  &>span {
+    vertical-align: middle;
+    line-height: 44px;
+    color: #000000;
+  }
+}

@@ -46,12 +46,12 @@ fs.writeFile("src/libs/_scripts.js", scripts, (err) => {
 
 
 module.exports = {
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, 'dist')
-    },
-    port: 8080,
-  },
+  // devServer: {
+  //   static: {
+  //     directory: path.resolve(__dirname, 'dist')
+  //   },
+  //   port: 8080,
+  // },
   mode: mode,
   entry: {
     'colors-types': './src/pages/colors-types/colors-types.js',
@@ -78,6 +78,24 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
 }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'cards.html',
+    //   template: './src/pages/cards/cards.pug',
+    //   inject: true,
+    //   chunks: ['cards']
+    // }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'colors-types.html',
+    //   template: './src/pages/colors-types/colors-types.pug',
+    //   inject: true,
+    //   chunks: ['colors-types']
+    // }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'form-elements.html',
+    //   template: './src/pages/form-elements/form-elements.pug',
+    //   inject: true,
+    //   chunks: ['form-elements']
+    // }),
   //   new HtmlWebpackPlugin({
   //   template: "./src/pages/colors-types/colors-types.pug"
   // }),
@@ -85,8 +103,11 @@ module.exports = {
       return new HtmlWebpackPlugin( {
         template: path,
         filename: `${path.split(/\/|.pug/).splice(-2, 1)}.html`,
+        chunks: [`${path.split(/\/|.pug/).splice(-2, 1)}`],
       });
-    })],
+    })
+
+  ],
   module: {
     rules: [
       {
