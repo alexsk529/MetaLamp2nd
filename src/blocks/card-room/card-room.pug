@@ -10,5 +10,6 @@ mixin card-room(props)
                 +room-number(number, price, lux)
             .card-room__rate
                 +rate-button(rate)
-                span.label.label_color_gray= review
-                span.body  Отзывов
+                div
+                    span.label.label_color_gray= review
+                    span.body=` Отзывов`

@@ -29,8 +29,15 @@
     border-bottom: 1px solid rgba(31, 32, 65, 0.05);
   }
   &__rate {
-    color: rgba(31, 32, 65, 0.5);
-
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    & span.body {
+      color: rgba(31, 32, 65, 0.5);
+    }
+    & span.label, & span.body {
+      font-size: 14px;
+    }
   }
 }
 
