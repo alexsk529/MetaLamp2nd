@@ -1,0 +1,37 @@
+include ../../pug/_image
+
+doctype html
+
+html
+    head
+        meta(charset='UTF-8')
+        title Starting Page(index)
+    body
+        .index
+            .index__header
+                +image('svg','logo','uiKit__logo')
+                h1.widget Hotel Toxin
+            .index__container
+                h2.widget UI-kit
+                ul
+                    li.widget-inside
+                        a(href='./colors-types.html') Colors & Types
+                    li.widget-inside
+                        a(href='./form-elements.html') Form Elements
+                    li.widget-inside
+                        a(href='./cards.html') Cards
+                    li.widget-inside
+                        a Headers & Footers
+                h2.widget Pages
+                ul
+                    li.widget-inside
+                        a Landing page
+                    li.widget-inside
+                        a Search room
+                    li.widget-inside
+                        a Room details
+                    li.widget-inside
+                        a Registration
+                    li.widget-inside
+                        a Sign in
+

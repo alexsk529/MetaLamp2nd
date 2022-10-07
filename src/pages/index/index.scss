@@ -1,0 +1,74 @@
+@use "../../reset";
+@use "../../text/text";
+
+html {
+  width: 1440px;
+  height: 1853px;
+  background: #f4f4f6;
+}
+
+.index {
+  width: 380px;
+  height: 358px;
+  margin: 0 auto;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 20px 0 20px 0;
+    padding: 0 29px;
+    &>h1 {
+      vertical-align: center;
+      line-height: 48px;
+    }
+
+  }
+
+  &__container {
+    width: 380px;
+    height: 390px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 35px 29px 35px;
+
+    &>h2 {
+      color: #BC9CFF;
+    }
+
+    &>ul {
+      text-align: right;
+    }
+
+    &>ul:not(:last-child) {
+      margin-bottom: 20px
+    }
+
+    & li:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    & a {
+      text-decoration: none;
+      color: rgba(31, 32, 65, 0.5);
+    }
+
+    & a:hover {
+      color: #1F2041;
+    }
+
+
+  }
+
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, span {
+  user-select: none;
+}

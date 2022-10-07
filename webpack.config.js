@@ -57,6 +57,7 @@ module.exports = {
     'colors-types': './src/pages/colors-types/colors-types.js',
     'form-elements': './src/pages/form-elements/form-elements.js',
     'cards': './src/pages/cards/cards.js',
+    'index': './src/pages/index/index.js',
   },
   output: {
     filename: '[name].[contenthash].js',
