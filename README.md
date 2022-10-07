@@ -35,8 +35,8 @@ UI-kit:
 
 ## Сторонние библиотеки
 В данном проекте использованы следующие JQuery и JavaScript -библиотеки:
-- [Airdatepicker, v.3.2.0] (https://air-datepicker.com/ru)
-- [Inputmask, v.5.0.7] (https://github.com/RobinHerbots/Inputmask)
-- [item-quantity-dropdown, v.2.1.0] (https://github.com/reservamos/item-quantity-dropdown)
-- [ion-rangeslider, v.2.3.1] (http://ionden.com/a/plugins/ion.rangeSlider/)
-- [paginationjs, v.2.1.5] (https://pagination.js.org/)
+- [Airdatepicker, v.3.2.0](https://air-datepicker.com/ru)
+- [Inputmask, v.5.0.7](https://github.com/RobinHerbots/Inputmask)
+- [item-quantity-dropdown, v.2.1.0](https://github.com/reservamos/item-quantity-dropdown)
+- [ion-rangeslider, v.2.3.1](http://ionden.com/a/plugins/ion.rangeSlider/)
+- [paginationjs, v.2.1.5](https://pagination.js.org/)
