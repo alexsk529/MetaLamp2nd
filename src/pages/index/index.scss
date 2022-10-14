@@ -12,6 +12,21 @@ html {
   height: 358px;
   margin: 0 auto;
 
+  &_active {
+    text-align: right;
+    & a {
+      color: rgba(31, 32, 65, 0.5);
+    }
+  }
+
+  &_inactive {
+    text-align: left;
+    & a {
+      cursor: not-allowed;
+      color: rgba(31, 32, 65, 0.25);
+    }
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -52,7 +67,6 @@ html {
 
     & a {
       text-decoration: none;
-      color: rgba(31, 32, 65, 0.5);
     }
 
     & a:hover {
