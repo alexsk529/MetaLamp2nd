@@ -1,6 +1,8 @@
 import './cards.scss'
 import '../../libs/_scripts.js'
 import AirDatepicker from "air-datepicker";
+import slick from "slick-carousel/slick/slick";
+
 
 
 let clearCustom = {
@@ -28,4 +30,12 @@ let singleOptions = {
 }
 
 new AirDatepicker('.card-calendar', singleOptions)
+
+for (let el of $('.card-room__img-container')) {
+    $(el).slick({
+        dots: true,
+        prevArrow: '<button type="button" class="slick-prev"><span class="material-icons chevron_left">&#xE5CB</span></button>',
+        nextArrow: '<button type="button" class="slick-next"><span class="material-icons chevron_right">&#xE5CC</span></button>',
+    });
+}
 
