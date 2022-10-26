@@ -43,6 +43,7 @@ UI-kit:
 - [item-quantity-dropdown, v.2.1.0](https://github.com/reservamos/item-quantity-dropdown)
 - [ion-rangeslider, v.2.3.1](http://ionden.com/a/plugins/ion.rangeSlider/)
 - [paginationjs, v.2.1.5](https://pagination.js.org/)
+- [slick-carousel, v.1.8.1](https://github.com/kenwheeler/slick/)
 
 ## Description (English)
 This is a pet project of the hotel web-site created in order to practice html-markup and apply side libraries and plugins.<br/>

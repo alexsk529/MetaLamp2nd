@@ -1,9 +1,0 @@
-import '../blocks/date-dropdown/date-dropdown.js';
-import '../blocks/expandable-checkbox/expandable-checkbox.js';
-import '../blocks/filter-date-dropdown/filter-date-dropdown.js';
-import '../blocks/iqdropdown/iqdropdown.js';
-import '../blocks/like-button/like-button.js';
-import '../blocks/masked-text-field/masked-text-field.js';
-import '../blocks/rate-button/rate-button.js';
-import '../blocks/slider/slider.js';
-import '../blocks/subscription-text-field/subscription-text-field.js';
