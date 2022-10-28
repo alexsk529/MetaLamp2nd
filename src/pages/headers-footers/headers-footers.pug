@@ -1,0 +1,22 @@
+include ../../pug/_image
+include ../../libs/_libs.pug
+
+doctype html
+
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="keywords")
+        meta(name="description" content="Cards for different actions")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        title Headers&Footers
+    body.headers-footers
+        header.uiKit.uiKit__header.headers-footers__logo
+            +image('svg','logo','uiKit__logo')
+        main
+            +header(true)
+            +header(false)
+            +footer(true)
+            +footer(false)
+
+

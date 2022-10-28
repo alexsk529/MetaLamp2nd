@@ -58,6 +58,7 @@ module.exports = {
     'form-elements': './src/pages/form-elements/form-elements.js',
     'cards': './src/pages/cards/cards.js',
     'index': './src/pages/index/index.js',
+    'headers-footers': './src/pages/headers-footers/headers-footers.js',
   },
   output: {
     filename: '[name].[contenthash].js',

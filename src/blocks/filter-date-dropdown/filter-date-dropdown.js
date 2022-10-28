@@ -1,4 +1,5 @@
 import AirDatepicker from 'air-datepicker';
+
 import './filter-date-dropdown.scss';
 
 let clearCustom = {

@@ -1,0 +1,42 @@
+include ../../pug/_image
+
+mixin header(existSingUp)
+    .header.header_color-white.headers-footers__margin-40
+        .header__logo
+            +image('svg', 'logoColor')
+        .header__menu
+            .header__navigation
+                nav.navigation
+                    ul.navigation__list
+                        li.navigation__item
+                            a(class = "navigation__link navigation__link_style-bold") О нас
+                        li.navigation__item
+                            a(class = "navigation__link navigation__expandable-link")
+                                |Услуги
+                                span(class="material-icons expand-arrow") &#xE5CF
+                                .expandable-list
+                                    ul.expandable-list__list
+                                        li.expandable-list__item Услуга 1
+                                        li.expandable-list__item Услуга 2
+                                        li.expandable-list__item Услуга 3
+                                        li.expandable-list__item Услуга 4
+                        li.navigation__item
+                            a(class = "navigation__link") Вакансии
+                        li.navigation__item
+                            a(class = "navigation__link") Новости
+                        li.navigation__item
+                            a(class = "navigation__link navigation__expandable-link")
+                                |Соглашения
+                                span(class="material-icons expand-arrow") &#xE5CF
+            if existSingUp
+                .header__buttons
+                    +button({
+                        title: 'войти',
+                        className: 'button button_style_border click-me',
+                    })
+                    +button({
+                        title: 'зарегистрироваться',
+                        className: 'button button_style_solid click-me',
+                    })
+            else
+                .header__dummy

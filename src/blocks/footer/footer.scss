@@ -1,0 +1,25 @@
+.footer {
+
+  &_color-white {
+    background: #ffffff;
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.05);
+  }
+
+  &__big-element {
+    height: 372px;
+    width: 100vw;
+    padding: 0 140px 0 140px;
+  }
+
+  &__small-element {
+    height: 367px;
+    width: 768px;
+  }
+
+  &__content-info {
+    height: 70px;
+    width: 100vw;
+    padding: 0 140px 0 140px;
+
+  }
+}

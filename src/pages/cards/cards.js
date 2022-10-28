@@ -1,7 +1,10 @@
-import './cards.scss'
-import '../../libs/_scripts.js'
 import AirDatepicker from "air-datepicker";
 import slick from "slick-carousel/slick/slick";
+
+import '../../libs/_scripts.js'
+
+import './cards.scss'
+
 
 
 
