@@ -1,0 +1,30 @@
+.expandable-list {
+  padding: 8px 20%;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  background: #ffffff;
+  border-radius: 4px;
+  z-index: 1000;
+  position: absolute;
+  top: 50px;
+  left: -20%;
+
+  &_hidden {
+    display: none;
+  }
+
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+  }
+
+  &__item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
+  }
+}

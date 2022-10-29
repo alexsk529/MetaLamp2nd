@@ -1,7 +1,7 @@
 include ../../pug/_image
 
 mixin header(existSingUp)
-    .header.header_color-white.headers-footers__margin-40
+    .header.header_color_white.headers-footers__margin-40
         .header__logo
             +image('svg', 'logoColor')
         .header__menu
@@ -10,11 +10,11 @@ mixin header(existSingUp)
                     ul.navigation__list
                         li.navigation__item
                             a(class = "navigation__link navigation__link_style-bold") О нас
-                        li.navigation__item
+                        li.navigation__item.navigation__item_expandable
                             a(class = "navigation__link navigation__expandable-link")
                                 |Услуги
                                 span(class="material-icons expand-arrow") &#xE5CF
-                                .expandable-list
+                                .expandable-list.expandable-list_hidden
                                     ul.expandable-list__list
                                         li.expandable-list__item Услуга 1
                                         li.expandable-list__item Услуга 2
@@ -24,10 +24,16 @@ mixin header(existSingUp)
                             a(class = "navigation__link") Вакансии
                         li.navigation__item
                             a(class = "navigation__link") Новости
-                        li.navigation__item
+                        li.navigation__item.navigation__item_expandable
                             a(class = "navigation__link navigation__expandable-link")
                                 |Соглашения
                                 span(class="material-icons expand-arrow") &#xE5CF
+                                .expandable-list.expandable-list_hidden
+                                    ul.expandable-list__list
+                                        li.expandable-list__item Соглашение 1
+                                        li.expandable-list__item Соглашение 2
+                                        li.expandable-list__item Соглашение 3
+                                        li.expandable-list__item Соглашение 4
             if existSingUp
                 .header__buttons
                     +button({
@@ -39,4 +45,6 @@ mixin header(existSingUp)
                         className: 'button button_style_solid click-me',
                     })
             else
-                .header__dummy
+                .header__dummy.dummy
+                    .dummy__border
+                    .dummy__name Юлий Цезарь

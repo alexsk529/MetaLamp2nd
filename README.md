@@ -19,7 +19,7 @@ UI-kit:
 - [Colors & Types](https://alexsk529.github.io/MetaLamp2nd/colors-types.html) (применяемые шрифты и цвета в создании макета);
 - [Form Elements](https://alexsk529.github.io/MetaLamp2nd/form-elements.html) (основные интерактивные элементы);
 - [Cards](https://alexsk529.github.io/MetaLamp2nd/cards.html) (карточки регистрации, поиска номеров, карточки номеров отеля);
-- Headers & Footers ***(в разработке).***
+- [Headers & Footers](https://alexsk529.github.io/MetaLamp2nd/headers-footers.html) (headers and footers)
 
 Макет веб-сайта:
 - Landing page ***(в разработке);***
@@ -64,7 +64,7 @@ UI-kit:
 - [Colors & Types](https://alexsk529.github.io/MetaLamp2nd/colors-types.html) (used colors & types within the project);
 - [Form Elements](https://alexsk529.github.io/MetaLamp2nd/form-elements.html) (interactive elements);
 - [Cards](https://alexsk529.github.io/MetaLamp2nd/cards.html) (sign-up cards, search-room cards, room cards);
-- Headers & Footers ***(in development).***
+- [Headers & Footers](https://alexsk529.github.io/MetaLamp2nd/headers-footers.html) (headers and footers)
 
 Web-site pages:
 - Landing page ***(in development);***
