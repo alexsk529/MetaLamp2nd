@@ -2,8 +2,11 @@
 @use "../../text/text";
 @use "../../libs/_libs.scss";
 
-html {
-  width: 1440px;
+body {
+  overflow-x: hidden;
+  max-width: 1920px;
+  min-width: 320px;
+  box-sizing: border-box;
   height: 1350px;
   background: #f4f4f6;
 }

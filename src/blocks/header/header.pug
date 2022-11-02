@@ -2,49 +2,50 @@ include ../../pug/_image
 
 mixin header(existSingUp)
     .header.header_color_white.headers-footers__margin-40
-        .header__logo
-            +image('svg', 'logoColor')
-        .header__menu
-            .header__navigation
-                nav.navigation
-                    ul.navigation__list
-                        li.navigation__item
-                            a(class = "navigation__link navigation__link_style-bold") О нас
-                        li.navigation__item.navigation__item_expandable
-                            a(class = "navigation__link navigation__expandable-link")
-                                |Услуги
-                                span(class="material-icons expand-arrow") &#xE5CF
-                                .expandable-list.expandable-list_hidden
-                                    ul.expandable-list__list
-                                        li.expandable-list__item Услуга 1
-                                        li.expandable-list__item Услуга 2
-                                        li.expandable-list__item Услуга 3
-                                        li.expandable-list__item Услуга 4
-                        li.navigation__item
-                            a(class = "navigation__link") Вакансии
-                        li.navigation__item
-                            a(class = "navigation__link") Новости
-                        li.navigation__item.navigation__item_expandable
-                            a(class = "navigation__link navigation__expandable-link")
-                                |Соглашения
-                                span(class="material-icons expand-arrow") &#xE5CF
-                                .expandable-list.expandable-list_hidden
-                                    ul.expandable-list__list
-                                        li.expandable-list__item Соглашение 1
-                                        li.expandable-list__item Соглашение 2
-                                        li.expandable-list__item Соглашение 3
-                                        li.expandable-list__item Соглашение 4
-            if existSingUp
-                .header__buttons
-                    +button({
-                        title: 'войти',
-                        className: 'button button_style_border click-me',
-                    })
-                    +button({
-                        title: 'зарегистрироваться',
-                        className: 'button button_style_solid click-me',
-                    })
-            else
-                .header__dummy.dummy
-                    .dummy__border
-                    .dummy__name Юлий Цезарь
+        .header__container
+            .header__logo
+                +image('svg', 'logoColor')
+            .header__menu
+                .header__navigation
+                    nav.navigation
+                        ul.navigation__list
+                            li.navigation__item
+                                a(class = "navigation__link navigation__link_style-bold") О нас
+                            li.navigation__item.navigation__item_expandable
+                                a(class = "navigation__link navigation__expandable-link")
+                                    |Услуги
+                                    span(class="material-icons expand-arrow") &#xE5CF
+                                    .expandable-list.expandable-list_hidden
+                                        ul.expandable-list__list
+                                            li.expandable-list__item Услуга 1
+                                            li.expandable-list__item Услуга 2
+                                            li.expandable-list__item Услуга 3
+                                            li.expandable-list__item Услуга 4
+                            li.navigation__item
+                                a(class = "navigation__link") Вакансии
+                            li.navigation__item
+                                a(class = "navigation__link") Новости
+                            li.navigation__item.navigation__item_expandable
+                                a(class = "navigation__link navigation__expandable-link")
+                                    |Соглашения
+                                    span(class="material-icons expand-arrow") &#xE5CF
+                                    .expandable-list.expandable-list_hidden
+                                        ul.expandable-list__list
+                                            li.expandable-list__item Соглашение 1
+                                            li.expandable-list__item Соглашение 2
+                                            li.expandable-list__item Соглашение 3
+                                            li.expandable-list__item Соглашение 4
+                if existSingUp
+                    .header__buttons
+                        +button({
+                            title: 'войти',
+                            className: 'button button_style_border click-me',
+                        })
+                        +button({
+                            title: 'зарегистрироваться',
+                            className: 'button button_style_solid click-me',
+                        })
+                else
+                    .header__dummy.dummy
+                        .dummy__border
+                        .dummy__name Юлий Цезарь

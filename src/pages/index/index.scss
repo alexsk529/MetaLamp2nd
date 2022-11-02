@@ -1,14 +1,22 @@
 @use "../../reset";
 @use "../../text/text";
 
-html {
-  width: 1440px;
-  height: 1853px;
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  max-width: 1920px;
+  min-width: 320px;
+  height: 100%;
   background: #f4f4f6;
+  box-sizing: border-box;
 }
 
 .index {
-
+  padding: 0 15px;
   &__header {
     display: flex;
     justify-content: space-between;
@@ -28,13 +36,16 @@ html {
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    padding: 35px 29px 35px;
+    padding: 20px 30px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     row-gap: 15px;
-    margin: 0 auto;
-
+    @media (max-width: 455px) {
+      padding: 10px 15px;
+      row-gap: 10px;
+    }
     &>h2 {
       color: #BC9CFF;
     }
@@ -49,6 +60,10 @@ html {
 
     & a {
       text-decoration: none;
+      @media (max-width: 350px) {
+        font-size: 18px;
+        line-height: 20px;
+      }
     }
 
     & a:hover {
@@ -59,6 +74,14 @@ html {
 
   &__widget {
     margin-bottom: 10px;
+    @media (max-width: 455px) {
+      font-size: 20px;
+      line-height: 22px;
+    }
+    @media (max-width: 350px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
 
     &_color_pink {
       color: #BC9CFF;

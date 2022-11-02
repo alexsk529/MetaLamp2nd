@@ -4,7 +4,8 @@
     align-items: center;
     grid-template-columns: 30px 1fr;
     height: 108px;
-    width: 100vh;
+    box-sizing: border-box;
+    //width: 100vh;
   }
   &__logo {
     grid-column: 2 / 3;
