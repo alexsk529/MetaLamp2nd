@@ -11,6 +11,9 @@
   &__big-element {
     height: 372px;
     width: 100vw;
+    @media (max-width:768px) {
+      display: none;
+    }
   }
 
   &__small-element {
@@ -78,6 +81,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__brands {

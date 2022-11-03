@@ -59,6 +59,7 @@ module.exports = {
     'cards': './src/pages/cards/cards.js',
     'index': './src/pages/index/index.js',
     'headers-footers': './src/pages/headers-footers/headers-footers.js',
+    'landing-page': './src/pages/landing-page/landing-page.js',
   },
   output: {
     filename: '[name].[contenthash].js',

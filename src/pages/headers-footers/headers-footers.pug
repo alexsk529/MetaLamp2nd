@@ -14,8 +14,14 @@ html(lang="ru")
         header.uiKit.uiKit__header.headers-footers__logo
             +image('svg','logo','uiKit__logo')
         main
-            +header(true)
-            +header(false)
+            +header({
+                existSignUp: true,
+                isBold: true,
+            })
+            +header({
+                existSignUp: false,
+                isBold: true,
+            })
             +footer(true)
             +footer(false)
 

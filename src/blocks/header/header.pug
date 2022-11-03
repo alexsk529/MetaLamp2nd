@@ -1,16 +1,23 @@
 include ../../pug/_image
 
-mixin header(existSingUp)
+mixin header(props)
+    - props = props || {}
+    - let {existSignUp, isBold} = props
     .header.header_color_white.headers-footers__margin-40
         .header__container
             .header__logo
                 +image('svg', 'logoColor')
+            .header__burger
+                span
             .header__menu
                 .header__navigation
                     nav.navigation
                         ul.navigation__list
                             li.navigation__item
-                                a(class = "navigation__link navigation__link_style-bold") О нас
+                                if isBold
+                                    a(class = "navigation__link navigation__link_style-bold") О нас
+                                else
+                                    a(class = "navigation__link") О нас
                             li.navigation__item.navigation__item_expandable
                                 a(class = "navigation__link navigation__expandable-link")
                                     |Услуги
@@ -35,7 +42,7 @@ mixin header(existSingUp)
                                             li.expandable-list__item Соглашение 2
                                             li.expandable-list__item Соглашение 3
                                             li.expandable-list__item Соглашение 4
-                if existSingUp
+                if existSignUp
                     .header__buttons
                         +button({
                             title: 'войти',
