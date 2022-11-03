@@ -251,7 +251,7 @@ var ExpandableList = /*#__PURE__*/_createClass(function ExpandableList(el) {
   _classCallCheck(this, ExpandableList);
 
   _defineProperty(this, "handleExpandableListClick", function (event) {
-    $(event.currentTarget).find('.expandable-list').toggleClass('expandable-list_hidden');
+    $(event.currentTarget).find('.expandable-list').toggleClass('expandable-list_active');
   });
 
   $(el).on('click.expandableList', function (event) {
@@ -259,7 +259,7 @@ var ExpandableList = /*#__PURE__*/_createClass(function ExpandableList(el) {
   });
 });
 
-var $expandableLists = $('.navigation__item_expandable');
+var $expandableLists = $('.navigation__expandable-link');
 $expandableLists.each(function (i, el) {
   new ExpandableList(el);
 });
@@ -5394,4 +5394,4 @@ module.exports = __webpack_require__.p + "assets/857cab640956f7abd854.svg";
 /***/ })
 
 }]);
-//# sourceMappingURL=src_libs__scripts_js-src_fonts_FontAwesome5_svg-src_fonts_FontAwesome5_ttf-src_fonts_FontAwes-aae58e.12b6f3ee1439a03fc374.js.map
+//# sourceMappingURL=src_libs__scripts_js-src_fonts_FontAwesome5_svg-src_fonts_FontAwesome5_ttf-src_fonts_FontAwes-aae58e.a7c30f011f405c0d35a8.js.map

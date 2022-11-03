@@ -5,11 +5,11 @@ class ExpandableList {
         })
     }
     handleExpandableListClick = function(event) {
-        $(event.currentTarget).find('.expandable-list').toggleClass('expandable-list_hidden');
+        $(event.currentTarget).find('.expandable-list').toggleClass('expandable-list_active')
     }
 }
 
-const $expandableLists = $('.navigation__item_expandable');
+const $expandableLists = $('.navigation__expandable-link');
 $expandableLists.each((i, el)=> {
     new ExpandableList(el);
 })
