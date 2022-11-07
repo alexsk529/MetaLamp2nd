@@ -7,6 +7,9 @@
   display: flex;
   justify-content: center;
   //padding-left: 34px;
+  @media (max-width: 420px) {
+    width: 254px;
+  }
   &:hover {
     opacity: 0.5;
   }

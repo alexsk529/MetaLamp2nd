@@ -11,12 +11,14 @@
   &__big-element {
     height: 372px;
     width: 100vw;
+    margin-bottom: 1px;
     @media (max-width:768px) {
       display: none;
     }
   }
 
   &__small-element {
+    margin: 0 auto;
     height: 367px;
     max-width: 768px;
     display: flex;
@@ -51,6 +53,7 @@
 
   &__logo {
     height: 40px;
+    user-select: none;
   }
 
   &__box {
@@ -61,6 +64,7 @@
     row-gap: 20px;
     height: 168px;
     max-width: 261px;
+    user-select: none;
     &_shrinkable {
       flex-shrink: 1;
     }

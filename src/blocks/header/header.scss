@@ -21,7 +21,7 @@
   }
 
   &__logo {
-
+    user-select: none;
   }
 
 
@@ -107,6 +107,8 @@
       border-radius: 15px;
       padding: 25px 15px;
       max-width: 440px;
+      min-width: 300px;
+      box-sizing: border-box;
     }
     &_active {
       @media (max-width: 1150px){

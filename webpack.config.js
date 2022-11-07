@@ -60,6 +60,7 @@ module.exports = {
     'index': './src/pages/index/index.js',
     'headers-footers': './src/pages/headers-footers/headers-footers.js',
     'landing-page': './src/pages/landing-page/landing-page.js',
+    'dummy-page': './src/pages/dummy-page/dummy-page.js',
   },
   output: {
     filename: '[name].[contenthash].js',

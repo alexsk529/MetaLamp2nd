@@ -28,6 +28,9 @@
 
     &_width_wide {
         width: 320px;
+        @media (max-width: 420px) {
+            width: 254px;
+        }
     }
 
     &_width_narrow {

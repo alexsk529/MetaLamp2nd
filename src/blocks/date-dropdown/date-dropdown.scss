@@ -6,9 +6,8 @@ $purple: #BC9CFF;
 .date-dropdown {
   display: flex;
   justify-content: space-between;
-  &__block:nth-child(1) {
-    margin-right: 20px;
-  }
+  max-width: 320px;
+  column-gap: 20px;
 
   &__block {
     display: inline-block;
@@ -26,12 +25,20 @@ $purple: #BC9CFF;
       position: absolute;
       top: 10px;
       right: 10px;
+      @media (max-width: 420px) {
+        right: 3px;
+      }
     }
   }
 
   &__field {
     width: 150px;
     height: 44px;
+    box-sizing: border-box;
+    @media (max-width: 420px) {
+      width: 116px;
+      //height: ;
+    }
   }
 
   &__field:hover, &__field:focus, &__field:active, &__field_hover  {

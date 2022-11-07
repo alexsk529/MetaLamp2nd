@@ -2,7 +2,7 @@ include ../../pug/_image
 
 mixin footer(isFull)
     if isFull
-        .footer.footer__big-element.footer_color_white.headers-footers__footer-big
+        .footer.footer__big-element.footer_color_white
             .footer__container.footer__container_big
                 .footer__box.footer__box_shrinkable
                     .footer__logo
@@ -37,7 +37,7 @@ mixin footer(isFull)
                     span.awesome facebook
                     span.awesome instagram
     else
-        .footer.footer__small-element.footer_color_white.headers-footers__footer-small
+        .footer.footer__small-element.footer_color_white
             .footer__logo
                 +image('svg', 'logoColor')
             span.body Copyright © 2018 Toxin отель. Все права защищены.
