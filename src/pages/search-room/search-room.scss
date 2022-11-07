@@ -1,0 +1,17 @@
+@use "../../reset";
+@use "../../text/text";
+@use "../../libs/_libs.scss";
+
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 1 auto;
+}

@@ -61,6 +61,7 @@ module.exports = {
     'headers-footers': './src/pages/headers-footers/headers-footers.js',
     'landing-page': './src/pages/landing-page/landing-page.js',
     'dummy-page': './src/pages/dummy-page/dummy-page.js',
+    'search-room': './src/pages/search-room/search-room.js',
   },
   output: {
     filename: '[name].[contenthash].js',
