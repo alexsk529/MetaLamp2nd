@@ -9,7 +9,8 @@
 - Верстка разметки сайта и применение стилей к HTML-элементам выполнялась с использованием препроцессоров Pug и SCSS (SASS);
 - Сборка проекта осуществляется с помощью сборщика модулей WebPack;
 - Организация блоков, страниц проекта выполнялась с применением [БЭМ-методологии](https://ru.bem.info/methodology/quick-start/);
-- Интерактивные элементы веб-сайта выполнены как с помощью сторонних библиотек (плагины JQuery, JS-плагины), так и с помощью нативного JavaScript.
+- Интерактивные элементы веб-сайта выполнены как с помощью сторонних библиотек (плагины JQuery, JS-плагины), так и с помощью нативного JavaScript;
+- Страницы веб-сайта отеля, кроме страниц UI-Kit, выполнены Responsive-Adaptive с учетом экранов мобильных устройств.
 
 ## Ссылки на страницы отеля
 
@@ -21,8 +22,8 @@ UI-kit:
 - [Cards](https://alexsk529.github.io/MetaLamp2nd/cards.html) (карточки регистрации, поиска номеров, карточки номеров отеля);
 - [Headers & Footers](https://alexsk529.github.io/MetaLamp2nd/headers-footers.html) (headers and footers)
 
-Макет веб-сайта:
-- Landing page ***(в разработке);***
+Страницы отеля:
+- [Landing page](https://alexsk529.github.io/MetaLamp2nd/landing-page.html);
 - Search room ***(в разработке);***
 - Room details ***(в разработке);***
 - Registration ***(в разработке);***
@@ -54,7 +55,8 @@ The project consists of the User Interface (UI-kit) pages and web-site pages.<br
 - HTML-markup and styling is made using preprocessors Pug and SCSS(SASS);
 - The project is built by the module bundler WebPack;
 - [BEM approach](https://ru.bem.info/methodology/quick-start/) is applied to the web-site;
-- Interactive elements are made by side libraries (JQuery-plugins, JS-plugins).
+- Interactive elements are made by side libraries (JQuery-plugins, JS-plugins);
+- Hotel web-pages, except UI-Kit pages, are made Responsive-Adaptive according to the mobile devices viewports.
 
 ## Links to the pages
 
@@ -67,7 +69,7 @@ UI-kit:
 - [Headers & Footers](https://alexsk529.github.io/MetaLamp2nd/headers-footers.html) (headers and footers)
 
 Web-site pages:
-- Landing page ***(in development);***
+- [Landing page](https://alexsk529.github.io/MetaLamp2nd/landing-page.html);
 - Search room ***(in development);***
 - Room details ***(in development);***
 - Registration ***(in development);***
@@ -88,3 +90,4 @@ There have been used the next JQuery and JavaScript libraries:
 - [item-quantity-dropdown, v.2.1.0](https://github.com/reservamos/item-quantity-dropdown)
 - [ion-rangeslider, v.2.3.1](http://ionden.com/a/plugins/ion.rangeSlider/)
 - [paginationjs, v.2.1.5](https://pagination.js.org/)
+- [slick-carousel, v.1.8.1](https://github.com/kenwheeler/slick/)
