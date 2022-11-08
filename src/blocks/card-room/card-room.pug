@@ -3,7 +3,7 @@ include ../../pug/_image
 mixin card-room(props)
     - props = props || {}
     - let {format, name, className, number, price, lux, rate, review} = props
-    .card-room
+    .card-room.card.card_shadow_small
         .card-room__img-container
             +image(format,name, className)
             +image(format,name, className)

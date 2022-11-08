@@ -6,12 +6,56 @@
 html, body {
   height: 100%;
   overflow-x: hidden;
+  max-width: 1920px;
+  min-width: 320px;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  background: #E5E5E5;
 }
 main {
   flex: 1 1 auto;
+}
+
+.search-room {
+  width: 100%;
+  margin-bottom: 1.5px;
+  background-color: #ffffff;
+  &__container {
+    width: 80.56%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    display: flex;
+  }
+  &__sidebar {
+    margin-right: 60px;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__title {
+    flex: 1 0 auto;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 21px;
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 21px;
+    margin-bottom: 41px;
+    justify-self: flex-end;
+  }
+  &__pagination {
+    margin: 0 auto;
+  }
+
 }

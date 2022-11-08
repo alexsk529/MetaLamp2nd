@@ -20,42 +20,52 @@ html(lang="ru")
         main
             .search-room
                 .search-room__container
-                    .sidebar
+                    .sidebar.search-room__sidebar
                         .sidebar__container
-                            +filter-date-dropdown('Даты пребывания в отеле')
-                            +iqdropdown({
-                                id1: 'Взрослые',
-                                id2: 'Дети',
-                                id3: 'Младенцы',
-                                label: 'Гости',
-                                className: 'iqdropdown_width_narrow',
-                            })
-                            +slider()
-                            +checkbox({
-                                title: 'правила дома',
-                                str: ['Можно курить','Можно с питомцами/checked','Можно пригласить гостей (до 10 человек)/checked'],
-                            })
-                            +rich-checkbox({
-                                title: 'Доступность',
-                                str: ['Широкий коридор/Ширина коридоров в номере не менее 91 см.',
-                                    'Помощник для инвалидов/На 1 этаже вас встретит специалист и проводит до номера']
-                            })
-                            +iqdropdown({
-                                id1: 'Спальни',
-                                id2: 'Кровати',
-                                id3: 'Ванные комнаты',
-                                label: 'удобства номера',
-                                className: 'iqdropdown_width_narrow',
-                            })
-                            +expandable-checkbox({
-                                title: 'дополнительные удобства',
-                                items: ['Завтрак', 'Письменный стол/checked', 'Стул для кормления/checked', 'Кроватка/checked', 'Телевизор', 'Шампунь']
-                            })
+                            .sidebar__small-box
+                                +filter-date-dropdown('Даты пребывания в отеле')
+                            .sidebar__big-box
+                                .sidebar__dropdown
+                                    +iqdropdown({
+                                        id1: 'Взрослые',
+                                        id2: 'Дети',
+                                        id3: 'Младенцы',
+                                        label: 'Гости',
+                                        className: 'iqdropdown_width_narrow',
+                                        content: 'guests',
+                                    })
+                                +slider({
+                                    title: 'диапазон цены',
+                                    description: 'Стоимость за сутки пребывания в номере',
+                                })
+                                +checkbox({
+                                    title: 'правила дома',
+                                    str: ['Можно курить','Можно с питомцами/checked','Можно пригласить гостей (до 10 человек)/checked'],
+                                })
+                                +rich-checkbox({
+                                    title: 'Доступность',
+                                    str: ['Широкий коридор/Ширина коридоров в номере не менее 91 см.',
+                                        'Помощник для инвалидов/На 1 этаже вас встретит специалист и проводит до номера']
+                                })
+                                .sidebar__dropdown
+                                    +iqdropdown({
+                                        id1: 'Спальни',
+                                        id2: 'Кровати',
+                                        id3: 'Ванные комнаты',
+                                        label: 'удобства номера',
+                                        className: 'iqdropdown_width_narrow',
+                                        content: 'rooms',
+                                    })
+                                +expandable-checkbox({
+                                    title: 'дополнительные удобства',
+                                    items: ['Завтрак', 'Письменный стол/checked', 'Стул для кормления/checked', 'Кроватка/checked', 'Телевизор', 'Шампунь']
+                                })
                     .search-room__content
-                        h1.widget Номера, которые мы для вас подобрали
-                        .search-room__img-layout.img-layout
+                        .search-room__title
+                            h1.widget Номера, которые мы для вас подобрали
+                        .search-room__items
                             -var numbers = [888, 840, 980, 856, 740, 982, 678, 450, 350, 666, 444, 352];
-                            -var prices = ['9 990', '9 990', '8 500', '7 300', '6 000', '5 800', '5 500', '5 300', '5 000','5 000','5 000'];
+                            -var prices = ['9 990', '9 990', '8 500', '7 300', '6 000', '5 800', '5 500', '5 300', '5 000','5 000','5 000','5 000'];
                             -var rates = [5, 4, 3, 5, 4, 3, 5, 4, 3, 5, 3, 3]
                             -var reviews = [145, 65, 35, 19, 44, 56, 45, 39, 77, 25, 15, 55];
                             -var i = 1;
@@ -68,10 +78,11 @@ html(lang="ru")
                                     price: `${prices[i-1]}`,
                                     lux: true,
                                     rate: `${rates[i-1]}`,
-                                    review: `${reviews[i-1]}}`,
+                                    review: `${reviews[i-1]}`,
                                 })
+                                - i++;
                         .search-room__pagination
-                            +pages
+                            +pagination
         footer
             +footer(true)
             +footer(false)

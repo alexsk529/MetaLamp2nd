@@ -1,0 +1,17 @@
+.sidebar {
+
+  &__container {
+    width: 266px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__small-box {
+    margin-bottom: 20px;
+  }
+  &__big-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30.5px;
+  }
+}

@@ -1,11 +1,11 @@
 
 mixin iqdropdown(props)
     - props = props || {}
-    - var { id1 = '', id2 = '', id3 = '', label = '', description = '', className = 'iqdropdown_width_wide' } = props
+    - var { id1 = '', id2 = '', id3 = '', label = '', description = '', className = 'iqdropdown_width_wide', content = 'guests' } = props
 
         h3(class="label label_position_text-field")= label
         span(class="label label_style_25 label_position_text-field")= description
-        div(class= `iqdropdown item ${className}`)
+        div(class= `iqdropdown item ${className}` data-content=content)
             p(class="iqdropdown-selection" data-selection-text="гость")
             .iqdropdown-menu
                 div(class="iqdropdown-menu-option" data-id=id1)

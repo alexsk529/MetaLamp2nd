@@ -1,6 +1,6 @@
 mixin slider(props)
     - props = props || {}
-    - let {title='range slider'} = props
+    - let {title='range slider', description=''} = props
     .slider
         h3.label.label_position_slider= title
         span.slider__range.body
@@ -10,3 +10,6 @@ mixin slider(props)
                 - n++
         .slider__container
             input(type='text' class="js-range-slider" name="my_range" value="")
+        if (description)
+            .slider__description
+                span.slider__text=description

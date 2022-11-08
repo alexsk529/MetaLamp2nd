@@ -1,5 +1,48 @@
 (self["webpackChunkwebpack_practice"] = self["webpackChunkwebpack_practice"] || []).push([["src_libs__scripts_js-src_fonts_FontAwesome5_svg-src_fonts_FontAwesome5_ttf-src_fonts_FontAwes-aae58e"],{
 
+/***/ "./src/blocks/card-room/card-room.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/card-room/card-room.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var slick_carousel_slick_slick__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! slick-carousel/slick/slick */ "./node_modules/slick-carousel/slick/slick.js");
+/* harmony import */ var slick_carousel_slick_slick__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _libs_slick_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../libs/slick.scss */ "./src/libs/slick.scss");
+/* harmony import */ var _libs_slick_theme_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../libs/slick-theme.scss */ "./src/libs/slick-theme.scss");
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+
+
+var _iterator = _createForOfIteratorHelper($('.card-room__img-container')),
+    _step;
+
+try {
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+    var el = _step.value;
+    $(el).slick({
+      dots: true,
+      prevArrow: '<button type="button" class="slick-prev"><span class="material-icons chevron_left">&#xE5CB</span></button>',
+      nextArrow: '<button type="button" class="slick-next"><span class="material-icons chevron_right">&#xE5CC</span></button>'
+    });
+  }
+} catch (err) {
+  _iterator.e(err);
+} finally {
+  _iterator.f();
+}
+
+/***/ }),
+
 /***/ "./src/blocks/date-dropdown/date-dropdown.js":
 /*!***************************************************!*\
   !*** ./src/blocks/date-dropdown/date-dropdown.js ***!
@@ -656,7 +699,7 @@ var options = {
   }
 };
 
-var _iterator = _createForOfIteratorHelper($('.iqdropdown_width_wide')),
+var _iterator = _createForOfIteratorHelper($('.iqdropdown[data-content="guests"]')),
     _step;
 
 try {
@@ -674,7 +717,7 @@ try {
   _iterator.f();
 }
 
-var _iterator2 = _createForOfIteratorHelper($('.iqdropdown_width_narrow')),
+var _iterator2 = _createForOfIteratorHelper($('.iqdropdown[data-content="rooms"]')),
     _step2;
 
 try {
@@ -715,109 +758,7 @@ try {
     };
 
     new roomDropdown(_el, _subOptions);
-  } // //confirm button
-  //     let counter = 0;
-  //     $('.iqdropdown-menu').append("<div class='iqdropdown-button-container'><button class='iqdropdown-confirm-button label label_color_purple'>Применить</button></div>");
-  // //iqdropdown initialization
-  //     $('.iqdropdown').iqDropdown({
-  //         maxItems: 20,
-  //         onChange: (id, count, totalItems) => {
-  //             let guests;
-  //             let infants;
-  // //reset button
-  //             counter = counter + 1;
-  //             if (totalItems != 0 && counter == 1) {
-  //                 $('.iqdropdown-button-container').prepend("<button class='iqdropdown-clean iqdropdown-confirm-button label label_color_purple'>Очистить</button>");
-  //                 $('.iqdropdown-button-container').addClass('iqdropdown-multiple-container')
-  //             }
-  //
-  //             if ( totalItems == 0 ) {
-  //                 $('.iqdropdown-button-container button:first-child').remove();
-  //                 $('.iqdropdown-button-container').removeClass('iqdropdown-multiple-container');
-  //                 counter = 0
-  //             }
-  // //function of conjugation adults
-  //             function string1 (item) {
-  //                 let str = String(item);
-  //                 if ((item >= 5 && item <= 20) || (Number(str[str.length - 1]) >= 5 && Number(str[str.length - 1]) <= 9) || (Number(str[str.length - 1]) == 0)) {
-  //                     guests = item + " гостей";
-  //                 } else if (Number(str[str.length - 1]) >= 2 && Number(str[str.length - 1]) <= 4) {
-  //                     guests = item + " гостя";
-  //                 } else if (Number(str[str.length - 1]) == 1) {
-  //                     guests = item + " гость";
-  //                 }
-  //             }
-  // //function of conjugation infants
-  //             function string2 (item) {
-  //                 let str = String(item);
-  //                 if ((item >= 5 && item <= 20) || (Number(str[str.length - 1]) >= 5 && Number(str[str.length - 1]) <= 9) || (Number(str[str.length - 1]) == 0)) {
-  //                     infants = item + " младенцев";
-  //                 } else if (Number(str[str.length - 1]) >= 2 && Number(str[str.length - 1]) <= 4) {
-  //                     infants = item + " младенца";
-  //                 } else if (Number(str[str.length - 1]) == 1) {
-  //                     infants = item + " младенец";
-  //                 }
-  //             }
-  //
-  //             if ( $("div[data-id='infants'] span.counter").html() == 0 ) {
-  //                 string1(totalItems);
-  //                 $('.iqdropdown-selection').html(guests)
-  //             }
-  //             else if ( $("div[data-id='infants'] span.counter").html() != 0 ) {
-  //                 let countGuests = Number($("div[data-id='adults'] span.counter").html()) + Number($("div[data-id='children'] span.counter").html());
-  //                 let countInf = Number($("div[data-id='infants'] span.counter").html());
-  //                 string1(countGuests);
-  //                 string2(countInf);
-  //                 $('.iqdropdown-selection').html(guests + ', ' + infants)
-  //             }
-  //             if (totalItems == 0) {
-  //                 $('.iqdropdown-selection').html('Сколько гостей');
-  //             }
-  //             console.log('On change count', id, count, totalItems, 'counter', counter);
-  // //put reset on Очистить
-  //             $('button.iqdropdown-clean').click(function () {
-  //                 $('.iqdropdown-item-controls').each(function () {
-  //                     $('.button-decrement').click()
-  //                 })
-  //             });
-  // //inactive buttons activations
-  //
-  //                 $('[data-id]').each(function () {
-  //                     if (count != 0) {
-  //                         $('[data-id=' + id + ']').find('.button-decrement').removeClass('iqdropdown-button_inactive')
-  //                     } else {
-  //                         $('[data-id=' + id + ']').find('.button-decrement').addClass('iqdropdown-button_inactive')
-  //                     }
-  //                 });
-  //
-  // //onchange ending
-  //         },
-  //     });
-  // //iqdropdown ending
-  //
-  //     $('.button-decrement').addClass('iqdropdown-button_inactive')
-  //     $('.iqdropdown-selection').html('Сколько гостей');
-  //
-  //     $('.iqdropdown-button-container').click(event => event.stopPropagation())
-  //     $('.iqdropdown-menu').click(event => event.stopPropagation())
-  // //put toggle on Применить
-  //     $('.iqdropdown-button-container button:last-child').click(function () {
-  //         $('.iqdropdown').toggleClass('menu-open')
-  //     });
-  // //hover on div.iqdropdown
-  //     $('.iqdropdown').hover(function (){
-  //         $(this).addClass('iqdropdown-hover')
-  //     }, function () {
-  //         $(this).removeClass('iqdropdown-hover')
-  //     });
-  // //setting styles
-  //     $('.iqdropdown-selection').after("<span class='material-icons expand-arrow'>&#xE5CF</span>")
-  //     $('.iqdropdown-item').addClass("label");
-  //     $('.counter').addClass("label");
-  //     $('.icon-decrement').html('-');
-  //     $('.icon-increment').html('+');
-  //
-
+  }
 } catch (err) {
   _iterator2.e(err);
 } finally {
@@ -1230,25 +1171,27 @@ try {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_date_dropdown_date_dropdown_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blocks/date-dropdown/date-dropdown.js */ "./src/blocks/date-dropdown/date-dropdown.js");
-/* harmony import */ var _blocks_expandable_checkbox_expandable_checkbox_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/expandable-checkbox/expandable-checkbox.js */ "./src/blocks/expandable-checkbox/expandable-checkbox.js");
-/* harmony import */ var _blocks_expandable_checkbox_expandable_checkbox_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_blocks_expandable_checkbox_expandable_checkbox_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _blocks_expandable_list_expandable_list_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/expandable-list/expandable-list.js */ "./src/blocks/expandable-list/expandable-list.js");
-/* harmony import */ var _blocks_expandable_list_expandable_list_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_blocks_expandable_list_expandable_list_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _blocks_filter_date_dropdown_filter_date_dropdown_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blocks/filter-date-dropdown/filter-date-dropdown.js */ "./src/blocks/filter-date-dropdown/filter-date-dropdown.js");
-/* harmony import */ var _blocks_header_header_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blocks/header/header.js */ "./src/blocks/header/header.js");
-/* harmony import */ var _blocks_header_header_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_blocks_header_header_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _blocks_iqdropdown_iqdropdown_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../blocks/iqdropdown/iqdropdown.js */ "./src/blocks/iqdropdown/iqdropdown.js");
-/* harmony import */ var _blocks_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../blocks/like-button/like-button.js */ "./src/blocks/like-button/like-button.js");
-/* harmony import */ var _blocks_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_blocks_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _blocks_masked_text_field_masked_text_field_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../blocks/masked-text-field/masked-text-field.js */ "./src/blocks/masked-text-field/masked-text-field.js");
-/* harmony import */ var _blocks_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../blocks/navigation/navigation.js */ "./src/blocks/navigation/navigation.js");
-/* harmony import */ var _blocks_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_blocks_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _blocks_rate_button_rate_button_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../blocks/rate-button/rate-button.js */ "./src/blocks/rate-button/rate-button.js");
-/* harmony import */ var _blocks_rate_button_rate_button_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_blocks_rate_button_rate_button_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _blocks_slider_slider_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../blocks/slider/slider.js */ "./src/blocks/slider/slider.js");
-/* harmony import */ var _blocks_subscription_text_field_subscription_text_field_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../blocks/subscription-text-field/subscription-text-field.js */ "./src/blocks/subscription-text-field/subscription-text-field.js");
-/* harmony import */ var _blocks_subscription_text_field_subscription_text_field_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_blocks_subscription_text_field_subscription_text_field_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _blocks_card_room_card_room_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blocks/card-room/card-room.js */ "./src/blocks/card-room/card-room.js");
+/* harmony import */ var _blocks_date_dropdown_date_dropdown_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/date-dropdown/date-dropdown.js */ "./src/blocks/date-dropdown/date-dropdown.js");
+/* harmony import */ var _blocks_expandable_checkbox_expandable_checkbox_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/expandable-checkbox/expandable-checkbox.js */ "./src/blocks/expandable-checkbox/expandable-checkbox.js");
+/* harmony import */ var _blocks_expandable_checkbox_expandable_checkbox_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_blocks_expandable_checkbox_expandable_checkbox_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _blocks_expandable_list_expandable_list_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blocks/expandable-list/expandable-list.js */ "./src/blocks/expandable-list/expandable-list.js");
+/* harmony import */ var _blocks_expandable_list_expandable_list_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_blocks_expandable_list_expandable_list_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _blocks_filter_date_dropdown_filter_date_dropdown_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blocks/filter-date-dropdown/filter-date-dropdown.js */ "./src/blocks/filter-date-dropdown/filter-date-dropdown.js");
+/* harmony import */ var _blocks_header_header_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../blocks/header/header.js */ "./src/blocks/header/header.js");
+/* harmony import */ var _blocks_header_header_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_blocks_header_header_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _blocks_iqdropdown_iqdropdown_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../blocks/iqdropdown/iqdropdown.js */ "./src/blocks/iqdropdown/iqdropdown.js");
+/* harmony import */ var _blocks_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../blocks/like-button/like-button.js */ "./src/blocks/like-button/like-button.js");
+/* harmony import */ var _blocks_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_blocks_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _blocks_masked_text_field_masked_text_field_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../blocks/masked-text-field/masked-text-field.js */ "./src/blocks/masked-text-field/masked-text-field.js");
+/* harmony import */ var _blocks_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../blocks/navigation/navigation.js */ "./src/blocks/navigation/navigation.js");
+/* harmony import */ var _blocks_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_blocks_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _blocks_rate_button_rate_button_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../blocks/rate-button/rate-button.js */ "./src/blocks/rate-button/rate-button.js");
+/* harmony import */ var _blocks_rate_button_rate_button_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_blocks_rate_button_rate_button_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _blocks_slider_slider_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../blocks/slider/slider.js */ "./src/blocks/slider/slider.js");
+/* harmony import */ var _blocks_subscription_text_field_subscription_text_field_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../blocks/subscription-text-field/subscription-text-field.js */ "./src/blocks/subscription-text-field/subscription-text-field.js");
+/* harmony import */ var _blocks_subscription_text_field_subscription_text_field_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_blocks_subscription_text_field_subscription_text_field_js__WEBPACK_IMPORTED_MODULE_12__);
+
 
 
 
@@ -5063,7 +5006,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".filter-date-dropdown__field {\n  width: 266px;\n  height: 44px;\n}\n.filter-date-dropdown__field:hover, .filter-date-dropdown__field:focus, .filter-date-dropdown__field:active, .filter-date-dropdown__field_hover {\n  border-color: rgba(31, 32, 65, 0.5);\n  outline: none;\n}\n.filter-date-dropdown__wrapper {\n  display: inline-block;\n  position: relative;\n  overflow: hidden;\n  width: 266px;\n}\n.filter-date-dropdown__wrapper .expand-arrow {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n}", "",{"version":3,"sources":["webpack://./src/blocks/filter-date-dropdown/filter-date-dropdown.scss"],"names":[],"mappings":"AAOE;EACE,YAAA;EACA,YAAA;AANJ;AASE;EACE,mCAAA;EACA,aAAA;AAPJ;AAUE;EACE,qBAAA;EACA,kBAAA;EACA,gBAAA;EACA,YAAA;AARJ;AAUI;EACE,kBAAA;EACA,SAAA;EACA,WAAA;AARN","sourcesContent":["$second-grad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);\r\n$main-grad: linear-gradient(180deg, rgba(188,156, 255, 1.0) 0%, rgba(136, 164, 249, 1.0) 100%);\r\n$main-grad-25: linear-gradient(180deg, rgba(188,156, 255, 0.25) 0%, rgba(136, 164, 249, 0.25) 100%);\r\n$purple: #BC9CFF;\r\n\r\n.filter-date-dropdown {\r\n\r\n  &__field {\r\n    width: 266px;\r\n    height: 44px;\r\n  }\r\n\r\n  &__field:hover, &__field:focus, &__field:active, &__field_hover  {\r\n    border-color: rgba(31, 32, 65, 0.5);\r\n    outline: none;\r\n  }\r\n\r\n  &__wrapper {\r\n    display: inline-block;\r\n    position: relative;\r\n    overflow: hidden;\r\n    width: 266px;\r\n\r\n    & .expand-arrow {\r\n      position: absolute;\r\n      top: 10px;\r\n      right: 10px;\r\n    }\r\n  }\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".filter-date-dropdown__field {\n  width: 266px;\n  height: 44px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.filter-date-dropdown__field:hover, .filter-date-dropdown__field:focus, .filter-date-dropdown__field:active, .filter-date-dropdown__field_hover {\n  border-color: rgba(31, 32, 65, 0.5);\n  outline: none;\n}\n.filter-date-dropdown__wrapper {\n  display: inline-block;\n  position: relative;\n  overflow: hidden;\n  width: 266px;\n}\n.filter-date-dropdown__wrapper .expand-arrow {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n}", "",{"version":3,"sources":["webpack://./src/blocks/filter-date-dropdown/filter-date-dropdown.scss"],"names":[],"mappings":"AAOE;EACE,YAAA;EACA,YAAA;EACA,8BAAA;UAAA,sBAAA;AANJ;AASE;EACE,mCAAA;EACA,aAAA;AAPJ;AAUE;EACE,qBAAA;EACA,kBAAA;EACA,gBAAA;EACA,YAAA;AARJ;AAUI;EACE,kBAAA;EACA,SAAA;EACA,WAAA;AARN","sourcesContent":["$second-grad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);\r\n$main-grad: linear-gradient(180deg, rgba(188,156, 255, 1.0) 0%, rgba(136, 164, 249, 1.0) 100%);\r\n$main-grad-25: linear-gradient(180deg, rgba(188,156, 255, 0.25) 0%, rgba(136, 164, 249, 0.25) 100%);\r\n$purple: #BC9CFF;\r\n\r\n.filter-date-dropdown {\r\n\r\n  &__field {\r\n    width: 266px;\r\n    height: 44px;\r\n    box-sizing: border-box;\r\n  }\r\n\r\n  &__field:hover, &__field:focus, &__field:active, &__field_hover  {\r\n    border-color: rgba(31, 32, 65, 0.5);\r\n    outline: none;\r\n  }\r\n\r\n  &__wrapper {\r\n    display: inline-block;\r\n    position: relative;\r\n    overflow: hidden;\r\n    width: 266px;\r\n\r\n    & .expand-arrow {\r\n      position: absolute;\r\n      top: 10px;\r\n      right: 10px;\r\n    }\r\n  }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -5088,6 +5031,54 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".iqdropdown {\n  -webkit-tap-highlight-color: transparent;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: relative;\n  height: 44px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -ms-flex-line-pack: justify;\n      align-content: space-between;\n}\n.iqdropdown_width_wide {\n  width: 320px;\n}\n@media (max-width: 420px) {\n  .iqdropdown_width_wide {\n    width: 254px;\n  }\n}\n.iqdropdown_width_narrow {\n  width: 266px;\n}\n.iqdropdown .expand-arrow {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n}\n.iqdropdown-hover {\n  border-color: rgba(31, 32, 65, 0.5);\n  outline: none;\n}\n.iqdropdown * {\n  -webkit-tap-highlight-color: transparent;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.iqdropdown *::after, .iqdropdown *::before {\n  -webkit-box-sizing: inherit;\n          box-sizing: inherit;\n}\n.iqdropdown *:not(input) {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.iqdropdown *:focus {\n  outline: none;\n}\n.iqdropdown h1, .iqdropdown h2, .iqdropdown h3, .iqdropdown h3, .iqdropdown h4, .iqdropdown h5, .iqdropdown h6, .iqdropdown p {\n  margin: 0;\n}\n.iqdropdown ul, .iqdropdown ol {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n}\n.iqdropdown a {\n  cursor: pointer;\n}\n.iqdropdown button {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  background: none;\n  border: 0;\n  cursor: pointer;\n  margin: 0;\n  padding: 0;\n}\n.iqdropdown select::-ms-expand {\n  display: none;\n}\n.iqdropdown input::-ms-clear {\n  display: none;\n  height: 0;\n  width: 0;\n}\n.iqdropdown .icon-decrement {\n  font-size: 18px;\n  line-height: 22px;\n  font-weight: 400;\n}\n.iqdropdown .iqdropdown-menu {\n  background-color: #FFFFFF;\n  cursor: default;\n  display: none;\n  vertical-align: top;\n  border: 1px rgba(31, 32, 65, 0.5) solid;\n  border-radius: 0 0 4px 4px;\n  border-top: none;\n  padding: 7px 0 0 15px;\n  margin: 1px -1px 0 -1px;\n  position: absolute;\n  right: 0;\n  left: 0;\n  top: 100%;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n  z-index: 99999;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);\n          box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);\n}\n.iqdropdown .iqdropdown-menu-option {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 30px;\n  margin-right: 7px;\n  margin-bottom: 7px;\n}\n.iqdropdown .iqdropdown-menu-close {\n  color: #002674;\n  font-size: 14px;\n  font-weight: 600;\n  height: 20px;\n  margin: 20px 0;\n  padding: 0 15px;\n  text-align: right;\n  width: 100%;\n}\n.iqdropdown.menu-open .iqdropdown-menu {\n  display: block;\n}\n.iqdropdown-content {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  margin-right: 10px;\n}\n.iqdropdown .iqdropdown-item-controls {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-line-pack: center;\n      align-content: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 92px;\n}\n.iqdropdown-button-container {\n  padding-top: 13px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  margin-right: 7px;\n  margin-bottom: 13px;\n}\n.iqdropdown-multiple-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.iqdropdown-confirm-button {\n  display: block;\n}\n.iqdropdown .iqdropdown-item-controls button {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border: 1px solid;\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n  text-align: center;\n}\n.iqdropdown .iqdropdown-button_inactive {\n  border-color: rgba(31, 32, 65, 0.25);\n  color: rgba(31, 32, 65, 0.25);\n  cursor: auto;\n}\n.iqdropdown .iqdropdown-selection {\n  color: rgba(31, 32, 65, 0.75);\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 18px;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  position: relative;\n  margin-bottom: 12px;\n}\n.iqdropdown.menu-open {\n  border-color: rgba(31, 32, 65, 0.5);\n  border-radius: 4px 4px 0px 0px;\n}\n\n@media only screen and (max-width: 640px) {\n  .iqdropdown .iqdropdown-menu.mobile-top-menu {\n    top: -285px;\n  }\n}\n.counter {\n  line-height: 30px;\n}\n\n.button-decrement, .button-increment {\n  border-color: rgba(31, 32, 65, 0.5);\n  color: rgba(31, 32, 65, 0.5);\n}", "",{"version":3,"sources":["webpack://./src/blocks/iqdropdown/iqdropdown.scss"],"names":[],"mappings":"AAiBA;EACI,wCAAA;EACA,8BAAA;UAAA,sBAAA;EACA,kBAAA;EACA,YAAA;EACA,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,wBAAA;MAAA,qBAAA;UAAA,uBAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,8BAAA;EACA,mBAAA;MAAA,eAAA;EACA,2BAAA;MAAA,4BAAA;AAhBJ;AAkBI;EACI,YAAA;AAhBR;AAiBQ;EAFJ;IAGQ,YAAA;EAdV;AACF;AAiBI;EACI,YAAA;AAfR;AAkBI;EACI,kBAAA;EACA,SAAA;EACA,WAAA;AAhBR;AAmBI;EACI,mCAAA;EACA,aAAA;AAjBR;AAoBI;EACI,wCAAA;EACA,8BAAA;UAAA,sBAAA;AAlBR;AAoBQ;EACI,2BAAA;UAAA,mBAAA;AAlBZ;AAqBQ;EACI,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,iBAAA;AAnBZ;AAsBQ;EACI,aAAA;AApBZ;AAwBI;EACI,SAAA;AAtBR;AAyBI;EACI,qBAAA;EACA,SAAA;EACA,UAAA;AAvBR;AA0BI;EACI,eAAA;AAxBR;AA4BI;EACI,wBAAA;EACA,qBAAA;EACA,gBAAA;EACA,gBAAA;EACA,SAAA;EACA,eAAA;EACA,SAAA;EACA,UAAA;AA1BR;AA6BI;EACI,aAAA;AA3BR;AA8BI;EACI,aAAA;EACA,SAAA;EACA,QAAA;AA5BR;AA+BI;EACI,eAAA;EACA,iBAAA;EACA,gBAAA;AA7BR;AA+BI;EACI,yBAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uCAAA;EACA,0BAAA;EACA,gBAAA;EACA,qBAAA;EACA,uBAAA;EACA,kBAAA;EACA,QAAA;EACA,OAAA;EACA,SAAA;EACA,wCAAA;EAAA,gCAAA;EACA,cAAA;EACA,8BAAA;UAAA,sBAAA;EACA,sDAAA;UAAA,8CAAA;AA7BR;AAgCI;EACI,yBAAA;MAAA,sBAAA;UAAA,mBAAA;EACA,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,YAAA;EACA,iBAAA;EACA,kBAAA;AA9BR;AAiCI;EACI,cAAA;EACA,eAAA;EACA,gBAAA;EACA,YAAA;EACA,cAAA;EACA,eAAA;EACA,iBAAA;EACA,WAAA;AA/BR;AAkCI;EACI,cAAA;AAhCR;AAoCI;EACI,mBAAA;MAAA,WAAA;UAAA,OAAA;EACA,kBAAA;AAlCR;AAqCI;EACI,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,0BAAA;MAAA,qBAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,8BAAA;EACA,WAAA;AAnCR;AAsCI;EACI,iBAAA;EACA,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,qBAAA;MAAA,kBAAA;UAAA,yBAAA;EACA,iBAAA;EACA,mBAAA;AApCR;AAuCI;EACI,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,8BAAA;AArCR;AAwCI;EACI,cAAA;AAtCR;AAyCI;EACI,yBAAA;MAAA,sBAAA;UAAA,mBAAA;EACA,iBAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,wBAAA;MAAA,qBAAA;UAAA,uBAAA;EACA,wCAAA;EAAA,gCAAA;EACA,kBAAA;AAvCR;AA0CI;EACI,oCAAA;EACA,6BAAA;EACA,YAAA;AAxCR;AA2CI;EACI,6BAAA;EACA,qCAAA;EACA,eAAA;EACA,gBAAA;EACA,iBAAA;EACA,mBAAA;MAAA,WAAA;UAAA,OAAA;EACA,kBAAA;EACA,mBAAA;AAzCR;AA4CI;EACI,mCAAA;EACA,8BAAA;AA1CR;;AA8CA;EACI;IACI,WAAA;EA3CN;AACF;AA8CA;EACI,iBAAA;AA5CJ;;AA+CA;EACI,mCAAA;EACA,4BAAA;AA5CJ","sourcesContent":["//html {\r\n//    box-sizing: border-box\r\n//}\r\n//\r\n//html * {\r\n//    box-sizing: inherit\r\n//}\r\n//\r\n//html *::after, html *::before {\r\n//    box-sizing: inherit\r\n//}\r\n//\r\n//body {\r\n//    margin: 0;\r\n//    position: inherit\r\n//}\r\n\r\n.iqdropdown {\r\n    -webkit-tap-highlight-color: transparent;\r\n    box-sizing: border-box;\r\n    position: relative;\r\n    height: 44px;\r\n    display: flex;\r\n    align-items: flex-start;\r\n    justify-content: space-between;\r\n    flex-wrap: wrap;\r\n    align-content: space-between;\r\n\r\n    &_width_wide {\r\n        width: 320px;\r\n        @media (max-width: 420px) {\r\n            width: 254px;\r\n        }\r\n    }\r\n\r\n    &_width_narrow {\r\n        width: 266px;\r\n    }\r\n\r\n    & .expand-arrow {\r\n        position: absolute;\r\n        top: 10px;\r\n        right: 10px;\r\n    }\r\n\r\n    &-hover{\r\n        border-color: rgba(31, 32, 65, 0.5);\r\n        outline: none;\r\n    }\r\n\r\n    & * {\r\n        -webkit-tap-highlight-color: transparent;\r\n        box-sizing: border-box;\r\n\r\n        &::after, &::before {\r\n            box-sizing: inherit;\r\n        }\r\n\r\n        &:not(input) {\r\n            -webkit-user-select: none;\r\n            -moz-user-select: none;\r\n            -ms-user-select: none;\r\n            user-select: none\r\n        }\r\n\r\n        &:focus {\r\n            outline: none\r\n        }\r\n    }\r\n\r\n    & h1, & h2, & h3, & h3, & h4, & h5, & h6, & p {\r\n        margin: 0\r\n    }\r\n\r\n    & ul, & ol {\r\n        list-style-type: none;\r\n        margin: 0;\r\n        padding: 0\r\n    }\r\n\r\n    & a {\r\n        cursor: pointer\r\n\r\n    }\r\n\r\n    & button {\r\n        -webkit-appearance: none;\r\n        -moz-appearance: none;\r\n        appearance: none;\r\n        background: none;\r\n        border: 0;\r\n        cursor: pointer;\r\n        margin: 0;\r\n        padding: 0;\r\n    }\r\n\r\n    & select::-ms-expand {\r\n        display: none\r\n    }\r\n\r\n    & input::-ms-clear {\r\n        display: none;\r\n        height: 0;\r\n        width: 0\r\n    }\r\n\r\n    & .icon-decrement {\r\n        font-size: 18px;\r\n        line-height: 22px;\r\n        font-weight: 400;\r\n    }\r\n    & .iqdropdown-menu {\r\n        background-color: #FFFFFF;\r\n        cursor: default;\r\n        display: none;\r\n        vertical-align: top;\r\n        border: 1px rgba(31, 32, 65, 0.5) solid;\r\n        border-radius: 0 0 4px 4px;\r\n        border-top: none;\r\n        padding: 7px 0 0 15px;\r\n        margin: 1px -1px 0 -1px;\r\n        position: absolute;\r\n        right: 0;\r\n        left: 0;\r\n        top: 100%;\r\n        transition: all 0.2s ease-in-out;\r\n        z-index: 99999;\r\n        box-sizing: border-box;\r\n        box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);\r\n    }\r\n\r\n    & &-menu-option {\r\n        align-items: center;\r\n        display: flex;\r\n        height: 30px;\r\n        margin-right: 7px;\r\n        margin-bottom: 7px;\r\n    }\r\n\r\n    & &-menu-close {\r\n        color: #002674;\r\n        font-size: 14px;\r\n        font-weight: 600;\r\n        height: 20px;\r\n        margin: 20px 0;\r\n        padding: 0 15px;\r\n        text-align: right;\r\n        width: 100%\r\n    }\r\n\r\n    &.menu-open &-menu {\r\n        display: block\r\n\r\n    }\r\n\r\n    &-content {\r\n        flex: 1;\r\n        margin-right: 10px\r\n    }\r\n\r\n    & &-item-controls {\r\n        display: flex;\r\n        align-content: center;\r\n        justify-content: space-between;\r\n        width: 92px;\r\n    }\r\n\r\n    &-button-container {\r\n        padding-top: 13px;\r\n        display: flex;\r\n        justify-content: flex-end;\r\n        margin-right: 7px;\r\n        margin-bottom: 13px;\r\n    }\r\n\r\n    &-multiple-container {\r\n        display: flex;\r\n        justify-content: space-between;\r\n    }\r\n\r\n    &-confirm-button {\r\n        display: block;\r\n    }\r\n\r\n    & &-item-controls button {\r\n        align-items: center;\r\n        border: 1px solid;\r\n        width: 30px;\r\n        height: 30px;\r\n        border-radius: 50%;\r\n        display: flex;\r\n        justify-content: center;\r\n        transition: all 0.2s ease-in-out;\r\n        text-align: center;\r\n    }\r\n\r\n    & &-button_inactive {\r\n        border-color: rgba(31, 32, 65, 0.25);\r\n        color: rgba(31, 32, 65, 0.25);\r\n        cursor: auto;\r\n    }\r\n\r\n    & &-selection {\r\n        color: rgba(31, 32, 65, 0.75);\r\n        font-family: 'Montserrat', sans-serif;\r\n        font-size: 14px;\r\n        font-weight: 400;\r\n        line-height: 18px;\r\n        flex: 1;\r\n        position: relative;\r\n        margin-bottom: 12px;\r\n    }\r\n\r\n    &.menu-open {\r\n        border-color: rgba(31, 32, 65, 0.5);\r\n        border-radius: 4px 4px 0px 0px;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 640px) {\r\n    .iqdropdown .iqdropdown-menu.mobile-top-menu {\r\n        top: -285px\r\n    }\r\n}\r\n\r\n.counter {\r\n    line-height: 30px;\r\n}\r\n\r\n.button-decrement, .button-increment {\r\n    border-color: rgba(31, 32, 65, 0.5);\r\n    color: rgba(31, 32, 65, 0.5);\r\n}\r\n\r\n\r\n\r\n\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/libs/slick-theme.scss":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/libs/slick-theme.scss ***!
+  \**************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/* Arrows */\n.slick-prev,\n.slick-next {\n  position: absolute;\n  top: 0;\n  display: block;\n  height: 151px;\n  width: 44px;\n  line-height: 0px;\n  font-size: 0px;\n  cursor: pointer;\n  background: transparent;\n  color: #ffffff;\n  padding: 0;\n  border: none;\n  outline: none;\n  z-index: 1000;\n}\n\n.slick-prev {\n  left: 0;\n}\n.slick-prev:hover {\n  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), color-stop(99.99%, rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0)));\n  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);\n}\n\n.slick-next {\n  right: 0;\n}\n.slick-next:hover {\n  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), color-stop(99.99%, rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0)));\n  background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);\n}\n\n.slick-next span:hover {\n  -webkit-transform: none;\n          transform: none;\n}\n\n.slick-arrow span {\n  vertical-align: middle;\n  text-align: center;\n}\n\n/* Dots */\n.slick-dots {\n  position: absolute;\n  top: 120px;\n  right: 15px;\n  width: 42px;\n  height: 8px;\n  list-style: none;\n  display: block;\n  text-align: center;\n  padding: 0;\n  margin: 0;\n}\n.slick-dots li:not(:last-child) {\n  margin-right: 3.75px;\n}\n.slick-dots li {\n  display: inline-block;\n  padding: 0;\n  cursor: pointer;\n}\n.slick-dots li button {\n  display: block;\n  height: 7.5px;\n  width: 7.5px;\n  border-radius: 50%;\n  border: 1px solid #FFFFFF;\n  -webkit-filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));\n          filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));\n  background-color: transparent;\n  outline: none;\n  line-height: 0px;\n  font-size: 0px;\n  color: transparent;\n  cursor: pointer;\n  padding: 0;\n}\n.slick-dots li.slick-active button {\n  background: #ffffff;\n  -webkit-box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);\n          box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);\n}", "",{"version":3,"sources":["webpack://./src/libs/slick-theme.scss"],"names":[],"mappings":"AA2CA,WAAA;AAEA;;EAEI,kBAAA;EACA,MAAA;EACA,cAAA;EACA,aAAA;EACA,WAAA;EACA,gBAAA;EACA,cAAA;EACA,eAAA;EACA,uBAAA;EACA,cAAA;EACA,UAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;AA3CJ;;AA+CA;EACI,OAAA;AA5CJ;AA6CI;EACI,qJAAA;EAAA,+GAAA;AA3CR;;AA+CA;EACI,QAAA;AA5CJ;AA6CI;EACI,qJAAA;EAAA,gHAAA;AA3CR;;AA+CA;EACI,uBAAA;UAAA,eAAA;AA5CJ;;AA+CA;EACI,sBAAA;EACA,kBAAA;AA5CJ;;AAgDA,SAAA;AAGA;EAEI,kBAAA;EACA,UAAA;EACA,WAAA;EACA,WAAA;EACA,WAAA;EACA,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,UAAA;EACA,SAAA;AAhDJ;AAiDI;EACI,oBAAA;AA/CR;AAiDI;EACI,qBAAA;EACA,UAAA;EACA,eAAA;AA/CR;AAgDQ;EACI,cAAA;EACA,aAAA;EACA,YAAA;EACA,kBAAA;EACA,yBAAA;EACA,8DAAA;UAAA,sDAAA;EACA,6BAAA;EACA,aAAA;EACA,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,eAAA;EACA,UAAA;AA9CZ;AAgDQ;EACI,mBAAA;EACA,mDAAA;UAAA,2CAAA;AA9CZ","sourcesContent":["@charset \"UTF-8\";\r\n\r\n// Default Variables\r\n\r\n// Slick icon entity codes outputs the following\r\n// \"\\2190\" outputs ascii character \"←\"\r\n// \"\\2192\" outputs ascii character \"→\"\r\n// \"\\2022\" outputs ascii character \"•\"\r\n\r\n$slick-font-path: \"./fonts/\" !default;\r\n$slick-font-family: \"slick\" !default;\r\n$slick-loader-path: \"./\" !default;\r\n$slick-arrow-color: white !default;\r\n$slick-dot-color: black !default;\r\n$slick-dot-color-active: $slick-dot-color !default;\r\n$slick-prev-character: \"\\2190\" !default;\r\n$slick-next-character: \"\\2192\" !default;\r\n$slick-dot-character: \"\\2022\" !default;\r\n$slick-dot-size: 6px !default;\r\n$slick-opacity-default: 0.75 !default;\r\n$slick-opacity-on-hover: 1 !default;\r\n$slick-opacity-not-active: 0.25 !default;\r\n\r\n@function slick-image-url($url) {\r\n    @if function-exists(image-url) {\r\n        @return image-url($url);\r\n    }\r\n    @else {\r\n        @return url($slick-loader-path + $url);\r\n    }\r\n}\r\n\r\n@function slick-font-url($url) {\r\n    @if function-exists(font-url) {\r\n        @return font-url($url);\r\n    }\r\n    @else {\r\n        @return url($slick-font-path + $url);\r\n    }\r\n}\r\n\r\n\r\n\r\n/* Arrows */\r\n\r\n.slick-prev,\r\n.slick-next {\r\n    position: absolute;\r\n    top:0;\r\n    display: block;\r\n    height: 151px;\r\n    width: 44px;\r\n    line-height: 0px;\r\n    font-size: 0px;\r\n    cursor: pointer;\r\n    background: transparent;\r\n    color: #ffffff;\r\n    padding: 0;\r\n    border: none;\r\n    outline: none;\r\n    z-index: 1000;\r\n\r\n}\r\n\r\n.slick-prev {\r\n    left: 0;\r\n    &:hover {\r\n        background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);\r\n    }\r\n}\r\n\r\n.slick-next {\r\n    right: 0;\r\n    &:hover {\r\n        background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);\r\n    }\r\n}\r\n\r\n.slick-next span:hover {\r\n    transform: none;\r\n}\r\n\r\n.slick-arrow span {\r\n    vertical-align: middle;\r\n    text-align: center;\r\n}\r\n\r\n\r\n/* Dots */\r\n\r\n\r\n.slick-dots {\r\n\r\n    position: absolute;\r\n    top: 120px;\r\n    right: 15px;\r\n    width: 42px;\r\n    height: 8px;\r\n    list-style: none;\r\n    display: block;\r\n    text-align: center;\r\n    padding: 0;\r\n    margin: 0;\r\n    li:not(:last-child) {\r\n        margin-right: 3.75px;\r\n    }\r\n    li {\r\n        display: inline-block;\r\n        padding: 0;\r\n        cursor: pointer;\r\n        button {\r\n            display: block;\r\n            height: 7.5px;\r\n            width: 7.5px;\r\n            border-radius: 50%;\r\n            border: 1px solid #FFFFFF;\r\n            filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));\r\n            background-color: transparent;\r\n            outline: none;\r\n            line-height: 0px;\r\n            font-size: 0px;\r\n            color: transparent;\r\n            cursor: pointer;\r\n            padding: 0;\r\n        }\r\n        &.slick-active button {\r\n            background: #ffffff;\r\n            box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);\r\n        }\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/libs/slick.scss":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/libs/slick.scss ***!
+  \********************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/* Slider */\n.slick-slider {\n  position: relative;\n  display: block;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -ms-touch-action: pan-y;\n  touch-action: pan-y;\n  -webkit-tap-highlight-color: transparent;\n}\n\n.slick-list {\n  position: relative;\n  overflow: hidden;\n  display: block;\n  margin: 0;\n  padding: 0;\n}\n.slick-list:focus {\n  outline: none;\n}\n.slick-list.dragging {\n  cursor: pointer;\n  cursor: hand;\n}\n\n.slick-slider .slick-track,\n.slick-slider .slick-list {\n  -webkit-transform: translate3d(0, 0, 0);\n  transform: translate3d(0, 0, 0);\n}\n\n.slick-track {\n  position: relative;\n  left: 0;\n  top: 0;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n.slick-track:before, .slick-track:after {\n  content: \"\";\n  display: table;\n}\n.slick-track:after {\n  clear: both;\n}\n.slick-loading .slick-track {\n  visibility: hidden;\n}\n\n.slick-slide {\n  float: left;\n  height: 100%;\n  min-height: 1px;\n  display: none;\n}\n[dir=rtl] .slick-slide {\n  float: right;\n}\n.slick-slide img {\n  display: block;\n}\n.slick-slide.slick-loading img {\n  display: none;\n}\n.slick-slide.dragging img {\n  pointer-events: none;\n}\n.slick-initialized .slick-slide {\n  display: block;\n}\n.slick-loading .slick-slide {\n  visibility: hidden;\n}\n.slick-vertical .slick-slide {\n  display: block;\n  height: auto;\n  border: 1px solid transparent;\n}\n\n.slick-arrow.slick-hidden {\n  display: none;\n}", "",{"version":3,"sources":["webpack://./src/libs/slick.scss"],"names":[],"mappings":"AAAA,WAAA;AAEA;EACI,kBAAA;EACA,cAAA;EACA,8BAAA;UAAA,sBAAA;EACA,2BAAA;EACA,yBAAA;EAEA,sBAAA;EACA,qBAAA;EACA,iBAAA;EACA,uBAAA;EACA,mBAAA;EACA,wCAAA;AAAJ;;AAEA;EACI,kBAAA;EACA,gBAAA;EACA,cAAA;EACA,SAAA;EACA,UAAA;AACJ;AACI;EACI,aAAA;AACR;AAEI;EACI,eAAA;EACA,YAAA;AAAR;;AAGA;;EAEI,uCAAA;EAIA,+BAAA;AAAJ;;AAGA;EACI,kBAAA;EACA,OAAA;EACA,MAAA;EACA,cAAA;EACA,iBAAA;EACA,kBAAA;AAAJ;AAEI;EAEI,WAAA;EACA,cAAA;AADR;AAII;EACI,WAAA;AAFR;AAKI;EACI,kBAAA;AAHR;;AAMA;EACI,WAAA;EACA,YAAA;EACA,eAAA;EAWA,aAAA;AAbJ;AAGI;EACI,YAAA;AADR;AAGI;EACI,cAAA;AADR;AAGI;EACI,aAAA;AADR;AAMI;EACI,oBAAA;AAJR;AAOI;EACI,cAAA;AALR;AAQI;EACI,kBAAA;AANR;AASI;EACI,cAAA;EACA,YAAA;EACA,6BAAA;AAPR;;AAUA;EACI,aAAA;AAPJ","sourcesContent":["/* Slider */\r\n\r\n.slick-slider {\r\n    position: relative;\r\n    display: block;\r\n    box-sizing: border-box;\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -khtml-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n    -ms-touch-action: pan-y;\r\n    touch-action: pan-y;\r\n    -webkit-tap-highlight-color: transparent;\r\n}\r\n.slick-list {\r\n    position: relative;\r\n    overflow: hidden;\r\n    display: block;\r\n    margin: 0;\r\n    padding: 0;\r\n\r\n    &:focus {\r\n        outline: none;\r\n    }\r\n\r\n    &.dragging {\r\n        cursor: pointer;\r\n        cursor: hand;\r\n    }\r\n}\r\n.slick-slider .slick-track,\r\n.slick-slider .slick-list {\r\n    -webkit-transform: translate3d(0, 0, 0);\r\n    -moz-transform: translate3d(0, 0, 0);\r\n    -ms-transform: translate3d(0, 0, 0);\r\n    -o-transform: translate3d(0, 0, 0);\r\n    transform: translate3d(0, 0, 0);\r\n}\r\n\r\n.slick-track {\r\n    position: relative;\r\n    left: 0;\r\n    top: 0;\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n\r\n    &:before,\r\n    &:after {\r\n        content: \"\";\r\n        display: table;\r\n    }\r\n\r\n    &:after {\r\n        clear: both;\r\n    }\r\n\r\n    .slick-loading & {\r\n        visibility: hidden;\r\n    }\r\n}\r\n.slick-slide {\r\n    float: left;\r\n    height: 100%;\r\n    min-height: 1px;\r\n    [dir=\"rtl\"] & {\r\n        float: right;\r\n    }\r\n    img {\r\n        display: block;\r\n    }\r\n    &.slick-loading img {\r\n        display: none;\r\n    }\r\n\r\n    display: none;\r\n\r\n    &.dragging img {\r\n        pointer-events: none;\r\n    }\r\n\r\n    .slick-initialized & {\r\n        display: block;\r\n    }\r\n\r\n    .slick-loading & {\r\n        visibility: hidden;\r\n    }\r\n\r\n    .slick-vertical & {\r\n        display: block;\r\n        height: auto;\r\n        border: 1px solid transparent;\r\n    }\r\n}\r\n.slick-arrow.slick-hidden {\r\n    display: none;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -5250,6 +5241,110 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./src/libs/slick-theme.scss":
+/*!***********************************!*\
+  !*** ./src/libs/slick-theme.scss ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_theme_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../../node_modules/sass-loader/dist/cjs.js!./slick-theme.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/libs/slick-theme.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_theme_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_theme_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_theme_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_theme_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./src/libs/slick.scss":
+/*!*****************************!*\
+  !*** ./src/libs/slick.scss ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../../node_modules/sass-loader/dist/cjs.js!./slick.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/libs/slick.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_slick_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/fonts/FontAwesome5.svg":
 /*!************************************!*\
   !*** ./src/fonts/FontAwesome5.svg ***!
@@ -5394,4 +5489,4 @@ module.exports = __webpack_require__.p + "assets/857cab640956f7abd854.svg";
 /***/ })
 
 }]);
-//# sourceMappingURL=src_libs__scripts_js-src_fonts_FontAwesome5_svg-src_fonts_FontAwesome5_ttf-src_fonts_FontAwes-aae58e.51c27bf2cbba037f1c7c.js.map
+//# sourceMappingURL=src_libs__scripts_js-src_fonts_FontAwesome5_svg-src_fonts_FontAwesome5_ttf-src_fonts_FontAwes-aae58e.ffb36e87feef158e3cd8.js.map

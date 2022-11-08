@@ -1,3 +1,4 @@
+import '../blocks/card-room/card-room.js';
 import '../blocks/date-dropdown/date-dropdown.js';
 import '../blocks/expandable-checkbox/expandable-checkbox.js';
 import '../blocks/expandable-list/expandable-list.js';

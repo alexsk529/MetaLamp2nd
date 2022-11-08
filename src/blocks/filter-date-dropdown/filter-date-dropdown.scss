@@ -8,6 +8,7 @@ $purple: #BC9CFF;
   &__field {
     width: 266px;
     height: 44px;
+    box-sizing: border-box;
   }
 
   &__field:hover, &__field:focus, &__field:active, &__field_hover  {

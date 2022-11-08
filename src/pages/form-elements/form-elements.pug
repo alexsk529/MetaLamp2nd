@@ -36,6 +36,7 @@ html(lang="ru")
                             id2: 'Дети',
                             id3: 'Младенцы',
                             label: 'dropdown',
+                            content: 'guests',
                         })
                     .masked-text-field.form__masked-text
                             h3.label.label_position_text-field masked text field
@@ -109,7 +110,7 @@ html(lang="ru")
                             isArrow: true,
                             className: 'button_style_solid payment-button',
                         })
-                    +pages({
+                    +pagination({
                         title: 'pagination'
                     })
             .form__Block
@@ -122,6 +123,7 @@ html(lang="ru")
                             label:  'dropdown',
                             className:  'iqdropdown_width_narrow',
                             description: 'default',
+                            content: 'rooms',
                         })
                     .wrapper.wrapper_width_narrow
                         +iqdropdown({
@@ -130,7 +132,8 @@ html(lang="ru")
                             id3: 'ванные комнаты',
                             label: 'dropdown',
                             className: 'iqdropdown_width_narrow',
-                            description: 'expanded'
+                            description: 'expanded',
+                            content: 'rooms',
                         })
                 .form__uBlock
                     .wrapper.form__dropdown
@@ -139,6 +142,7 @@ html(lang="ru")
                             id2: 'Дети',
                             id3: 'Младенцы',
                             label: 'dropdown',
+                            content: 'guests',
                         })
                 .form__uBlock
                     .wrapper.form__dropdow
@@ -147,6 +151,7 @@ html(lang="ru")
                             id2: 'Дети',
                             id3: 'Младенцы',
                             label: 'dropdown',
+                            content: 'guests',
                         })
             .form__Block
                 .form__uBlock

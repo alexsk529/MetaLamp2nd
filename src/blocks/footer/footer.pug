@@ -3,7 +3,7 @@ include ../../pug/_image
 mixin footer(isFull)
     if isFull
         .footer.footer__big-element.footer_color_white
-            .footer__container.footer__container_big
+            .footer__container.footer__container_big.footer_shadow_small
                 .footer__box.footer__box_shrinkable
                     .footer__logo
                         +image('svg', 'logoColor')
@@ -29,7 +29,7 @@ mixin footer(isFull)
                     h3.label подписка
                     span.body Получайте специальные предложения и новости сервиса
                     +subscription-text-field(null, 'Email')
-        .footer__content-info.footer_color_white.headers-footers__margin-40
+        .footer__content-info.footer_color_white.headers-footers__margin-40.footer_shadow_big
             .footer__container.footer__container_big
                 span.body Copyright © 2018 Toxin отель. Все права защищены.
                 .footer__brands
@@ -37,7 +37,7 @@ mixin footer(isFull)
                     span.awesome facebook
                     span.awesome instagram
     else
-        .footer.footer__small-element.footer_color_white
+        .footer.footer__small-element.footer_color_white.footer_shadow_big
             .footer__logo
                 +image('svg', 'logoColor')
             span.body Copyright © 2018 Toxin отель. Все права защищены.

@@ -1,9 +1,8 @@
 
 import './form-elements.scss'
 import '../../libs/_scripts.js'
+
 let pagination = require('paginationjs')
-// import '../../libs/jquery.simplePagination';
-// import '../../libs/simplePagination.css';
 
 
 //iqdropdown
@@ -29,17 +28,6 @@ $('.click-me').eq(1).addClass('click-me_hover')
 $('.click-me').eq(3).addClass('click-me_hover')
 $('.button_style_without-border').eq(1).addClass('button_style_without-border_hover')
 
-$('.pagination').pagination({
-    dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-    pageSize: 1,
-    callback: function(data, pagination) {
-        $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
-    },
-    showPrevious: false,
-    pageRange: 1,
-})
-
-$('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
 
 for (let i = 0; i < 2; i++) {
     let dp = $('.iqdropdown_width_narrow')
@@ -63,6 +51,20 @@ for (let i = 0; i < 2; i++) {
     }
     dp.find('.icon-increment').eq(0).click()
 }
+
+
+
+$('.pagination').pagination({
+    dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    pageSize: 1,
+    callback: function(data, pagination) {
+        $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
+    },
+    showPrevious: false,
+    pageRange: 1,
+})
+
+$('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
 
 
 
