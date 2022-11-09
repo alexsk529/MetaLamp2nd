@@ -23,6 +23,7 @@ main {
   width: 100%;
   margin-bottom: 1.5px;
   background-color: #ffffff;
+  position: relative;
   &__container {
     width: 80.56%;
     height: 100%;
@@ -31,9 +32,17 @@ main {
     padding-top: 30px;
     padding-bottom: 70px;
     display: flex;
+
   }
   &__sidebar {
     margin-right: 60px;
+    transition: transform 0.6s;
+    @media (max-width: 1440px) {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      margin-right: 0;
+    }
   }
   &__content {
     display: flex;

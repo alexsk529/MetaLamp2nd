@@ -16,3 +16,7 @@ $('.pagination').pagination({
 })
 
 $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
+
+
+
+

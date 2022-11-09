@@ -1,4 +1,5 @@
-mixin card-room-search
+mixin card-room-search(link)
+    - link = link || './search-room.html'
     .card-room-search.card.card_shadow_big
         h1.widget.card-room-search__headline Найдем номера под ваши пожелания
         .card-room-search__date-dropdown
@@ -14,4 +15,5 @@ mixin card-room-search
             title: 'подобрать номер',
             isArrow: true,
             className: 'button_style_solid payment-button',
+            link: link,
         })

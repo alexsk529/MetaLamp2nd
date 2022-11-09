@@ -102,24 +102,7 @@ for (let el of $('.start')) {
     datedropArr.push(dp);
 }
 
-console.log(datedropArr)
-console.log($('.start'))
 
-
-// } else $('#end').removeClass("date-dropdown__field_hover")
-
-// $(document).click(function (){dp.hide()})
-//
-// $('#end, #start, .air-datepicker').click(function (event) {
-//     event.stopPropagation();
-//     dp.show();
-// });
-//
-//
-// $('.date-dropdown__item').find('span').click(function () {
-//     event.stopPropagation();
-//     dp.show();
-// })
 
 
 
