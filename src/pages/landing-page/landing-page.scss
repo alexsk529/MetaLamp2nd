@@ -32,6 +32,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-content: space-between;
+    z-index: 1000;
     @media (max-width: 1050px) {
       align-items: center;
       padding-top: 40px
@@ -43,6 +44,9 @@ main {
       padding-top: 20px;
     }
 
+  }
+  &_upper {
+    z-index: 1000;
   }
   &__text {
     max-width: 280px;

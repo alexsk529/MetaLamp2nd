@@ -94,6 +94,7 @@
   }
 
   &__content-info {
+    user-select: none;
     height: 70px;
     width: 100vw;
     display: flex;
