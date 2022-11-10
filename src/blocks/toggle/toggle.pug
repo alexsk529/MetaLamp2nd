@@ -5,11 +5,13 @@ mixin toggle (props)
         - if (title != '')
             h3.label.label_position_button= title
         each val in str
+            - var text = val.split('/')[0];
+            - var checked = val.split('/')[1];
             .toggle__item
                 label
-                    if (index == 0 && str.length > 1)
+                    if (checked === 'true')
                         input(type="checkbox" checked)
                     else
                         input(type="checkbox")
                     span.toggle__icon
-                    span.body= val
+                    span.body= text

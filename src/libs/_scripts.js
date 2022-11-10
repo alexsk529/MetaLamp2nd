@@ -8,6 +8,7 @@ import '../blocks/iqdropdown/iqdropdown.js';
 import '../blocks/like-button/like-button.js';
 import '../blocks/masked-text-field/masked-text-field.js';
 import '../blocks/navigation/navigation.js';
+import '../blocks/pagination/pagination.js';
 import '../blocks/rate-button/rate-button.js';
 import '../blocks/sidebar/sidebar.js';
 import '../blocks/slider/slider.js';

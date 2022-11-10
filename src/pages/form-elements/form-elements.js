@@ -2,27 +2,8 @@
 import './form-elements.scss'
 import '../../libs/_scripts.js'
 
-let pagination = require('paginationjs')
 
-
-//iqdropdown
-
-$('.text-field').eq(1).find('input').addClass('text-field__field_hover');
-
-
-$('.toggle__item:first').find('input').attr('checked', 'checked');
-
-for (let i = 0; i < 3; i++) {
-
-    if (i == 0) window.likeButtons[i].counter = 2;
-    else {
-        window.likeButtons[i].counter = 11;
-        window.likeButtons[i].array[0].trigger('click')
-    }
-    window.likeButtons[i].updateCounter();
-
-}
-
+$('.text-field').eq(1).find('input').addClass('text-field__field_hover'); //hover to the text-field forcefully
 
 $('.click-me').eq(1).addClass('click-me_hover')
 $('.click-me').eq(3).addClass('click-me_hover')
@@ -53,18 +34,6 @@ for (let i = 0; i < 2; i++) {
 }
 
 
-
-$('.pagination').pagination({
-    dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-    pageSize: 1,
-    callback: function(data, pagination) {
-        $('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
-    },
-    showPrevious: false,
-    pageRange: 1,
-})
-
-$('.paginationjs .paginationjs-pages li:last-child > a').replaceWith("<span class='material-icons arrow-forward'>&#xE5C8</span>");
 
 
 

@@ -48,6 +48,7 @@ $purple: #BC9CFF;
 }
 
 .air-datepicker-cell.-day-.-other-month-, .air-datepicker-cell.-year-.-other-decade- {
+  z-index: 10000;
   color: var(--adp-color-other-month)
 }
 

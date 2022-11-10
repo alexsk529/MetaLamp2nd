@@ -60,12 +60,12 @@ html(lang="ru")
                     .form__toggle
                         +toggle({
                             title: 'toggle',
-                            str: ['Получать спецпредложения', 'Получать спецпредложения']
+                            str: ['Получать спецпредложения/true', 'Получать спецпредложения/false']
                         })
                     .wrapper.form__buttons
                         h3.label.label_position_button= 'like button'
-                        +like-button
-                        +like-button
+                        +like-button(2, false)
+                        +like-button(12, true)
                     .wrapper
                         h3.label.label_position_button= 'rate button'
                         +rate-button(4)
@@ -125,7 +125,7 @@ html(lang="ru")
                             description: 'default',
                             content: 'rooms',
                         })
-                    .wrapper.wrapper_width_narrow
+                    .wrapper.form__dropdown.wrapper_width_narrow
                         +iqdropdown({
                             id1: 'спальни',
                             id2: 'кровати',
