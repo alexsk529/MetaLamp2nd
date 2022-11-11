@@ -33,13 +33,6 @@ main {
     padding-bottom: 70px;
     display: flex;
     justify-content: space-between;
-    //@media (min-width: 1697px) {
-    //  width: 85%;
-    //}
-    //@media (max-width: 1439px) {
-    //  justify-content: center;
-    //}
-
   }
   &__sidebar {
     margin-right: 60px;
@@ -57,24 +50,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    //@media (min-width: 1697px) {
-    //  max-width: 1120px;
-    //}
-    //@media (max-width: 1696px) {
-    //  max-width: 835px;
-    //}
-    //@media (min-width: 1439px) {
-    //  max-width: 1120px;
-    //}
-    //@media (max-width: 1035px) {
-    //  max-width: 835px;
-    //}
-    //@media (max-width: 1034px) {
-    //  max-width: 552px;
-    //}
-    //@media (max-width: 684px) {
-    //  max-width: 270px;
-    //}
   }
   &__title {
     flex: 1 0 auto;
@@ -84,19 +59,24 @@ main {
     & .widget {
       @media (max-width: 685px) {
       font-size: 20px;
+        text-align: center;
       }
     }
   }
   &__items {
-    //display: flex;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 270px);
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     width: 100%;
-    //flex-wrap: wrap;
-    //justify-content: center;
-    column-gap: 12px;
-    row-gap: 21px;
+    grid-column-gap: 12px;
+    grid-row-gap: 21px;
     margin-bottom: 41px;
+    @media (max-width: 685px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 21px;
+    }
   }
   &__pagination {
     margin: 0 auto;
