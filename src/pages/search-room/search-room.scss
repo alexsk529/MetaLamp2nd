@@ -52,6 +52,7 @@ main {
     }
   }
   &__content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,9 +88,12 @@ main {
     }
   }
   &__items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    //display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    width: 100%;
+    //flex-wrap: wrap;
+    //justify-content: center;
     column-gap: 12px;
     row-gap: 21px;
     margin-bottom: 41px;
