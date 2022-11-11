@@ -3,7 +3,9 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   user-select: none;
-
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
   &__name {
     display: flex;
     flex-wrap: wrap;

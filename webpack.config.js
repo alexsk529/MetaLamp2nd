@@ -62,6 +62,7 @@ module.exports = {
     'landing-page': './src/pages/landing-page/landing-page.js',
     'dummy-page': './src/pages/dummy-page/dummy-page.js',
     'search-room': './src/pages/search-room/search-room.js',
+    'room-details': './src/pages/room-details/room-details.js',
   },
   output: {
     filename: '[name].[contenthash].js',

@@ -2,9 +2,16 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  padding-bottom: 17px;
-  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  width: 280px;
+  box-sizing: border-box;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
 
+  &_bordered {
+    padding-bottom: 17px;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  }
   & span {
     user-select: none;
   }

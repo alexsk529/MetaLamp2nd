@@ -1,7 +1,8 @@
 mixin bullet-list(props)
     - props = props || {}
-    - let {title = 'bullet list', str = []} = props
+    - let {title = '', str = []} = props
         .bullet-list
-            h3.label.label_position_button= title
+            if (title)
+                h3.label.label_position_button= title
             each val in str
                 span.body= val
