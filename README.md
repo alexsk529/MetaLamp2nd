@@ -31,7 +31,7 @@ UI-kit:
 
 ## Развертывание проекта
 ```
-  git clone https://github.com/yarlykov/hotel_toxin.git
+  git clone https://github.com/alexsk529/MetaLamp2nd.git
 ```
 ``` npm install ``` - installing dependencies <br/>
 ``` npm run dev ``` - development stage <br/>
@@ -77,7 +77,7 @@ Web-site pages:
 
 ## Launching the project
 ```
-  git clone https://github.com/yarlykov/hotel_toxin.git
+  git clone https://github.com/alexsk529/MetaLamp2nd.git
 ```
 ``` npm install ``` - installing dependencies <br/>
 ``` npm run dev ``` - development stage <br/>
