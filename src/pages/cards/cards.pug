@@ -1,16 +1,11 @@
-include ../../pug/_image
+include ../../pug/_image.pug
+include ../../pug/_head.pug
 include ../../libs/_libs.pug
 
 doctype html
 
 html(lang="ru")
-    head
-        meta(charset="UTF-8")
-        meta(name="keywords")
-        meta(name="description" content="Cards for different actions")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
-        title Cards
-
+    +head('Cards for different actions', 'Cards')
     body.cards
         header.uiKit.uiKit__header
             +image('svg','logo','uiKit__logo')

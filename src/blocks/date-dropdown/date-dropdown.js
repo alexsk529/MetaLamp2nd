@@ -60,21 +60,21 @@ if ($firstInputs) {
 
         constructor(el, opts) {
             super(el, opts)
-            let start = $(el);
-            let end = $(el).parent().parent().parent().find('.end');
-            let wrapper = $(el).parent().parent().parent().find('.date-dropdown__wrapper');
+            const start = $(el);
+            const end = $(el).parent().parent().parent().find('.end');
+            const wrapper = $(el).parent().parent().parent().find('.date-dropdown__wrapper');
 
             start.val('ДД.ММ.ГГГГ');
             end.val('ДД.ММ.ГГГГ');
 
             end.click(() => {
                 this.visible || this.show();
-                start.addClass("date-dropdown__field_hover");
+                start.addClass("item_hover");
             })
 
             end.blur(() => {
                 this.inFocus || !this.visible || this.hide();
-                start.removeClass("date-dropdown__field_hover");
+                start.removeClass("item_hover");
             })
 
             wrapper.find('span').click(() => {
@@ -82,15 +82,15 @@ if ($firstInputs) {
             })
 
             wrapper.find('span').hover(function (){
-                $(this).parent().find('input').addClass("date-dropdown__field_hover")
+                $(this).parent().find('input').addClass("item_hover")
             }, function () {
-                $(this).parent().find('input').removeClass("date-dropdown__field_hover")
+                $(this).parent().find('input').removeClass("item_hover")
             })
 
             start.focus(() => {
-                end.addClass("date-dropdown__field_hover")});
+                end.addClass("item_hover")});
             start.blur(() => {
-                end.removeClass("date-dropdown__field_hover")});
+                end.removeClass("item_hover")});
 
             $('.date-dropdown .air-datepicker-navigation').find('svg').remove();
         }

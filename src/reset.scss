@@ -23,6 +23,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+header {
+    z-index: 9999;
+}
 body {
   line-height: 1;
 }

@@ -4,9 +4,6 @@ import '../../libs/_scripts.js'
 
 import './cards.scss'
 
-
-
-
 let clearCustom = {
     content: 'очистить'.toUpperCase(),
     className: 'custom-button-round-classname',

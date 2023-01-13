@@ -1,16 +1,12 @@
-include ../../pug/_image
+include ../../pug/_image.pug
+include ../../pug/_head.pug
 include ../../libs/_libs.pug
 
 
 doctype html
 
 html(lang="ru")
-    head
-        meta(charset="UTF-8")
-        meta(name="keywords")
-        meta(name="description" content="Landing page")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
-        title Room Details
+    +head( 'Room Details', 'Room Details' )
     body
         header
             +header({
