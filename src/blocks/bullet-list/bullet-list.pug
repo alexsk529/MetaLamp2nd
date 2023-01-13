@@ -1,8 +1,9 @@
 mixin bullet-list(props)
     - props = props || {}
-    - let {title = '', str = []} = props
+    - let {title = '', content, padding ='20px', lineMargin='10px'} = props
         .bullet-list
             if (title)
                 h3.label.label_position_button= title
-            each val in str
-                span.body= val
+            each val in content
+                - const {string, color='#1F204140'} = val
+                span(class="body" style=`--color: ${color}; --padding: ${padding}; --lineMargin: ${lineMargin}`)= string

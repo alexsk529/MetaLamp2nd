@@ -25,7 +25,7 @@ UI-kit:
 Страницы отеля:
 - [Landing page](https://alexsk529.github.io/MetaLamp2nd/landing-page.html);
 - [Search room](https://alexsk529.github.io/MetaLamp2nd/search-room.html);
-- Room details ***(в разработке);***
+- [Room details](https://alexsk529.github.io/MetaLamp2nd/room-details.html);
 - Registration ***(в разработке);***
 - Sign in ***(в разработке).***
 

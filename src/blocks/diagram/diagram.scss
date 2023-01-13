@@ -1,5 +1,7 @@
 .diagram {
-
+    display: flex;
+    gap: 30px;
+    align-items: flex-end;
 }
 
 .diagram__chart {
@@ -9,6 +11,13 @@
 .diagram__segment {
     fill: none;
     stroke-width: 4;
+    cursor: pointer;
+    &:hover {
+        stroke-width: 6;
+        opacity: 0.6;
+        transition-property: all;
+        transition-duration: 0.5s;
+    }
 }
 
 .diagram__segment:nth-child(1) {

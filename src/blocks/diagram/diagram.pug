@@ -1,10 +1,12 @@
+include ../bullet-list/bullet-list.pug
+
 mixin diagram(entities)
     - let sum = 0;
     each entity in entities
         -sum += entity.value 
     .diagram
         .diagram__circle
-            svg(class="diagram__chart" width='125' height='125' viewBox="0 0 125 125")
+            svg(class="diagram__chart" width='127' height='127' viewBox="0 0 127 127")
                 -let prevVal=0;
                 each entity in entities
                     if entity.value == 0
@@ -41,4 +43,15 @@ mixin diagram(entities)
                         stop(offset="100%" stop-color="#66D2EA")  
                     linearGradient(id="grad4" x1="0%" y1="0%" x2="100%" y2="100%")
                         stop(offset="0%" stop-color="#909090")
-                        stop(offset="100%" stop-color="#3D4975")              
+                        stop(offset="100%" stop-color="#3D4975")  
+        +bullet-list({
+                        content: [
+                            {string: 'Великолепно', color: 'linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)'},
+                            {string: 'Хорошо', color: 'linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)'},
+                            {string: 'Удовлетворительно', color: 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)'},
+                            {string: 'Разочарован', color: 'linear-gradient(180deg, #919191 0%, #3D4975 100%)'}
+                        ],
+                        padding: '15px',
+                        lineMargin: '0px'
+                    })                          
+            
