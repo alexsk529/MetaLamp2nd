@@ -3,7 +3,6 @@ import '../../libs/_scripts.js'
 import './room-details.scss'
 
 const reviews = document.querySelectorAll('.review');
-console.log(reviews)
 
 const revCounter = document.querySelector('.room-details__reviews .room-details__title span');
 

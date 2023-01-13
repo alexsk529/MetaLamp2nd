@@ -36,6 +36,12 @@ html(lang="ru")
                             .room-details__impression
                                 .room-details__title
                                     h2.widget-inside Впечатления от номера
+                                +diagram([
+                                    {value: 520, title: 'Великолепно'},
+                                    {value: 260, title: 'Хорошо'},
+                                    {value: 260, title: 'Удовлетворительно'},
+                                    {value: 0, title: 'Разочарован'}
+                                ])    
                                 .room-details__diagram.diagram
                                     .diagram__circle
                                     .diagram__description

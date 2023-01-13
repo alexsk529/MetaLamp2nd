@@ -63,6 +63,7 @@ module.exports = {
         filename: '[name].[contenthash].js',
         assetModuleFilename: "assets/[hash][ext][query]",
         clean: true,
+        path: path.resolve(__dirname, 'docs')
     },
     devtool: 'source-map',
     optimization: {

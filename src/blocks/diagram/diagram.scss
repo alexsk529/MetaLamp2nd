@@ -1,0 +1,37 @@
+.diagram {
+
+}
+
+.diagram__chart {
+
+}
+
+.diagram__segment {
+    fill: none;
+    stroke-width: 4;
+}
+
+.diagram__segment:nth-child(1) {
+    stroke: url(#grad1);
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.diagram__segment:nth-child(2) {
+    stroke: url(#grad2);
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.diagram__segment:nth-child(3) {
+    stroke: url(#grad3);
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.diagram__segment:nth-child(4) {
+    stroke: url(#grad4);
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
