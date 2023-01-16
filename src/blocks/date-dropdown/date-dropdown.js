@@ -52,7 +52,7 @@ if ($firstInputs) {
         nextHtml: '<span class="material-icons arrow-forward">&#xE5C8</span>',
         multipleDatesSeparator: " ",
         navTitles: {days: "MMMM yyyy", months: "yyyy", years: "yyyy1 - yyyy2"},
-        position({$datepicker, $target, $poinet}) {
+        position({$datepicker, $target, $points}) {
             if (window.innerWidth < 420) {
                 console.log('tick');
                 $datepicker.style.top = '115px';
