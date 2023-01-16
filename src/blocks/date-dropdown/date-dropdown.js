@@ -52,6 +52,18 @@ if ($firstInputs) {
         nextHtml: '<span class="material-icons arrow-forward">&#xE5C8</span>',
         multipleDatesSeparator: " ",
         navTitles: {days: "MMMM yyyy", months: "yyyy", years: "yyyy1 - yyyy2"},
+        position({$datepicker, $target, $poinet}) {
+            if (window.innerWidth < 420) {
+                console.log('tick');
+                $datepicker.style.top = '115px';
+                $datepicker.style.left = '-10px';
+                $datepicker.style.transform = 'scale(0.85)';
+            }
+            else {
+                $datepicker.style.top = '165px';
+                $datepicker.style.left = '29px';
+            }
+        }
     }
 
     class Datedropdown extends AirDatepicker {
@@ -100,6 +112,7 @@ if ($firstInputs) {
     for (let firstInput of $firstInputs) {
         opts.container = firstInput.closest('.date-dropdown');
         let dp = new Datedropdown(firstInput, opts);
+        console.log(dp);
         datedropArr.push(dp);
     }
 }

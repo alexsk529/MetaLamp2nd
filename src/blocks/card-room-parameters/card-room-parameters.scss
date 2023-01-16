@@ -4,6 +4,12 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   padding: 39px 29px 29px;
   box-sizing: border-box;
+  
+  @media (max-width: 421px) {
+    width: 300px;
+    padding: 30px 22px 22px;
+    height: 100%;
+  }
 
   &__room-number {
     margin-bottom: 20px;
