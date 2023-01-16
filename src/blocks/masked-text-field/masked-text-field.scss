@@ -3,6 +3,11 @@
   &__field {
     width: 320px;
     height: 44px;
+    box-sizing: border-box;
+
+    @media (max-width: 420px) {
+        width: 254px;
+    }
   }
 
 

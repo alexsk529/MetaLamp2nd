@@ -58,6 +58,8 @@ module.exports = {
         'dummy-page': './src/pages/dummy-page/dummy-page.js',
         'search-room': './src/pages/search-room/search-room.js',
         'room-details': './src/pages/room-details/room-details.js',
+        'registration': './src/pages/registration/registration.js',
+        'signin': './src/pages/signin/signin.js'
     },
     output: {
         filename: '[name].[contenthash].js',

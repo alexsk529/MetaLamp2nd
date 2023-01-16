@@ -1,4 +1,4 @@
-mixin card-account-signup
+mixin card-account-signup(button='Перейти к оплате', link='./dummy-page.html')
     .card-account-signup.card.card_shadow_big
         h1.widget.card-account-signup__headline Регистрация аккаунта
         .card-account-signup__text-field
@@ -35,8 +35,9 @@ mixin card-account-signup
             })
         .card-account-signup__button
             +button({
-                title: 'перейти к оплате',
+                title: button,
+                link: link,
                 isArrow: true,
                 className: 'button_style_solid payment-button',
             })
-        +card-footer('Уже есть аккаунт на Toxin', 'войти')
+        +card-footer('Уже есть аккаунт на Toxin', 'войти', './signin.html')

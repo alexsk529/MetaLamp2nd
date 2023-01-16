@@ -4,8 +4,6 @@
 Здесь размещен учебный проект отеля с целью практики верстки и применения плагинов сторонних библиотек.<br/>
 Проект представлен страницами User Interface (UI-kit) и страницами непосредственно макета сайта отеля.<br/>
 
-***Проект В РАЗРАБОТКЕ***
-
 - Верстка разметки сайта и применение стилей к HTML-элементам выполнялась с использованием препроцессоров Pug и SCSS (SASS);
 - Сборка проекта осуществляется с помощью сборщика модулей WebPack;
 - Организация блоков, страниц проекта выполнялась с применением [БЭМ-методологии](https://ru.bem.info/methodology/quick-start/);
@@ -26,8 +24,8 @@ UI-kit:
 - [Landing page](https://alexsk529.github.io/MetaLamp2nd/landing-page.html);
 - [Search room](https://alexsk529.github.io/MetaLamp2nd/search-room.html);
 - [Room details](https://alexsk529.github.io/MetaLamp2nd/room-details.html);
-- Registration ***(в разработке);***
-- Sign in ***(в разработке).***
+- [Registration](https://alexsk529.github.io/MetaLamp2nd/registration.html);
+- [Sign in](https://alexsk529.github.io/MetaLamp2nd/signin.html).
 
 ## Развертывание проекта
 ```
@@ -50,8 +48,6 @@ UI-kit:
 This is a pet project of the hotel web-site created in order to practice html-markup and apply side libraries and plugins.<br/>
 The project consists of the User Interface (UI-kit) pages and web-site pages.<br/>
 
-***The project is in development***
-
 - HTML-markup and styling is made using preprocessors Pug and SCSS(SASS);
 - The project is built by the module bundler WebPack;
 - [BEM approach](https://ru.bem.info/methodology/quick-start/) is applied to the web-site;
@@ -71,9 +67,9 @@ UI-kit:
 Web-site pages:
 - [Landing page](https://alexsk529.github.io/MetaLamp2nd/landing-page.html);
 - [Search room](https://alexsk529.github.io/MetaLamp2nd/search-room.html);
-- Room details ***(in development);***
-- Registration ***(in development);***
-- Sign in ***(in development).***
+- [Room details](https://alexsk529.github.io/MetaLamp2nd/room-details.html);
+- [Registration](https://alexsk529.github.io/MetaLamp2nd/registration.html);
+- [Sign in](https://alexsk529.github.io/MetaLamp2nd/signin.html).
 
 ## Launching the project
 ```

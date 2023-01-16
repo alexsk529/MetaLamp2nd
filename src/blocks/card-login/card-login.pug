@@ -14,7 +14,8 @@ mixin card-login
         .card-login__button
             +button({
                 title: 'войти',
+                link: './signin.html',
                 isArrow: true,
                 className: 'button_style_solid payment-button',
             })
-        +card-footer('Нет аккаунта на Toxin?', 'создать')
+        +card-footer('Нет аккаунта на Toxin?', 'создать', './registration.html')
