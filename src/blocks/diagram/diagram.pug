@@ -20,6 +20,8 @@ mixin diagram(entities)
                                 r='60' 
                                 cx='50%' 
                                 cy='50%'
+                                data-value=entity.title
+                                data-count=entity.value
                             )
                         else
                             circle(
@@ -29,6 +31,8 @@ mixin diagram(entities)
                                 r='60' 
                                 cx='50%' 
                                 cy='50%'
+                                data-value=entity.title
+                                data-count=entity.value
                             )     
                     -prevVal= prevVal - (entity.value / sum * 377);
                 defs 
@@ -45,13 +49,13 @@ mixin diagram(entities)
                         stop(offset="0%" stop-color="#909090")
                         stop(offset="100%" stop-color="#3D4975")  
         +bullet-list({
-                        content: [
-                            {string: 'Великолепно', color: 'linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)'},
-                            {string: 'Хорошо', color: 'linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)'},
-                            {string: 'Удовлетворительно', color: 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)'},
-                            {string: 'Разочарован', color: 'linear-gradient(180deg, #919191 0%, #3D4975 100%)'}
-                        ],
-                        padding: '15px',
-                        lineMargin: '0px'
+            content: [
+                {string: 'Великолепно', color: 'linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)'},
+                {string: 'Хорошо', color: 'linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)'},
+                {string: 'Удовлетворительно', color: 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)'},
+                {string: 'Разочарован', color: 'linear-gradient(180deg, #919191 0%, #3D4975 100%)'}
+            ],
+            padding: '15px',
+            lineMargin: '0px'
                     })                          
-            
+

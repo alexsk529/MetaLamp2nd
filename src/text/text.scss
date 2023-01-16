@@ -1,120 +1,130 @@
 @use "../fonts/fonts";
 
 body {
-  font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-input, textarea, button, i {
-  font-family: inherit;
+input,
+textarea,
+button,
+i {
+    font-family: inherit;
 }
 
 .body {
-  font-size: 14px;
-  font-weight: 400;
-  color: #1F2041;
-  opacity: 0.75;
-  line-height: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1F2041;
+    opacity: 0.75;
+    line-height: 24px;
 }
 
 .widget {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: calc(29 / 24 * 100%);
-  color: #1F2041;
-  @media (max-width: 420px) {
-    font-size: 20px;
-  }
+    font-size: 24px;
+    font-weight: 700;
+    line-height: calc(29 / 24 * 100%);
+    color: #1F2041;
+
+    @media (max-width: 420px) {
+        font-size: 20px;
+    }
+
+    &_color_purple {
+        color: #BC9CFF;
+    }
 }
 
 .widget-inside {
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 23px;
-  color: #1F2041;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 23px;
+    color: #1F2041;
 
-  &_color-gray {
-    color: rgba(31, 32, 65, 0.5);
-  }
+    &_color-gray {
+        color: rgba(31, 32, 65, 0.5);
+    }
 }
 
 .label {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 15px;
-  color: #1F2041;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 15px;
+    color: #1F2041;
 
-  &_style {
-    &_25 {
-      font-weight: 400;
-      opacity: 0.25;
-    }
-  }
-
-  &_position {
-    &_text-field {
-      margin-bottom: 5px;
-    }
-    &_button {
-      margin-bottom: 16px;
+    &_style {
+        &_25 {
+            font-weight: 400;
+            opacity: 0.25;
+        }
     }
 
-    &_slider {
-      margin-bottom: 20px;
-    }
+    &_position {
+        &_text-field {
+            margin-bottom: 5px;
+        }
 
-  }
+        &_button {
+            margin-bottom: 16px;
+        }
+
+        &_slider {
+            margin-bottom: 20px;
+        }
+
+    }
 }
 
 .label_color_purple {
-  color: #BC9CFF;
+    color: #BC9CFF;
 }
 
 .label_color_gray {
-  color: rgba(31, 32, 65, 0.5);
+    color: rgba(31, 32, 65, 0.5);
 }
 
 .label-25 {
-  font-size: 12px;
-  font-weight: 400;
-  text-transform: uppercase;
-  line-height: 15px;
-  opacity: 0.25;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 15px;
+    opacity: 0.25;
 }
 
 .material-icons {
-  font-family: 'Material Icons', sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
+    font-family: 'Material Icons', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
 
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
 
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
 
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+    /* Support for IE. */
+    font-feature-settings: 'liga';
 }
 
 .awesome {
-  font-family: 'Font Awesome', sans-serif;
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 400;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+    font-family: 'Font Awesome', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }

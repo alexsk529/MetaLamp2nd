@@ -6,4 +6,4 @@ mixin bullet-list(props)
                 h3.label.label_position_button= title
             each val in content
                 - const {string, color='#1F204140'} = val
-                span(class="body" style=`--color: ${color}; --padding: ${padding}; --lineMargin: ${lineMargin}`)= string
+                span(class="body bullet-list__span" data-value=string style=`--color: ${color}; --padding: ${padding}; --lineMargin: ${lineMargin}`)= string

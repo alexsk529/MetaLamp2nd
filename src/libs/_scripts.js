@@ -1,6 +1,7 @@
 import '../blocks/card-room-parameters/card-room-parameters.js';
 import '../blocks/card-room/card-room.js';
 import '../blocks/date-dropdown/date-dropdown.js';
+import '../blocks/diagram/diagram.js';
 import '../blocks/expandable-checkbox/expandable-checkbox.js';
 import '../blocks/expandable-list/expandable-list.js';
 import '../blocks/filter-date-dropdown/filter-date-dropdown.js';
